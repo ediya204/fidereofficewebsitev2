@@ -23,7 +23,7 @@ export function AboutCompliance() {
           <ul className="space-y-3 pl-6">
             {t.about.compliance.items.map((item, index) => (
               <li key={index} className="flex gap-3">
-                <Check className="h-5 w-5 flex-shrink-0 text-[#C9A961]" />
+                <Check className="h-5 w-5 flex-shrink-0 text-[#4357ef]" />
                 <span>{item}</span>
               </li>
             ))}

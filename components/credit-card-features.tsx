@@ -32,28 +32,28 @@ export function CreditCardFeatures() {
           </h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <div className="p-6 text-center">
-              <Wallet className="h-12 w-12 text-[#C9A961] mx-auto mb-4" />
+              <Wallet className="h-12 w-12 text-[#4357ef] mx-auto mb-4" />
               <h3 className="text-lg font-bold text-gray-900 mb-2">Flexible Withdrawals</h3>
               <p className="text-sm text-gray-600">
                 Withdraw cash at any time from any ATM with a Mastercard logo in 210 countries
               </p>
             </div>
             <div className="p-6 text-center">
-              <Shield className="h-12 w-12 text-[#C9A961] mx-auto mb-4" />
+              <Shield className="h-12 w-12 text-[#4357ef] mx-auto mb-4" />
               <h3 className="text-lg font-bold text-gray-900 mb-2">High Level of Privacy</h3>
               <p className="text-sm text-gray-600">
                 Protected by Trust Law and Personal Data Ordinance with utmost confidentiality
               </p>
             </div>
             <div className="p-6 text-center">
-              <Globe className="h-12 w-12 text-[#C9A961] mx-auto mb-4" />
+              <Globe className="h-12 w-12 text-[#4357ef] mx-auto mb-4" />
               <h3 className="text-lg font-bold text-gray-900 mb-2">No Interest</h3>
               <p className="text-sm text-gray-600">
                 Enable automatic repayment to deduct from current assets daily with no interest
               </p>
             </div>
             <div className="p-6 text-center">
-              <Clock className="h-12 w-12 text-[#C9A961] mx-auto mb-4" />
+              <Clock className="h-12 w-12 text-[#4357ef] mx-auto mb-4" />
               <h3 className="text-lg font-bold text-gray-900 mb-2">No Repayment Cycle</h3>
               <p className="text-sm text-gray-600">No monthly billing cycle or minimum repayment requirements</p>
             </div>

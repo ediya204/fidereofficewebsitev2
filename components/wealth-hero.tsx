@@ -67,15 +67,15 @@ export function WealthHero() {
         >
           {/* Label */}
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-8 h-px bg-amber-500" />
-            <span className="text-amber-500 text-sm font-medium tracking-wider uppercase">{t.label}</span>
+            <div className="w-8 h-px bg-[#4357ef]" />
+            <span className="text-[#4357ef] text-sm font-medium tracking-wider uppercase">{t.label}</span>
           </div>
 
           {/* Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6">
             <span className="text-white">{t.headline1}</span>
             <br />
-            <span className="text-amber-500">{t.headline2}</span>
+            <span className="text-[#4357ef]">{t.headline2}</span>
           </h1>
 
           {/* Subtitle */}
@@ -86,7 +86,7 @@ export function WealthHero() {
 
           {/* CTA Button */}
           <Link href="/contact">
-            <Button className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-6 text-base font-medium rounded-md">
+            <Button className="bg-[#4357ef] hover:bg-[#3b4ee0] text-white px-8 py-6 text-base font-medium rounded-md">
               {t.cta}
             </Button>
           </Link>

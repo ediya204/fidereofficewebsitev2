@@ -98,10 +98,10 @@ export function TrustCustodySolution() {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="mb-16">
-          <div className="text-sm text-[#C9A961] mb-2 uppercase tracking-wider">{t.sectionLabel}</div>
+          <div className="text-sm text-[#4357ef] mb-2 uppercase tracking-wider">{t.sectionLabel}</div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">{t.title}</h2>
           <Link href={localePath("/trust-account")}>
-            <Button variant="link" className="text-[#C9A961] p-0">
+            <Button variant="link" className="text-[#4357ef] p-0">
               {t.learnMore}
             </Button>
           </Link>

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X, ChevronDown, Search, ArrowRight } from "lucide-react"
+import { Menu, X, ChevronDown, Search } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 import { getTranslation, type Language } from "@/lib/translations"
 
@@ -27,10 +27,10 @@ export function Header({ forceDarkText = false }: HeaderProps) {
   const solutionsTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const pathname = usePathname()
   const useDarkText = forceDarkText || scrolled
-  const headerClass = useDarkText ? "bg-white shadow-sm py-2" : "bg-transparent py-4"
-  const primaryTextClass = useDarkText ? "!text-[#1a1a2e]" : "!text-white"
-  const mutedTextClass = useDarkText ? "!text-[#1a1a2e]/70 hover:!text-[#1a1a2e]" : "!text-white/70 hover:!text-white"
-  const hoverTextClass = useDarkText ? "hover:!text-[#2563EB]" : "hover:!text-white/80"
+  const headerClass = useDarkText ? "bg-white/95 backdrop-blur-md py-2 stripe-shadow" : "bg-transparent py-4"
+  const primaryTextClass = useDarkText ? "!text-[#07072d]" : "!text-white"
+  const mutedTextClass = useDarkText ? "!text-[#232937]/75 hover:!text-[#07072d]" : "!text-white/70 hover:!text-white"
+  const hoverTextClass = useDarkText ? "hover:!text-[#4357ef]" : "hover:!text-white/80"
 
   const localePath = (path: string) => `/${locale}${path}`
 
@@ -115,13 +115,13 @@ export function Header({ forceDarkText = false }: HeaderProps) {
             <button
               className={`flex items-center gap-1 text-sm font-medium transition ${
                 solutionsMenuOpen
-                  ? useDarkText ? "!text-[#2563EB]" : "!text-white"
+                  ? useDarkText ? "!text-[#4357ef]" : "!text-white"
                   : `${primaryTextClass} ${hoverTextClass}`
               }`}
             >
               {t.nav.solutions}
               <ChevronDown className={`w-4 h-4 transition-transform ${solutionsMenuOpen ? "rotate-180" : ""}`} />
-              {solutionsMenuOpen && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#2563EB]"></span>}
+              {solutionsMenuOpen && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4357ef]"></span>}
             </button>
           </div>
 
@@ -174,7 +174,7 @@ export function Header({ forceDarkText = false }: HeaderProps) {
       {/* Solutions Mega Menu Dropdown */}
       {solutionsMenuOpen && (
         <div
-          className="fixed top-16 left-1/2 -translate-x-1/2 w-[calc(100%-80px)] max-w-6xl bg-white shadow-xl z-50 rounded-2xl"
+          className="fixed top-16 left-1/2 -translate-x-1/2 w-[calc(100%-80px)] max-w-6xl bg-white z-50 rounded-md stripe-shadow"
           onMouseEnter={handleSolutionsMenuEnter}
           onMouseLeave={handleSolutionsMenuLeave}
         >
@@ -182,7 +182,7 @@ export function Header({ forceDarkText = false }: HeaderProps) {
             <div className="flex gap-12">
               {/* Left side - Image card */}
               <div className="w-72 flex-shrink-0">
-                <p className="text-2xl font-bold text-[#1a1a2e] tracking-wide mb-2">{t.nav.solutions?.toUpperCase()}</p>
+                <p className="text-2xl font-semibold text-[#07072d] tracking-wide mb-2">{t.nav.solutions?.toUpperCase()}</p>
                 <p className="text-sm text-gray-500 mb-4">{t.nav.solutionsOverview}</p>
                 <Link href={localePath("/solutions")} className="block">
                   <div className="relative aspect-[4/3] rounded-xl overflow-hidden group">
@@ -194,12 +194,6 @@ export function Header({ forceDarkText = false }: HeaderProps) {
                   </div>
                 </Link>
                 <p className="text-sm text-gray-600 mt-4">{t.nav.solutionsDesc}</p>
-                <Link
-                  href={localePath("/solutions")}
-                  className="inline-flex items-center gap-1 text-[#2563EB] text-sm font-medium mt-3 hover:underline"
-                >
-                  {t.nav.learnMore} <ArrowRight className="w-4 h-4" />
-                </Link>
               </div>
 
               {/* Right side - Menu items */}
@@ -207,7 +201,7 @@ export function Header({ forceDarkText = false }: HeaderProps) {
                 <div className="grid grid-cols-2 gap-x-12 gap-y-6">
                   {solutionsItems.map((item) => (
                     <Link key={item.title} href={item.href} className="group">
-                      <p className="text-lg font-bold text-[#1a1a2e] group-hover:text-[#2563EB] transition">
+                      <p className="text-lg font-semibold text-[#07072d] group-hover:text-[#4357ef] transition">
                         {item.title}
                       </p>
                       <p className="text-sm text-gray-500 mt-1">{item.description}</p>

@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowRight, CheckCircle2, Globe2, Layers, ShieldCheck, Workflow } from "lucide-react"
+import { ArrowRight, CheckCircle2, ChevronDown, Globe2, Layers, ShieldCheck, Workflow } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/language-context"
@@ -8,7 +8,9 @@ import { useLanguage } from "@/contexts/language-context"
 const translations = {
   en: {
     heroLabel: "Family Office",
-    heroTitle: "A Dedicated Platform for Family Office Governance",
+    heroTitlePart1: "A Dedicated Platform",
+    heroTitleHighlight: "For Family Office Governance",
+    heroSubtitle: "A coordinated model for multi-generational wealth operations",
     heroDescription:
       "Integrate trust structuring, custody, payments, and reporting into one coordinated operating model designed for multi-generational families.",
     capabilitiesTitle: "Core Family Office Capabilities",
@@ -45,7 +47,9 @@ const translations = {
   },
   "zh-CN": {
     heroLabel: "家族办公室",
-    heroTitle: "为家族办公室治理打造的一体化平台",
+    heroTitlePart1: "为家族办公室打造",
+    heroTitleHighlight: "一体化治理平台",
+    heroSubtitle: "面向多代财富运营的协同管理模式",
     heroDescription:
       "将信托架构、资产托管、支付执行与报告管理整合为一个协同运作体系，服务于多代家族财富目标。",
     capabilitiesTitle: "家族办公室核心能力",
@@ -81,7 +85,9 @@ const translations = {
   },
   "zh-TW": {
     heroLabel: "家族辦公室",
-    heroTitle: "為家族辦公室治理打造的一體化平台",
+    heroTitlePart1: "為家族辦公室打造",
+    heroTitleHighlight: "一體化治理平台",
+    heroSubtitle: "面向多代財富運營的協同管理模式",
     heroDescription:
       "將信託架構、資產託管、支付執行與報告管理整合為一個協同運作體系，服務於多代家族財富目標。",
     capabilitiesTitle: "家族辦公室核心能力",
@@ -123,22 +129,41 @@ export function FamilyOfficeContent() {
   const { language, locale } = useLanguage()
   const t = translations[language] || translations.en
   const localePath = (path: string) => `/${locale}${path}`
+  const scrollToContent = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: "smooth",
+    })
+  }
 
   return (
     <>
-      <section className="relative min-h-[82vh] flex items-center overflow-hidden bg-[#0f172a] pt-28 pb-20">
+      <section className="relative h-screen flex items-center overflow-hidden bg-[#0f172a] pt-28 pb-20">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: "url('/business-solutions-consulting-professional-meeting.jpg')" }}
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/young-woman-in-yellow-sweater-using-tablet-device.jpg')" }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a]/95 via-[#0f172a]/85 to-[#0f172a]/70" />
-        <div className="relative container mx-auto px-6">
-          <div className="max-w-3xl">
-            <p className="text-sm uppercase tracking-[0.24em] text-[#60A5FA] mb-5">{t.heroLabel}</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">{t.heroTitle}</h1>
-            <p className="mt-6 text-lg text-white/80 leading-relaxed">{t.heroDescription}</p>
+        <div className="absolute inset-0 bg-black/0" />
+        <div className="relative z-10 container mx-auto px-6 max-w-4xl animate-fade-in">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-8 h-px bg-[#4357ef]" />
+            <span className="text-[#4357ef] text-sm tracking-widest">{t.heroLabel}</span>
           </div>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-tight mb-6">
+            <span className="text-white">{t.heroTitlePart1}</span>
+            <br />
+            <span className="text-[#4357ef]">{t.heroTitleHighlight}</span>
+          </h1>
+          <p className="text-white/90 text-lg md:text-xl mb-4">{t.heroSubtitle}</p>
+          <p className="text-white/70 text-base md:text-lg max-w-2xl">{t.heroDescription}</p>
         </div>
+        <button
+          onClick={scrollToContent}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 text-white animate-bounce"
+          aria-label="Scroll down"
+        >
+          <ChevronDown className="w-8 h-8" />
+        </button>
       </section>
 
       <section className="py-24 bg-white">
@@ -152,8 +177,8 @@ export function FamilyOfficeContent() {
               const Icon = capabilityIcons[index]
               return (
                 <div key={item.title} className="rounded-2xl border border-gray-100 p-8 shadow-sm hover:shadow-md transition">
-                  <div className="w-12 h-12 rounded-xl bg-[#2563EB]/10 flex items-center justify-center mb-5">
-                    <Icon className="h-6 w-6 text-[#2563EB]" />
+                  <div className="w-12 h-12 rounded-xl bg-[#4357ef]/10 flex items-center justify-center mb-5">
+                    <Icon className="h-6 w-6 text-[#4357ef]" />
                   </div>
                   <h3 className="text-xl font-semibold text-[#1a1a2e]">{item.title}</h3>
                   <p className="mt-3 text-gray-600 leading-relaxed">{item.description}</p>
@@ -171,7 +196,7 @@ export function FamilyOfficeContent() {
             <div className="space-y-5">
               {t.approachItems.map((item) => (
                 <div key={item} className="flex items-start gap-4">
-                  <CheckCircle2 className="h-6 w-6 text-[#2563EB] mt-0.5 flex-shrink-0" />
+                  <CheckCircle2 className="h-6 w-6 text-[#4357ef] mt-0.5 flex-shrink-0" />
                   <p className="text-gray-700 text-lg leading-relaxed">{item}</p>
                 </div>
               ))}
@@ -182,7 +207,7 @@ export function FamilyOfficeContent() {
 
       <section className="py-20 bg-[#111827]">
         <div className="container mx-auto px-6">
-          <div className="rounded-3xl bg-gradient-to-r from-[#1d4ed8] to-[#2563EB] p-10 md:p-14 text-white">
+          <div className="rounded-3xl bg-gradient-to-r from-[#672bff] to-[#4357ef] p-10 md:p-14 text-white">
             <h2 className="text-3xl md:text-4xl font-bold max-w-2xl">{t.ctaTitle}</h2>
             <p className="mt-4 text-white/85 max-w-2xl text-lg">{t.ctaDescription}</p>
             <Link href={localePath("/contact")}>

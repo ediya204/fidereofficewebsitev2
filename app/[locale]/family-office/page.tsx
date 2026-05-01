@@ -5,7 +5,7 @@ import { FamilyOfficeContent } from "@/components/family-office-content"
 export default function FamilyOfficePage() {
   return (
     <main className="flex min-h-screen flex-col">
-      <Header />
+      <Header forceDarkText={true} />
       <FamilyOfficeContent />
       <Footer />
     </main>

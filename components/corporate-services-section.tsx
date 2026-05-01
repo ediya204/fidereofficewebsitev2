@@ -129,19 +129,27 @@ const iconMap = {
 export function CorporateServicesSection() {
   const { language } = useLanguage()
   const t = translations[language] || translations.en
+  const moduleStyles = [
+    { color: "#4357ef", softBg: "bg-[#eef1ff]", border: "group-hover:border-[#4357ef]/40" },
+    { color: "#672bff", softBg: "bg-[#f2eaff]", border: "group-hover:border-[#672bff]/40" },
+    { color: "#ff5c50", softBg: "bg-[#fff0ee]", border: "group-hover:border-[#ff5c50]/40" },
+    { color: "#07072d", softBg: "bg-[#eff0f6]", border: "group-hover:border-[#07072d]/30" },
+    { color: "#33384f", softBg: "bg-[#f2f4f8]", border: "group-hover:border-[#33384f]/35" },
+    { color: "#4357ef", softBg: "bg-[#edf3ff]", border: "group-hover:border-[#4357ef]/40" },
+  ]
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-20 md:py-24 bg-[#f6f9fc]">
       <div className="container mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 bg-[#5B4BA0]/10 rounded-full text-[#5B4BA0] text-sm font-medium mb-4">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
+          <div className="inline-block px-4 py-1.5 bg-[#eef1ff] rounded-md text-[#4357ef] text-sm font-semibold mb-4 tracking-[0.08em] uppercase">
             {t.sectionLabel}
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#07072d] mb-4">
             {t.title}
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-[#64748d] text-lg max-w-2xl mx-auto">
             {t.subtitle}
           </p>
         </div>
@@ -150,26 +158,44 @@ export function CorporateServicesSection() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {t.services.map((service, index) => {
             const IconComponent = iconMap[service.icon as keyof typeof iconMap]
+            const style = moduleStyles[index % moduleStyles.length]
+            const moduleLabel =
+              language === "en"
+                ? `Module ${String(index + 1).padStart(2, "0")}`
+                : language === "zh-CN"
+                  ? `模块 ${String(index + 1).padStart(2, "0")}`
+                  : `模組 ${String(index + 1).padStart(2, "0")}`
             return (
               <div
                 key={index}
-                className="group relative bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-lg hover:border-[#5B4BA0]/20 transition-all duration-300"
+                className={`group relative overflow-hidden rounded-lg border border-[#e5edf5] bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_42px_-24px_rgba(7,7,45,0.28)] ${style.border}`}
               >
+                {/* Top accent */}
+                <div className="absolute left-0 right-0 top-0 h-1" style={{ backgroundColor: style.color }} />
+                {/* Ambient accent glow */}
+                <div
+                  className="pointer-events-none absolute -right-8 -top-10 h-28 w-28 rounded-full opacity-30 blur-2xl"
+                  style={{ backgroundColor: style.color }}
+                />
+
                 {/* Icon */}
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#5B4BA0] to-[#7B6BC0] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent className="w-7 h-7 text-white" />
+                <div className={`w-14 h-14 rounded-md ${style.softBg} flex items-center justify-center mb-6`}>
+                  <IconComponent className="w-7 h-7" style={{ color: style.color }} />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#5B4BA0] transition-colors duration-300">
+                <h3 className="text-2xl font-semibold text-[#07072d] mb-3 transition-colors duration-300">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
+                <p className="text-[#64748d] leading-relaxed text-sm">
                   {service.description}
                 </p>
 
-                {/* Hover accent line */}
-                <div className="absolute bottom-0 left-8 right-8 h-1 bg-gradient-to-r from-[#5B4BA0] to-[#C9A961] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Footer label */}
+                <div className="mt-6 flex items-center justify-between">
+                  <span className="text-xs uppercase tracking-[0.16em] text-[#64748d]">{moduleLabel}</span>
+                  <span className="h-[2px] w-10 rounded-full" style={{ backgroundColor: style.color }} />
+                </div>
               </div>
             )
           })}

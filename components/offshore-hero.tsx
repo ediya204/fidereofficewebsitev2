@@ -53,15 +53,15 @@ export function OffshoreHero() {
       <div className="relative z-10 container mx-auto px-6 max-w-4xl animate-fade-in">
         {/* Label */}
         <div className="flex items-center gap-3 mb-6">
-          <div className="w-8 h-px bg-amber-500" />
-          <span className="text-amber-500 text-sm tracking-widest">{t.label}</span>
+          <div className="w-8 h-px bg-[#4357ef]" />
+          <span className="text-[#4357ef] text-sm tracking-widest">{t.label}</span>
         </div>
 
         {/* Main Headline with gold highlight */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-tight mb-6">
           <span className="text-white">{t.titlePart1}</span>
           <br />
-          <span className="text-amber-500">{t.titleHighlight}</span>
+          <span className="text-[#4357ef]">{t.titleHighlight}</span>
         </h1>
 
         {/* Subtitle */}

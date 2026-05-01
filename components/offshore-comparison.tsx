@@ -91,9 +91,9 @@ export function OffshoreComparison() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-6">
-            <div className="w-8 h-[1px] bg-[#C9A961]" />
-            <span className="text-[#C9A961] text-sm font-medium tracking-widest uppercase">{t.label}</span>
-            <div className="w-8 h-[1px] bg-[#C9A961]" />
+            <div className="w-8 h-[1px] bg-[#4357ef]" />
+            <span className="text-[#4357ef] text-sm font-medium tracking-widest uppercase">{t.label}</span>
+            <div className="w-8 h-[1px] bg-[#4357ef]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-light text-[#1a1a2e] mb-4">{t.title}</h2>
           <p className="text-gray-500 max-w-2xl mx-auto">{t.subtitle}</p>

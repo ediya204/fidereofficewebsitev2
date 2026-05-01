@@ -18,7 +18,7 @@ export function BusinessSolution() {
         {/* Services Grid */}
         <div className="grid gap-8 md:grid-cols-3">
           <div className="p-8 bg-gray-50 rounded-lg">
-            <Building2 className="h-12 w-12 text-[#C9A961] mb-4" />
+            <Building2 className="h-12 w-12 text-[#4357ef] mb-4" />
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Business Services</h3>
             <ul className="space-y-2 text-gray-600">
               <li>• Corporate formation and administration</li>
@@ -30,7 +30,7 @@ export function BusinessSolution() {
           </div>
 
           <div className="p-8 bg-gray-50 rounded-lg">
-            <TrendingUp className="h-12 w-12 text-[#C9A961] mb-4" />
+            <TrendingUp className="h-12 w-12 text-[#4357ef] mb-4" />
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Capital Market Services</h3>
             <ul className="space-y-2 text-gray-600">
               <li>• SPV incorporation and management</li>
@@ -42,7 +42,7 @@ export function BusinessSolution() {
           </div>
 
           <div className="p-8 bg-gray-50 rounded-lg">
-            <Shield className="h-12 w-12 text-[#C9A961] mb-4" />
+            <Shield className="h-12 w-12 text-[#4357ef] mb-4" />
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Global Compliance Solutions</h3>
             <ul className="space-y-2 text-gray-600">
               <li>• Regulatory business plan development</li>

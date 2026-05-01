@@ -19,7 +19,7 @@ export function FinancialSolution() {
         {/* Features Grid */}
         <div className="grid gap-8 md:grid-cols-3 mb-16">
           <div className="p-8 bg-white rounded-lg shadow-sm">
-            <CreditCard className="h-12 w-12 text-[#C9A961] mb-4" />
+            <CreditCard className="h-12 w-12 text-[#4357ef] mb-4" />
             <h3 className="text-2xl font-bold text-gray-900 mb-3">Asset Link Credit Card</h3>
             <p className="text-gray-600 mb-4">
               Unique product allowing full-asset autonomy through creative uses of financial tools and technology.
@@ -30,7 +30,7 @@ export function FinancialSolution() {
           </div>
 
           <div className="p-8 bg-white rounded-lg shadow-sm">
-            <Wallet className="h-12 w-12 text-[#C9A961] mb-4" />
+            <Wallet className="h-12 w-12 text-[#4357ef] mb-4" />
             <h3 className="text-2xl font-bold text-gray-900 mb-3">Asset Mobility</h3>
             <p className="text-gray-600">
               Execute funds movement, perform multi-jurisdiction transfers, and access investment options seamlessly.
@@ -38,7 +38,7 @@ export function FinancialSolution() {
           </div>
 
           <div className="p-8 bg-white rounded-lg shadow-sm">
-            <TrendingUp className="h-12 w-12 text-[#C9A961] mb-4" />
+            <TrendingUp className="h-12 w-12 text-[#4357ef] mb-4" />
             <h3 className="text-2xl font-bold text-gray-900 mb-3">Investment Execution</h3>
             <p className="text-gray-600">
               Manage your investments with our proprietary platform offering 24/7 borderless asset allocation.

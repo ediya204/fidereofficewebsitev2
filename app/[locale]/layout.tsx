@@ -19,15 +19,21 @@ export function generateStaticParams() {
   return [{ locale: "en" }, { locale: "cn" }, { locale: "tc" }]
 }
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
   params,
 }: {
   children: React.ReactNode
   params: Promise<{ locale: string }>
 }) {
+  const lang = {
+    en: "en",
+    cn: "zh-CN",
+    tc: "zh-Hant",
+  }[(await params).locale] ?? "en"
+
   return (
-    <html lang="en">
+    <html lang={lang}>
       <body className={`font-sans antialiased`}>
         <LanguageProvider>{children}</LanguageProvider>
         <Analytics />

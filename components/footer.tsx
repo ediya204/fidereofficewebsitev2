@@ -13,7 +13,7 @@ export function Footer() {
 
   const leftLinks = [
     { label: t.nav.solutions, href: localePath("/solutions") },
-    { label: t.nav.fidere, href: localePath("/about") },
+    { label: t.nav.about, href: localePath("/about") },
     { label: t.nav.contact, href: localePath("/contact") },
   ]
 

@@ -6,15 +6,16 @@ import Image from "next/image"
 import { useLanguage } from "@/contexts/language-context"
 import { getTranslation } from "@/lib/translations"
 
+const HERO_BG_IMAGES = [
+  "https://www.agoda.com/wp-content/uploads/2018/06/experience_hongkong_hongkong_skyline.jpg",
+  "/hong-kong-peak-view.jpg",
+]
+
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const { language } = useLanguage()
   const t = getTranslation(language)
-  const bgImages = [
-    "https://www.agoda.com/wp-content/uploads/2018/06/experience_hongkong_hongkong_skyline.jpg",
-    "/hong-kong-peak-view.jpg",
-  ]
-  const slides = t.hero.slides.slice(0, bgImages.length)
+  const slides = t.hero.slides.slice(0, HERO_BG_IMAGES.length)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,8 +23,6 @@ export function HeroSection() {
     }, 6000)
     return () => clearInterval(interval)
   }, [slides.length])
-
-  const currentSlideData = slides[currentSlide]
 
   const scrollToContent = () => {
     window.scrollTo({
@@ -36,7 +35,7 @@ export function HeroSection() {
     <section className="relative h-[100dvh] min-h-[100svh] w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        {bgImages.map((img, index) => (
+        {HERO_BG_IMAGES.map((img, index) => (
           <div
             key={img}
             className={`absolute inset-0 transition-opacity duration-1000 ${
@@ -44,7 +43,7 @@ export function HeroSection() {
             }`}
           >
             <Image
-              src={img || "/placeholder.svg"}
+              src={img}
               alt="Hong Kong Skyline"
               fill
               className="object-cover"

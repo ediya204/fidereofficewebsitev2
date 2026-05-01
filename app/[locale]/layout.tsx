@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Analytics } from "@vercel/analytics/next"
 import { Open_Sans, Barlow_Semi_Condensed } from "next/font/google"
+import { CookieConsentBanner } from "@/components/cookie-consent-banner"
 import { LanguageProvider } from "@/contexts/language-context"
 import "@/styles/globals.css"
 
@@ -48,7 +49,10 @@ export default async function LocaleLayout({
   return (
     <html lang={lang}>
       <body className={`${openSans.variable} ${barlowSemiCondensed.variable} font-sans antialiased`}>
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider>
+          {children}
+          <CookieConsentBanner />
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>

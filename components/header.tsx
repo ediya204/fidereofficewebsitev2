@@ -187,8 +187,8 @@ export function Header({ forceDarkText = false }: HeaderProps) {
                 <Link href={localePath("/solutions")} className="block">
                   <div className="relative aspect-[4/3] rounded-xl overflow-hidden group">
                     <img
-                      src="/business-solutions-consulting-professional-meeting.jpg"
-                      alt="Solutions"
+                      src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80"
+                      alt="Family and warm lifestyle planning"
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>

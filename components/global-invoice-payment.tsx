@@ -210,10 +210,10 @@ export function GlobalInvoicePayment() {
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 bg-[#2563EB]/10 rounded-full text-[#2563EB] text-sm font-medium mb-4">
+          <div className="inline-block px-4 py-1.5 bg-[#4357ef]/10 rounded-full text-[#4357ef] text-sm font-medium mb-4">
             {t.sectionLabel}
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4">
             {t.title}
           </h2>
           <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
@@ -227,7 +227,7 @@ export function GlobalInvoicePayment() {
             <div className="inline-block px-3 py-1 bg-gray-100 rounded-full text-gray-600 text-xs font-medium uppercase tracking-wider mb-3">
               {t.howItWorks.label}
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            <h3 className="text-2xl md:text-3xl font-semibold text-gray-900">
               {t.howItWorks.title}
             </h3>
           </div>
@@ -238,14 +238,14 @@ export function GlobalInvoicePayment() {
               return (
                 <div key={index} className="text-center">
                   <div className="relative inline-block mb-6">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#2563EB] to-[#1d4ed8] flex items-center justify-center mx-auto">
+                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#4357ef] to-[#3b4ee0] flex items-center justify-center mx-auto">
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[#2563EB] text-white text-sm font-bold flex items-center justify-center">
+                    <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-[#4357ef] text-white text-sm font-semibold flex items-center justify-center">
                       {index + 1}
                     </div>
                   </div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">{step.description}</p>
                 </div>
               )
@@ -256,10 +256,10 @@ export function GlobalInvoicePayment() {
         {/* Key Benefits */}
         <div className="bg-gradient-to-b from-gray-50 to-white rounded-3xl p-8 md:p-12">
           <div className="text-center mb-12">
-            <div className="inline-block px-3 py-1 bg-[#2563EB]/10 rounded-full text-[#2563EB] text-xs font-medium uppercase tracking-wider mb-3">
+            <div className="inline-block px-3 py-1 bg-[#4357ef]/10 rounded-full text-[#4357ef] text-xs font-medium uppercase tracking-wider mb-3">
               {t.benefits.label}
             </div>
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            <h3 className="text-2xl md:text-3xl font-semibold text-gray-900">
               {t.benefits.title}
             </h3>
           </div>
@@ -270,12 +270,12 @@ export function GlobalInvoicePayment() {
               return (
                 <div
                   key={index}
-                  className="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-[#2563EB]/20 transition-all duration-300"
+                  className="group bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md hover:border-[#4357ef]/20 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-lg bg-[#2563EB]/10 flex items-center justify-center mb-4 group-hover:bg-[#2563EB] transition-colors duration-300">
-                    <IconComponent className="w-6 h-6 text-[#2563EB] group-hover:text-white transition-colors duration-300" />
+                  <div className="w-12 h-12 rounded-lg bg-[#4357ef]/10 flex items-center justify-center mb-4 group-hover:bg-[#4357ef] transition-colors duration-300">
+                    <IconComponent className="w-6 h-6 text-[#4357ef] group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#2563EB] transition-colors duration-300">
+                  <h4 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-[#4357ef] transition-colors duration-300">
                     {benefit.title}
                   </h4>
                   <p className="text-gray-600 text-sm leading-relaxed">

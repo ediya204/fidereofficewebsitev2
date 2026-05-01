@@ -74,8 +74,8 @@ export function WealthBenefits() {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="mb-16">
-          <span className="text-[#2563EB] text-sm font-medium tracking-wider uppercase">{t.label}</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4">{t.title}</h2>
+          <span className="text-[#4357ef] text-sm font-medium tracking-wider uppercase">{t.label}</span>
+          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mt-4">{t.title}</h2>
         </div>
 
         {/* Benefits Grid */}
@@ -92,16 +92,16 @@ export function WealthBenefits() {
                 onMouseEnter={() => setActiveIndex(index)}
               >
                 {isActive && (
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#2563EB] rounded-t-full" />
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-[#4357ef] rounded-t-full" />
                 )}
                 <div
                   className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-4 transition-colors ${
-                    isActive ? "bg-[#2563EB]/10" : "bg-gray-100"
+                    isActive ? "bg-[#4357ef]/10" : "bg-gray-100"
                   }`}
                 >
-                  <Icon className={`h-7 w-7 ${isActive ? "text-[#2563EB]" : "text-gray-400"}`} />
+                  <Icon className={`h-7 w-7 ${isActive ? "text-[#4357ef]" : "text-gray-400"}`} />
                 </div>
-                <div className="text-[#2563EB] text-sm font-bold mb-2">{benefit.number}</div>
+                <div className="text-[#4357ef] text-sm font-semibold mb-2">{benefit.number}</div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3">{benefit.title}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed">{benefit.description}</p>
               </div>

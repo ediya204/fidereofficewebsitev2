@@ -109,7 +109,7 @@ export function OffshoreBenefits() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-16">
           <div>
             <span className="text-[#6366F1] text-sm font-medium mb-3 block">{t.label}</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a2e]">{t.title}</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#07072d]">{t.title}</h2>
           </div>
           <Link
             href="/solutions"
@@ -136,7 +136,7 @@ export function OffshoreBenefits() {
               </div>
 
               {/* Content */}
-              <h3 className="text-xl font-bold text-[#1a1a2e] mb-4">{solution.title}</h3>
+              <h3 className="text-xl font-semibold text-[#07072d] mb-4">{solution.title}</h3>
               <p className="text-gray-500 leading-relaxed mb-6 line-clamp-4">{solution.description}</p>
 
               {/* Learn More Link */}

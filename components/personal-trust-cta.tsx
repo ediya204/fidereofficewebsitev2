@@ -34,12 +34,12 @@ export function PersonalTrustCTA() {
   return (
     <section className="py-24 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 relative overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C9A961]/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#4357ef]/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#5B4BA0]/5 rounded-full blur-3xl" />
 
       <div className="container relative z-10 mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 text-balance">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-6 text-balance">
             {t.title}
           </h2>
           <p className="text-lg text-white/70 mb-10 leading-relaxed">
@@ -47,7 +47,7 @@ export function PersonalTrustCTA() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href={localePath("/contact")}>
-              <Button className="bg-[#C9A961] hover:bg-[#B8994F] text-white px-8 py-6 text-lg rounded-full group">
+              <Button className="bg-[#4357ef] hover:bg-[#3b4ee0] text-white px-8 py-6 text-lg rounded-full group">
                 {t.cta}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>

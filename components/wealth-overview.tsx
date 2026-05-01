@@ -114,12 +114,12 @@ export function WealthOverview() {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block px-4 py-1.5 bg-[#2563EB]/10 text-[#2563EB] text-sm font-medium rounded-full mb-6">
+          <span className="inline-block px-4 py-1.5 bg-[#4357ef]/10 text-[#4357ef] text-sm font-medium rounded-full mb-6">
             {t.badge}
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6 leading-tight">
             {t.title1}
-            <span className="text-[#2563EB]">{t.title2}</span>
+            <span className="text-[#4357ef]">{t.title2}</span>
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed">{t.description}</p>
         </div>
@@ -152,7 +152,7 @@ export function WealthOverview() {
                     <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-white/20 transition-all duration-300 border border-white/20">
                       <Icon className="h-7 w-7 text-white" />
                     </div>
-                    <h3 className="text-3xl font-bold text-white mb-3 drop-shadow-lg">{item.title}</h3>
+                    <h3 className="text-3xl font-semibold text-white mb-3 drop-shadow-lg">{item.title}</h3>
                     <p className="text-white/90 text-base leading-relaxed drop-shadow-md">{item.description}</p>
                   </div>
                   <div className="flex items-center justify-between mt-6">
@@ -177,18 +177,18 @@ export function WealthOverview() {
             return (
               <div
                 key={item.title}
-                className={`group relative bg-white rounded-2xl p-6 border border-gray-100 cursor-pointer transition-all duration-300 hover:border-[#2563EB]/30 hover:shadow-lg hover:-translate-y-1 ${
-                  isHovered ? "border-[#2563EB] shadow-xl" : ""
+                className={`group relative bg-white rounded-2xl p-6 border border-gray-100 cursor-pointer transition-all duration-300 hover:border-[#4357ef]/30 hover:shadow-lg hover:-translate-y-1 ${
+                  isHovered ? "border-[#4357ef] shadow-xl" : ""
                 }`}
                 onMouseEnter={() => setHoveredIndex(index + featuredItems.length)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
                 <div
                   className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all duration-300 ${
-                    isHovered ? "bg-[#2563EB] scale-110" : "bg-gray-100 group-hover:bg-[#2563EB]/10"
+                    isHovered ? "bg-[#4357ef] scale-110" : "bg-gray-100 group-hover:bg-[#4357ef]/10"
                   }`}
                 >
-                  <Icon className={`h-5 w-5 transition-colors ${isHovered ? "text-white" : "text-[#2563EB]"}`} />
+                  <Icon className={`h-5 w-5 transition-colors ${isHovered ? "text-white" : "text-[#4357ef]"}`} />
                 </div>
                 <h3 className="text-base font-semibold text-gray-900 mb-1">{item.title}</h3>
                 <p className="text-xs text-gray-500">{item.stats}</p>
@@ -205,7 +205,7 @@ export function WealthOverview() {
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <Link href="/contact">
-            <Button className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white rounded-full px-8 py-6 text-base font-medium shadow-lg shadow-[#2563EB]/25 hover:shadow-xl hover:shadow-[#2563EB]/30 transition-all">
+            <Button className="bg-[#4357ef] hover:bg-[#3b4ee0] text-white rounded-full px-8 py-6 text-base font-medium shadow-lg shadow-[#4357ef]/25 hover:shadow-xl hover:shadow-[#4357ef]/30 transition-all">
               {t.cta} <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>

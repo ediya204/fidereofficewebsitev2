@@ -36,11 +36,11 @@ export function SolutionsCTA() {
     <section className="py-24 bg-[#1a1a2e]">
       <div className="container mx-auto px-6 text-center">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">{t.title}</h2>
+          <h2 className="text-4xl md:text-5xl font-semibold text-white mb-6">{t.title}</h2>
           <p className="text-xl text-white/70 mb-10 max-w-2xl mx-auto">{t.description}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href={localePath("/contact")}>
-              <Button size="lg" className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-6 text-lg rounded-full">
+              <Button size="lg" className="bg-[#4357ef] hover:bg-[#3b4ee0] text-white px-8 py-6 text-lg rounded-full">
                 {t.cta}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>

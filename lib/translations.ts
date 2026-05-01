@@ -73,12 +73,6 @@ export const translations = {
       noticeText:
         "Some of our services are exclusively available to Professional Investors as defined under the Securities and Futures Ordinance (Cap. 571) of Hong Kong. If you do not qualify as a Professional Investor, please refrain from accessing restricted services.",
     },
-    platform: {
-      label: "The Platform",
-      title: "FinTech Trust Platform",
-      description:
-        "The best-in-class proprietary FinTech Trust Platform manages all your assets and your everyday needs. Now at your fingertips, you can view and initiate instructions from your trust account.",
-    },
     homeSolutions: {
       label: "Our Solutions",
       title: "Services tailored to you",
@@ -476,11 +470,6 @@ export const translations = {
       noticeText:
         "我们的部分服务仅面向香港《证券及期货条例》（第571章）所定义的专业投资者。如果您不符合专业投资者资格，请勿访问受限服务。",
     },
-    platform: {
-      label: "平台介绍",
-      title: "金融科技信托平台",
-      description: "一流的专有金融科技信托平台管理您的所有资产和日常需求。现在，您可以随时查看并从信托账户发起指令。",
-    },
     homeSolutions: {
       label: "我们的解决方案",
       title: "为您量身定制的服务",
@@ -847,11 +836,6 @@ export const translations = {
       noticeTitle: "提示：",
       noticeText:
         "我們的部分服務僅面向香港《證券及期貨條例》（第571章）所定義的專業投資者。如果您不符合專業投資者資格，請勿訪問受限服務。",
-    },
-    platform: {
-      label: "平台介紹",
-      title: "金融科技信託平台",
-      description: "一流的專有金融科技信託平台管理您的所有資產和日常需求。現在，您可以隨時查看並從信託賬戶發起指令。",
     },
     homeSolutions: {
       label: "我們的解決方案",

@@ -40,11 +40,11 @@ export function WealthCTA() {
       <div className="absolute inset-0 bg-black/50" />
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">{t.title}</h2>
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-8">{t.title}</h2>
         <p className="text-lg text-white/80 mb-10 max-w-2xl">{t.description}</p>
         <div className="flex flex-col sm:flex-row gap-4">
           <Link href="/contact">
-            <Button className="bg-[#2563EB] hover:bg-[#1D4ED8] text-white px-8 py-6 text-base font-medium rounded-md">
+            <Button className="bg-[#4357ef] hover:bg-[#3b4ee0] text-white px-8 py-6 text-base font-medium rounded-md">
               {t.register}
             </Button>
           </Link>

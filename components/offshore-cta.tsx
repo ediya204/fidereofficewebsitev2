@@ -33,7 +33,7 @@ export function OffshoreCTA() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight max-w-4xl mx-auto mb-12 text-balance">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-tight max-w-4xl mx-auto mb-12 text-balance">
           {t.title}
         </h2>
         <Link

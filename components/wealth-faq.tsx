@@ -106,8 +106,8 @@ export function WealthFAQ() {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-[#2563EB] text-sm font-medium tracking-wider uppercase">{t.label}</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4">{t.title}</h2>
+          <span className="text-[#4357ef] text-sm font-medium tracking-wider uppercase">{t.label}</span>
+          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mt-4">{t.title}</h2>
         </div>
 
         {/* FAQ List */}
@@ -125,12 +125,12 @@ export function WealthFAQ() {
                   onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="w-full flex items-center justify-between p-6 text-left"
                 >
-                  <h3 className={`font-semibold pr-4 ${isOpen ? "text-[#2563EB]" : "text-gray-900"}`}>
+                  <h3 className={`font-semibold pr-4 ${isOpen ? "text-[#4357ef]" : "text-gray-900"}`}>
                     {faq.question}
                   </h3>
                   <ChevronDown
                     className={`flex-shrink-0 h-5 w-5 transition-transform duration-300 ${
-                      isOpen ? "rotate-180 text-[#2563EB]" : "text-gray-400"
+                      isOpen ? "rotate-180 text-[#4357ef]" : "text-gray-400"
                     }`}
                   />
                 </button>

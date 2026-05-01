@@ -59,7 +59,7 @@ export function OffshoreOverview() {
         <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
           {/* Left Side - Title and Description */}
           <div className="flex-1 max-w-xl">
-            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#1a1a2e] leading-tight mb-6">
+            <h2 className="text-3xl md:text-4xl lg:text-[42px] font-semibold text-[#07072d] leading-tight mb-6">
               {t.title}
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed">{t.description}</p>
@@ -69,8 +69,8 @@ export function OffshoreOverview() {
           <div className="flex-1 flex items-start justify-center pt-1">
             <div className="relative flex items-center gap-4">
               {/* Central Hub - FIDERE Logo */}
-              <div className="relative z-10 w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#2563EB] flex items-center justify-center shadow-lg">
-                <span className="text-white text-2xl md:text-3xl font-bold tracking-wide">FIDERE</span>
+              <div className="relative z-10 w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#4357ef] flex items-center justify-center shadow-lg">
+                <span className="text-white text-2xl md:text-3xl font-semibold tracking-wide">FIDERE</span>
               </div>
 
               {/* Arrow */}

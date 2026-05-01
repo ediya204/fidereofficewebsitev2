@@ -88,7 +88,7 @@ export function OffshoreFAQ() {
   return (
     <section className="py-24 bg-[#fafafa]">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a2e] mb-12">{t.title}</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold text-[#07072d] mb-12">{t.title}</h2>
 
         <div className="max-w-3xl space-y-4">
           {t.faqs.map((faq, index) => (

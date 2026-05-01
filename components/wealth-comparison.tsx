@@ -192,8 +192,8 @@ export function WealthComparison() {
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-[#2563EB] text-sm font-medium tracking-wider uppercase">{t.badge}</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-4 mb-4">{t.title}</h2>
+          <span className="text-[#4357ef] text-sm font-medium tracking-wider uppercase">{t.badge}</span>
+          <h2 className="text-3xl md:text-4xl font-semibold text-gray-900 mt-4 mb-4">{t.title}</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">{t.subtitle}</p>
         </div>
 
@@ -203,7 +203,7 @@ export function WealthComparison() {
           <div className="grid grid-cols-3 gap-4 mb-4">
             <div className="text-sm font-medium text-gray-500 uppercase tracking-wider">{t.comparisonItem}</div>
             <div className="text-center">
-              <div className="inline-block bg-[#2563EB] text-white px-6 py-3 rounded-xl font-semibold">
+              <div className="inline-block bg-[#4357ef] text-white px-6 py-3 rounded-xl font-semibold">
                 {t.trustAccount}
               </div>
             </div>
@@ -222,7 +222,7 @@ export function WealthComparison() {
                 className="grid grid-cols-3 gap-4 py-5 px-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors"
               >
                 <div className="font-medium text-gray-900">{row.category}</div>
-                <div className={`text-sm leading-relaxed ${row.trustHighlight ? "text-[#2563EB]" : "text-gray-700"}`}>
+                <div className={`text-sm leading-relaxed ${row.trustHighlight ? "text-[#4357ef]" : "text-gray-700"}`}>
                   {row.trust}
                 </div>
                 <div className="text-sm text-gray-500 leading-relaxed">{row.bank}</div>

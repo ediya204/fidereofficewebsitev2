@@ -169,7 +169,7 @@ export function FamilyOfficeContent() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a2e]">{t.capabilitiesTitle}</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#07072d]">{t.capabilitiesTitle}</h2>
             <p className="mt-4 text-gray-600 text-lg leading-relaxed">{t.capabilitiesSubtitle}</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -192,7 +192,7 @@ export function FamilyOfficeContent() {
       <section className="py-24 bg-gray-50">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a2e] mb-8">{t.approachTitle}</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#07072d] mb-8">{t.approachTitle}</h2>
             <div className="space-y-5">
               {t.approachItems.map((item) => (
                 <div key={item} className="flex items-start gap-4">
@@ -208,7 +208,7 @@ export function FamilyOfficeContent() {
       <section className="py-20 bg-[#111827]">
         <div className="container mx-auto px-6">
           <div className="rounded-3xl bg-gradient-to-r from-[#672bff] to-[#4357ef] p-10 md:p-14 text-white">
-            <h2 className="text-3xl md:text-4xl font-bold max-w-2xl">{t.ctaTitle}</h2>
+            <h2 className="text-3xl md:text-4xl font-semibold max-w-2xl">{t.ctaTitle}</h2>
             <p className="mt-4 text-white/85 max-w-2xl text-lg">{t.ctaDescription}</p>
             <Link href={localePath("/contact")}>
               <Button className="mt-8 bg-white text-[#1d4ed8] hover:bg-blue-50 px-8 py-6 text-base font-semibold rounded-full">

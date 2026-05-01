@@ -11,11 +11,18 @@ const HERO_BG_IMAGES = [
   "/hong-kong-peak-view.jpg",
 ]
 
+const HERO_SLOGANS = {
+  en: ["PRESERVE LEGACY. ELEVATE WEALTH.", "PRIVATE TRUST. GLOBAL ALLOCATION."],
+  "zh-CN": ["守护传承，成就财富长期价值", "私密信托架构，全球资产配置"],
+  "zh-TW": ["守護傳承，成就財富長期價值", "私密信託架構，全球資產配置"],
+} as const
+
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const { language } = useLanguage()
   const t = getTranslation(language)
   const slides = t.hero.slides.slice(0, HERO_BG_IMAGES.length)
+  const slogans = HERO_SLOGANS[language] || HERO_SLOGANS.en
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -61,7 +68,7 @@ export function HeroSection() {
             className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-tight max-w-5xl mx-auto animate-fadeIn"
             style={{ fontFamily: "var(--font-sans)" }}
           >
-            WE LIVE IN TRUST
+            {slogans[currentSlide] || slogans[0]}
           </h1>
         </div>
       </div>

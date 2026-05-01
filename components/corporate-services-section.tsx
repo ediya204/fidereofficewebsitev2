@@ -22,7 +22,8 @@ const translations = {
       {
         icon: "users",
         title: "Trustee & Directors",
-        description: "We provide comprehensive administrative support including corporate directors, company secretarial services, nominee structures, bank signatory roles, and liaison with local authorities.",
+        description:
+          "We deliver governance-focused fiduciary support, including board advisory, corporate governance framework setup, delegation controls, and ongoing compliance coordination for cross-border entities.",
       },
       {
         icon: "calculator",
@@ -59,7 +60,8 @@ const translations = {
       {
         icon: "users",
         title: "受托人与董事",
-        description: "我们提供全面的行政支持，包括公司董事、公司秘书服务、代理人架构、银行签字人角色以及与地方当局的联络。",
+        description:
+          "我们提供以治理为核心的受托支持服务，包括董事会治理顾问、公司治理框架搭建、授权机制设计，以及跨境实体的持续合规协调。",
       },
       {
         icon: "calculator",
@@ -96,7 +98,8 @@ const translations = {
       {
         icon: "users",
         title: "受託人與董事",
-        description: "我們提供全面的行政支持，包括公司董事、公司秘書服務、代理人架構、銀行簽字人角色以及與地方當局的聯絡。",
+        description:
+          "我們提供以治理為核心的受託支持服務，包括董事會治理顧問、公司治理框架搭建、授權機制設計，以及跨境實體的持續合規協調。",
       },
       {
         icon: "calculator",

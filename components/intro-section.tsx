@@ -10,19 +10,19 @@ import { getTranslation } from "@/lib/translations"
 const businessCards = [
   {
     id: 1,
-    image: "/professional-woman-analyzing-financial-data-on-scr.jpg",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=80",
     titleKey: "highNetWorth",
     descKey: "highNetWorthDesc",
   },
   {
     id: 2,
-    image: "/hands-holding-smartphone-and-credit-card-mobile-pa.jpg",
+    image: "https://images.unsplash.com/photo-1464146072230-91cabc968266?auto=format&fit=crop&w=1200&q=80",
     titleKey: "familyOffice",
     descKey: "familyOfficeDesc",
   },
   {
     id: 3,
-    image: "/two-business-people-discussing-on-sofa-with-tablet.jpg",
+    image: "/corporate-trust-meeting.jpg",
     titleKey: "corporateTrust",
     descKey: "corporateTrustDesc",
   },
@@ -34,7 +34,7 @@ const businessCards = [
   },
   {
     id: 5,
-    image: "/young-woman-in-yellow-sweater-using-tablet-device.jpg",
+    image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80",
     titleKey: "successionPlanning",
     descKey: "successionPlanningDesc",
   },

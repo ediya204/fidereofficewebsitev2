@@ -20,7 +20,7 @@ export function AboutMission() {
             }}
           />
           <div className="flex flex-col justify-center">
-            <span className="mb-4 inline-block border-l-4 border-[#C9A961] pl-4 text-sm uppercase tracking-wide text-[#C9A961]">
+            <span className="mb-4 inline-block border-l-4 border-[#2563EB] pl-4 text-sm uppercase tracking-wide text-[#2563EB]">
               {t.about.mission.label}
             </span>
             <h2 className="mb-6 text-balance text-3xl font-bold text-slate-900 md:text-4xl">{t.about.mission.title}</h2>

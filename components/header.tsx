@@ -74,7 +74,7 @@ export function Header({ forceDarkText = false }: HeaderProps) {
     {
       title: t.nav.corporateClients || "Corporate Clients",
       description: t.nav.corporateTreasury || "",
-      href: localePath("/solutions"),
+      href: localePath("/corporate-clients"),
     },
     {
       title: t.nav.offshoreAccounts || "Offshore Accounts",
@@ -85,6 +85,11 @@ export function Header({ forceDarkText = false }: HeaderProps) {
       title: t.nav.wealthManagement || "Wealth Management",
       description: t.nav.wealthManagementDesc || "",
       href: localePath("/wealth-management"),
+    },
+    {
+      title: t.nav.familyOffices || "Family Offices",
+      description: t.nav.familyOfficesDesc || "",
+      href: localePath("/family-office"),
     },
     {
       title: language === "en" ? "Global Invoice Payment" : language === "zh-CN" ? "全球账单支付" : "全球帳單支付",

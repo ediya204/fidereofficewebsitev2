@@ -50,13 +50,13 @@ export function OffshoreOverview() {
   const t = translations[language] || translations.en
 
   return (
-    <section className="py-12 bg-[#f8f9fa]">
+    <section className="pt-12 pb-16 md:pb-20 bg-[#f8f9fa]">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto text-center mb-10">
           <p className="text-[#1a1a2e] text-lg md:text-xl leading-relaxed">{t.topBanner}</p>
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+        <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
           {/* Left Side - Title and Description */}
           <div className="flex-1 max-w-xl">
             <h2 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-[#1a1a2e] leading-tight mb-6">
@@ -66,7 +66,7 @@ export function OffshoreOverview() {
           </div>
 
           {/* Right Side - Hub and Spoke Diagram */}
-          <div className="flex-1 flex items-center justify-center">
+          <div className="flex-1 flex items-start justify-center pt-1">
             <div className="relative flex items-center gap-4">
               {/* Central Hub - FIDERE Logo */}
               <div className="relative z-10 w-32 h-32 md:w-40 md:h-40 rounded-full bg-[#2563EB] flex items-center justify-center shadow-lg">

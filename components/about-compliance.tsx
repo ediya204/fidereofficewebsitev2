@@ -12,7 +12,7 @@ export function AboutCompliance() {
     <section className="bg-slate-900 py-20 text-white">
       <div className="container mx-auto px-6">
         <div className="mb-12">
-          <span className="mb-4 inline-block text-sm uppercase tracking-wide text-[#C9A961]">
+          <span className="mb-4 inline-block text-sm uppercase tracking-wide text-[#2563EB]">
             {t.about.compliance.label}
           </span>
           <h2 className="text-3xl font-bold md:text-4xl">{t.about.compliance.title}</h2>

@@ -11,7 +11,7 @@ export function AboutTeam() {
     <section className="bg-white py-20">
       <div className="container mx-auto px-6">
         <div className="mb-12">
-          <span className="mb-4 inline-block text-sm uppercase tracking-wide text-[#C9A961]">{t.about.team.label}</span>
+          <span className="mb-4 inline-block text-sm uppercase tracking-wide text-[#2563EB]">{t.about.team.label}</span>
           <h2 className="text-3xl font-bold text-slate-900 md:text-4xl">{t.about.team.title}</h2>
         </div>
         <div className="space-y-6 text-slate-600">

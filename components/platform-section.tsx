@@ -87,7 +87,7 @@ export function PlatformSection() {
   }
 
   return (
-    <section className="py-12 md:py-16 bg-white">
+    <section className="mt-0 pt-8 md:pt-10 pb-12 md:pb-16 bg-white border-t border-gray-100">
       <div className="container mx-auto px-6 mb-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>

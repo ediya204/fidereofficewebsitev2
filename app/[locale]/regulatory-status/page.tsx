@@ -4,7 +4,7 @@ import { RegulatoryStatusContent } from "@/components/regulatory-status-content"
 
 export default function RegulatoryStatusPage() {
   return (
-    <main className="flex min-h-screen flex-col pt-16 md:pt-20">
+    <main className="flex min-h-screen flex-col pt-10 md:pt-12">
       <Header forceDarkText={true} />
       <RegulatoryStatusContent />
       <Footer />

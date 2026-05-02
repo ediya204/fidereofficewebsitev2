@@ -6,6 +6,11 @@ import { AboutExperience } from "@/components/about-experience"
 import { AboutTeam } from "@/components/about-team"
 import { AboutCompliance } from "@/components/about-compliance"
 import { Footer } from "@/components/footer"
+import { generatePageMetadata } from "@/lib/seo"
+
+export function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  return generatePageMetadata("about", params)
+}
 
 export default function AboutPage() {
   return (

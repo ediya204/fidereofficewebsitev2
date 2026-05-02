@@ -6,6 +6,11 @@ import { WealthComparison } from "@/components/wealth-comparison"
 import { WealthFAQ } from "@/components/wealth-faq"
 import { WealthCTA } from "@/components/wealth-cta"
 import { Footer } from "@/components/footer"
+import { generatePageMetadata } from "@/lib/seo"
+
+export function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  return generatePageMetadata("wealthManagement", params)
+}
 
 export default function WealthManagementPage() {
   return (

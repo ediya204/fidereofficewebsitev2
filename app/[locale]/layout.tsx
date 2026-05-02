@@ -1,10 +1,9 @@
-import type React from "react"
-import type { Metadata } from "next"
+import type { ReactNode } from "react"
 import { Analytics } from "@vercel/analytics/next"
 import { Open_Sans, Barlow_Semi_Condensed } from "next/font/google"
 import { CookieConsentBanner } from "@/components/cookie-consent-banner"
 import { LanguageProvider } from "@/contexts/language-context"
-import "@/styles/globals.css"
+import { buildOrganizationJsonLd } from "@/lib/seo"
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -18,16 +17,6 @@ const barlowSemiCondensed = Barlow_Semi_Condensed({
   weight: ["300", "400", "500", "600", "700"],
 })
 
-export const metadata: Metadata = {
-  title: "FIDERE TRUST | Family Office, Trust & Global Wealth Solutions",
-  description: "FIDERE TRUST delivers private trust, family office governance, and cross-border wealth solutions with institutional compliance, custody, and global asset execution.",
-  icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
-  },
-}
-
 // Generate static params for all locales
 export function generateStaticParams() {
   return [{ locale: "en" }, { locale: "cn" }, { locale: "tc" }]
@@ -37,24 +26,24 @@ export default async function LocaleLayout({
   children,
   params,
 }: {
-  children: React.ReactNode
+  children: ReactNode
   params: Promise<{ locale: string }>
 }) {
-  const lang = {
-    en: "en",
-    cn: "zh-CN",
-    tc: "zh-Hant",
-  }[(await params).locale] ?? "en"
+  const { locale } = await params
 
   return (
-    <html lang={lang}>
-      <body className={`${openSans.variable} ${barlowSemiCondensed.variable} font-sans antialiased`}>
-        <LanguageProvider>
-          {children}
-          <CookieConsentBanner />
-        </LanguageProvider>
-        <Analytics />
-      </body>
-    </html>
+    <LanguageProvider>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(buildOrganizationJsonLd(locale)).replace(/</g, "\\u003c"),
+        }}
+      />
+      <div className={`${openSans.variable} ${barlowSemiCondensed.variable} font-sans antialiased`}>
+        {children}
+        <CookieConsentBanner />
+      </div>
+      <Analytics />
+    </LanguageProvider>
   )
 }

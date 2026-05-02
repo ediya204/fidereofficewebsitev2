@@ -66,7 +66,7 @@ export const translations = {
     },
     intro: {
       title:
-        "FIDERE TRUST Limited is a global connected and FinTech-driven licensed trust company. We provide a full suite of trust services.",
+        "FIDERE TRUST Limited is a Hong Kong licensed trust company providing trust, family trust, digital asset custody, and asset management services.",
       licenseNo: "(license no. TC010497)",
       cta: "Get to Know Us",
       noticeTitle: "Notice:",
@@ -463,7 +463,7 @@ export const translations = {
       footer: "立即设立信托，开始享受真正的资产财务自主权。",
     },
     intro: {
-      title: "FIDERE TRUST Limited 是一家全球互联的金融科技驱动持牌信托公司。我们提供全套信托服务。",
+      title: "FIDERE TRUST Limited 是一家香港持牌信托公司，提供信托、香港信托、家族信托、数字资产托管与资产管理服务。",
       licenseNo: "（牌照号码 TC010497）",
       cta: "了解我们",
       noticeTitle: "提示：",
@@ -830,7 +830,7 @@ export const translations = {
       footer: "立即設立信託，開始享受真正的資產財務自主權。",
     },
     intro: {
-      title: "FIDERE TRUST Limited 是一家全球互聯的金融科技驅動持牌信託公司。我們提供全套信託服務。",
+      title: "FIDERE TRUST Limited 是一家香港持牌信託公司，提供信託、香港信託、家族信託、數字資產託管與資產管理服務。",
       licenseNo: "（牌照號碼 TC010497）",
       cta: "了解我們",
       noticeTitle: "提示：",

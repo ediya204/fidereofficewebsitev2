@@ -12,9 +12,9 @@ const HERO_BG_IMAGES = [
 ]
 
 const HERO_SLOGANS = {
-  en: ["PRESERVE LEGACY. ELEVATE WEALTH.", "PRIVATE TRUST. GLOBAL ALLOCATION."],
-  "zh-CN": ["守护传承，成就财富长期价值", "私密信托架构，全球资产配置"],
-  "zh-TW": ["守護傳承，成就財富長期價值", "私密信託架構，全球資產配置"],
+  en: ["HONG KONG TRUST. FAMILY LEGACY.", "DIGITAL ASSETS. GLOBAL ASSET MANAGEMENT."],
+  "zh-CN": ["香港信托，家族信托资产管理", "数字资产，全球资产管理"],
+  "zh-TW": ["香港信託，家族信託資產管理", "數字資產，全球資產管理"],
 } as const
 
 export function HeroSection() {

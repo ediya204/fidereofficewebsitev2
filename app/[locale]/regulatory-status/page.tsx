@@ -1,6 +1,11 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { RegulatoryStatusContent } from "@/components/regulatory-status-content"
+import { generatePageMetadata } from "@/lib/seo"
+
+export function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  return generatePageMetadata("regulatoryStatus", params)
+}
 
 export default function RegulatoryStatusPage() {
   return (

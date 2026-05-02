@@ -3,6 +3,11 @@ import { ContactHero } from "@/components/contact-hero"
 import { ContactForm } from "@/components/contact-form"
 import { ContactInfo } from "@/components/contact-info"
 import { Footer } from "@/components/footer"
+import { generatePageMetadata } from "@/lib/seo"
+
+export function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  return generatePageMetadata("contact", params)
+}
 
 export default function ContactPage() {
   return (

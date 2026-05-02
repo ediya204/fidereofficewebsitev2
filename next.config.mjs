@@ -6,14 +6,25 @@ const __dirname = path.dirname(__filename)
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   images: {
-    unoptimized: true,
-  },
-  generateBuildId: async () => {
-    return `build-${Date.now()}`
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.agoda.com",
+      },
+      {
+        protocol: "https",
+        hostname: "framerusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "365financialanalyst.com",
+      },
+    ],
   },
   turbopack: {
     root: __dirname,

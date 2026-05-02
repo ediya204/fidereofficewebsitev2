@@ -1,10 +1,21 @@
-import type React from "react"
+import type { ReactNode } from "react"
 import type { Metadata } from "next"
+import { siteName, siteUrl } from "@/lib/seo"
 import "@/styles/globals.css"
 
 export const metadata: Metadata = {
-  title: "FIDERE TRUST | Family Office, Trust & Global Wealth Solutions",
-  description: "FIDERE TRUST delivers private trust, family office governance, and cross-border wealth solutions with institutional compliance, custody, and global asset execution.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "香港信托、数字资产与家族信托资产管理 | FIDERE TRUST",
+    template: `%s | ${siteName}`,
+  },
+  description:
+    "FIDERE TRUST 提供香港信托、家族信托、数字资产托管与资产管理方案，服务全球家族、专业投资者与企业客户。",
+  applicationName: siteName,
+  authors: [{ name: siteName }],
+  creator: siteName,
+  publisher: siteName,
+  category: "Trust and asset management services",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -12,10 +23,10 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  return children
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  )
 }

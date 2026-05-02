@@ -3,6 +3,11 @@ import { PersonalTrustHero } from "@/components/personal-trust-hero"
 import { PersonalTrustServices } from "@/components/personal-trust-services"
 import { PersonalTrustCTA } from "@/components/personal-trust-cta"
 import { Footer } from "@/components/footer"
+import { generatePageMetadata } from "@/lib/seo"
+
+export function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  return generatePageMetadata("personalTrust", params)
+}
 
 export default function PersonalTrustPage() {
   return (

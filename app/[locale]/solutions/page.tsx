@@ -5,6 +5,11 @@ import { TrustCustodySolution } from "@/components/trust-custody-solution"
 import { CorporateServicesSection } from "@/components/corporate-services-section"
 import { SolutionsCTA } from "@/components/solutions-cta"
 import { Footer } from "@/components/footer"
+import { generatePageMetadata } from "@/lib/seo"
+
+export function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  return generatePageMetadata("solutions", params)
+}
 
 export default function SolutionsPage() {
   return (

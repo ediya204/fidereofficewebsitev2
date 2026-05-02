@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { Zap, Globe, Shield, Clock, Code, Headphones } from "lucide-react"
+import { Zap, Globe, Shield, Clock, Code, Headphones } from "@/components/ui/app-icon"
 
 export function TrustAccountTechnology() {
   const { language } = useLanguage()

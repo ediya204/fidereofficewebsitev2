@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { Building2, FileText, Users, Calculator, Scale, Briefcase } from "lucide-react"
+import { Building2, FileText, Users, Calculator, Scale, Briefcase } from "@/components/ui/app-icon"
 
 const translations = {
   en: {

@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown } from "@/components/ui/app-icon"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { useLanguage } from "@/contexts/language-context"

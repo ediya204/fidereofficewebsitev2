@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/contexts/language-context"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from "@/components/ui/app-icon"
 
 const translations = {
   en: {

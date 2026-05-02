@@ -1,6 +1,6 @@
 "use client"
 
-import { ArrowUpRight, Clock, Link2, Shield, UserPlus } from "lucide-react"
+import { ArrowUpRight, Clock, Link2, Shield, UserPlus } from "@/components/ui/app-icon"
 import { useLanguage } from "@/contexts/language-context"
 
 const features = [

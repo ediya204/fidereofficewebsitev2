@@ -2,7 +2,7 @@
 
 import {
   ChevronDown,
-} from "lucide-react"
+} from "@/components/ui/app-icon"
 import { useState } from "react"
 import { useLanguage } from "@/contexts/language-context"
 

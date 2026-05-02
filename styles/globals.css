@@ -6,6 +6,17 @@
 :root {
   --background: #ffffff;
   --foreground: #232937;
+  --emq-primary: #4357ef;
+  --emq-primary-hover: #3b4ee0;
+  --emq-primary-strong: #672bff;
+  --emq-ink-strong: #07072d;
+  --emq-ink: #232937;
+  --emq-surface: #ffffff;
+  --emq-muted-surface: #f6f9fc;
+  --emq-danger: #ff5c50;
+  --emq-border: #e5edf5;
+  --emq-border-strong: #c9d2ff;
+  --emq-text-muted: #64748d;
   --card: #ffffff;
   --card-foreground: #232937;
   --popover: #ffffff;

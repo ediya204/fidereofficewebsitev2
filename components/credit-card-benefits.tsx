@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { CreditCard, Shield, Globe, Zap } from "lucide-react"
+import { CreditCard, Shield, Globe, Zap } from "@/components/ui/app-icon"
 
 const benefits = [
   {

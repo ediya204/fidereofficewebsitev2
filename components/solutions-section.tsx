@@ -1,6 +1,6 @@
 "use client"
 
-import { TrendingUp, FileText } from "lucide-react"
+import { TrendingUp, FileText } from "@/components/ui/app-icon"
 import { useLanguage } from "@/contexts/language-context"
 import { getTranslation } from "@/lib/translations"
 

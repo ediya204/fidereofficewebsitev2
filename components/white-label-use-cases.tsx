@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { Users, Shield, Key, Briefcase, Scale } from "lucide-react"
+import { Users, Shield, Key, Briefcase, Scale } from "@/components/ui/app-icon"
 
 const content = {
   en: {

@@ -15,7 +15,7 @@ import {
   Coins,
   Lock,
   ArrowUpRight,
-} from "lucide-react"
+} from "@/components/ui/app-icon"
 import { useLanguage } from "@/contexts/language-context"
 
 const translations = {

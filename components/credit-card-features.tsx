@@ -1,4 +1,4 @@
-import { Wallet, Globe, Shield, Clock } from "lucide-react"
+import { Wallet, Globe, Shield, Clock } from "@/components/ui/app-icon"
 
 export function CreditCardFeatures() {
   return (

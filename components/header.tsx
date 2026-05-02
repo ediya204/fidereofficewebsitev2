@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X, ChevronDown, Search } from "lucide-react"
+import { Menu, X, ChevronDown, Search } from "@/components/ui/app-icon"
 import { useLanguage } from "@/contexts/language-context"
 import { getTranslation, type Language } from "@/lib/translations"
 

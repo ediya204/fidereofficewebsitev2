@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { Check, X } from "lucide-react"
+import { Check, X } from "@/components/ui/app-icon"
 
 const translations = {
   en: {

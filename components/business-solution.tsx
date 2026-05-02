@@ -1,4 +1,4 @@
-import { Building2, TrendingUp, Shield } from "lucide-react"
+import { Building2, TrendingUp, Shield } from "@/components/ui/app-icon"
 
 export function BusinessSolution() {
   return (

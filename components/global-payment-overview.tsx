@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Globe, CreditCard, Clock, FileText, ArrowRight, Building2 } from "lucide-react"
+import { Globe, CreditCard, Clock, FileText, ArrowRight, Building2 } from "@/components/ui/app-icon"
 import { useState } from "react"
 import { useLanguage } from "@/contexts/language-context"
 

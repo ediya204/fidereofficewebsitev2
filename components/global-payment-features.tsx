@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Upload, FileSearch, Send, CheckCircle2, ArrowRight } from "lucide-react"
+import { Upload, FileSearch, Send, CheckCircle2, ArrowRight } from "@/components/ui/app-icon"
 import { useLanguage } from "@/contexts/language-context"
 
 const translations = {

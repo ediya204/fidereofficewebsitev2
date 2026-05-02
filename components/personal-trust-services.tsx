@@ -1,12 +1,18 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { Shield, Globe, Home, TrendingUp, Landmark, Bitcoin } from "lucide-react"
+import { Shield, Globe, Home, TrendingUp, Landmark, Bitcoin } from "@/components/ui/app-icon"
 
 const translations = {
   en: {
     sectionLabel: "What We Offer",
     title: "Comprehensive services for your wealth journey",
+    eyebrow: "Private trust capabilities",
+    summary:
+      "A coordinated service layer for families who need trust structuring, cross-border execution, asset oversight, and long-term governance from one accountable team.",
+    proofPoints: ["Trust structuring", "Global execution", "Asset oversight"],
+    moduleLabel: "Service module",
+    serviceTags: ["Trust", "Execution", "Mobility", "Markets", "Real assets", "Web3"],
     services: [
       {
         icon: "Shield",
@@ -43,6 +49,11 @@ const translations = {
   "zh-CN": {
     sectionLabel: "我们提供的服务",
     title: "为您的财富之旅提供全面服务",
+    eyebrow: "私人信托能力",
+    summary: "为需要信托架构、跨境执行、资产监督和长期治理的家族，提供由同一专业团队协调的综合服务层。",
+    proofPoints: ["信托架构", "全球执行", "资产监督"],
+    moduleLabel: "服务模块",
+    serviceTags: ["信托", "执行", "身份规划", "市场", "实物资产", "Web3"],
     services: [
       {
         icon: "Shield",
@@ -79,6 +90,11 @@ const translations = {
   "zh-TW": {
     sectionLabel: "我們提供的服務",
     title: "為您的財富之旅提供全面服務",
+    eyebrow: "私人信託能力",
+    summary: "為需要信託架構、跨境執行、資產監督和長期治理的家族，提供由同一專業團隊協調的綜合服務層。",
+    proofPoints: ["信託架構", "全球執行", "資產監督"],
+    moduleLabel: "服務模組",
+    serviceTags: ["信託", "執行", "身份規劃", "市場", "實物資產", "Web3"],
     services: [
       {
         icon: "Shield",
@@ -127,69 +143,84 @@ export function PersonalTrustServices() {
   const { language } = useLanguage()
   const t = translations[language] || translations.en
   const moduleStyles = [
-    { color: "#4357ef", softBg: "bg-[#eef1ff]", border: "group-hover:border-[#4357ef]/40" },
-    { color: "#672bff", softBg: "bg-[#f2eaff]", border: "group-hover:border-[#672bff]/40" },
-    { color: "#ff5c50", softBg: "bg-[#fff0ee]", border: "group-hover:border-[#ff5c50]/40" },
-    { color: "#07072d", softBg: "bg-[#eff0f6]", border: "group-hover:border-[#07072d]/30" },
-    { color: "#33384f", softBg: "bg-[#f2f4f8]", border: "group-hover:border-[#33384f]/35" },
-    { color: "#4357ef", softBg: "bg-[#edf3ff]", border: "group-hover:border-[#4357ef]/40" },
+    { color: "var(--emq-primary)", softBg: "bg-[#eef1ff]", border: "group-hover:border-[#4357ef]/45" },
+    { color: "var(--emq-primary-strong)", softBg: "bg-[#f2eaff]", border: "group-hover:border-[#672bff]/40" },
+    { color: "var(--emq-danger)", softBg: "bg-[#fff0ee]", border: "group-hover:border-[#ff5c50]/45" },
+    { color: "var(--emq-ink-strong)", softBg: "bg-[#eff0f6]", border: "group-hover:border-[#07072d]/35" },
+    { color: "var(--emq-ink)", softBg: "bg-[#f2f4f8]", border: "group-hover:border-[#232937]/35" },
+    { color: "var(--emq-primary)", softBg: "bg-[#eef1ff]", border: "group-hover:border-[#4357ef]/45" },
   ]
 
   return (
-    <section className="py-24 bg-[#f6f9fc]">
-      <div className="container mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center mb-16 max-w-3xl mx-auto">
-          <div className="text-sm text-[#4357ef] mb-3 uppercase tracking-[0.18em] font-semibold">
-            {t.sectionLabel}
+    <section className="bg-[var(--emq-muted-surface)] py-20 md:py-24">
+      <div className="container mx-auto max-w-7xl px-6">
+        <div className="mb-12 grid gap-8 border-b border-[var(--emq-border)] pb-10 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+          <div>
+            <div className="mb-4 inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--emq-primary)]">
+              <span className="h-px w-10 bg-[var(--emq-primary)]" />
+              {t.sectionLabel}
+            </div>
+            <h2 className="max-w-3xl text-4xl font-semibold leading-[1.1] text-[var(--emq-ink-strong)] md:text-[42px]">
+              {t.title}
+            </h2>
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#07072d] text-balance">
-            {t.title}
-          </h2>
+
+          <div className="lg:pl-8">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.12em] text-[var(--emq-text-muted)]">{t.eyebrow}</p>
+            <p className="max-w-2xl text-base leading-7 text-[var(--emq-ink)]">{t.summary}</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {t.proofPoints.map((point) => (
+                <span
+                  key={point}
+                  className="rounded-[4px] border border-[var(--emq-border-strong)] bg-white px-4 py-2 text-sm font-medium text-[var(--emq-ink)]"
+                >
+                  {point}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
 
-        {/* Services Grid - EMQ-inspired module cards */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {t.services.map((service, index) => {
             const IconComponent = iconMap[service.icon as keyof typeof iconMap]
             const style = moduleStyles[index % moduleStyles.length]
-            const moduleLabel =
-              language === "en"
-                ? `Module ${String(index + 1).padStart(2, "0")}`
-                : language === "zh-CN"
-                  ? `模块 ${String(index + 1).padStart(2, "0")}`
-                  : `模組 ${String(index + 1).padStart(2, "0")}`
             return (
               <div
                 key={index}
-                className={`group relative overflow-hidden rounded-lg border border-[#e5edf5] bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_42px_-24px_rgba(7,7,45,0.28)] ${style.border}`}
+                className={`group relative min-h-[250px] overflow-hidden rounded-md border border-[var(--emq-border)] bg-white p-7 transition-all duration-200 hover:shadow-[rgba(7,7,45,0.14)_0_15px_35px_0,rgba(0,0,0,0.08)_0_8px_24px_-8px] ${style.border}`}
               >
-                {/* Accent strip */}
-                <div className="absolute left-0 right-0 top-0 h-1" style={{ backgroundColor: style.color }} />
-                {/* Ambient accent blob */}
                 <div
-                  className="pointer-events-none absolute -right-8 -top-10 h-28 w-28 rounded-full opacity-30 blur-2xl"
+                  className="absolute inset-x-0 top-0 h-[3px] transition-all duration-200 group-hover:h-1"
                   style={{ backgroundColor: style.color }}
                 />
-
-                {/* Icon */}
-                <div className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-md ${style.softBg}`}>
-                  <IconComponent className="w-7 h-7" style={{ color: style.color }} />
+                <div className="mb-8 flex items-start justify-between gap-4">
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-[4px] ${style.softBg}`}>
+                    <IconComponent className="h-6 w-6" style={{ color: style.color }} />
+                  </div>
+                  <div className="text-right">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--emq-text-muted)]">
+                      {t.moduleLabel}
+                    </p>
+                    <p className="mt-1 text-2xl font-semibold tabular-nums text-[var(--emq-ink-strong)]">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+                  </div>
                 </div>
 
-                {/* Content */}
-                <h3 className="mb-3 text-2xl font-semibold text-[#07072d] transition-colors" style={{ color: "#07072d" }}>
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="h-px w-8" style={{ backgroundColor: style.color }} />
+                  <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[var(--emq-text-muted)]">
+                    {t.serviceTags[index]}
+                  </span>
+                </div>
+
+                <h3 className="mb-3 text-2xl font-semibold leading-[1.15] tracking-normal text-[var(--emq-ink-strong)]">
                   {service.title}
                 </h3>
-                <p className="leading-relaxed text-[#64748d]">
+                <p className="text-[15px] leading-7 text-[var(--emq-text-muted)]">
                   {service.description}
                 </p>
-
-                {/* Footer tag */}
-                <div className="mt-6 flex items-center justify-between">
-                  <span className="text-xs uppercase tracking-[0.16em] text-[#64748d]">{moduleLabel}</span>
-                  <span className="h-[2px] w-10 rounded-full" style={{ backgroundColor: style.color }} />
-                </div>
               </div>
             )
           })}

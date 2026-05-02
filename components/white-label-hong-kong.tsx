@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { Globe, Shield, Landmark, Scale, FileCheck, Building2 } from "lucide-react"
+import { Globe, Shield, Landmark, Scale, FileCheck, Building2 } from "@/components/ui/app-icon"
 
 const content = {
   en: {

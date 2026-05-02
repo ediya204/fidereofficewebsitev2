@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from "@/components/ui/app-icon"
 import Link from "next/link"
 
 export function TrustAccountCTA() {

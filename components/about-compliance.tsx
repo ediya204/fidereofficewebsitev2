@@ -2,7 +2,7 @@
 
 import { useLanguage } from "@/contexts/language-context"
 import { getTranslation } from "@/lib/translations"
-import { Check } from "lucide-react"
+import { Check } from "@/components/ui/app-icon"
 
 export function AboutCompliance() {
   const { language } = useLanguage()

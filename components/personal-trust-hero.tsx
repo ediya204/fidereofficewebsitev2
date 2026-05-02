@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown } from "@/components/ui/app-icon"
 import { useLanguage } from "@/contexts/language-context"
 
 const translations = {

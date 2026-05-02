@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from "@/components/ui/app-icon"
 import Link from "next/link"
 import { useLanguage } from "@/contexts/language-context"
 

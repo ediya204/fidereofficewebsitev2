@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Shield, Clock, Globe, Wallet, Users } from "lucide-react"
+import { Shield, Clock, Globe, Wallet, Users } from "@/components/ui/app-icon"
 import { useLanguage } from "@/contexts/language-context"
 
 const translations = {

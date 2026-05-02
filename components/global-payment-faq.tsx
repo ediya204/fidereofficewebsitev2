@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Plus, Minus } from "lucide-react"
+import { Plus, Minus } from "@/components/ui/app-icon"
 import { useLanguage } from "@/contexts/language-context"
 
 const translations = {

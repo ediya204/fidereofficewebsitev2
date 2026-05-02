@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { useLanguage } from "@/contexts/language-context"
-import { ArrowRight, FileText, TrendingUp, Building2 } from "lucide-react"
+import { ArrowRight, FileText, TrendingUp, Building2 } from "@/components/ui/app-icon"
 
 const translations = {
   en: {

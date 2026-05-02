@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { CreditCard, Wallet, TrendingUp } from "lucide-react"
+import { CreditCard, Wallet, TrendingUp } from "@/components/ui/app-icon"
 
 export function FinancialSolution() {
   return (

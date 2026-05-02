@@ -1,6 +1,6 @@
 "use client"
 
-import { MapPin, Mail, Phone } from "lucide-react"
+import { MapPin, Mail, Phone } from "@/components/ui/app-icon"
 import { useLanguage } from "@/contexts/language-context"
 
 const translations = {

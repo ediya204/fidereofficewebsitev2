@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown } from "@/components/ui/app-icon"
 
 const translations = {
   en: {

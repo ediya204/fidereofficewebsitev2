@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { Upload, FileCheck, Clock, Shield, Globe, CalendarClock } from "lucide-react"
+import { Upload, FileCheck, Clock, Shield, Globe, CalendarClock } from "@/components/ui/app-icon"
 
 const translations = {
   en: {

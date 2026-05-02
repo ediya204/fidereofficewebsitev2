@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { Shield, Globe, Zap, Eye, Scale, Lock } from "lucide-react"
+import { Shield, Globe, Zap, Eye, Scale, Lock } from "@/components/ui/app-icon"
 
 export function TrustAccountBenefits() {
   const { language } = useLanguage()

@@ -1,6 +1,6 @@
 "use client"
 
-import { CheckCircle2, User, Phone, FileText, Shield, ClipboardCheck, Info, Lock } from "lucide-react"
+import { CheckCircle2, User, Phone, FileText, Shield, ClipboardCheck, Info, Lock } from "@/components/ui/app-icon"
 
 interface PersonalKycGuideContentProps {
   locale: string

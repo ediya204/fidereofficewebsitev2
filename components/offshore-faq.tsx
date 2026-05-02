@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useLanguage } from "@/contexts/language-context"
-import { Plus, Minus } from "lucide-react"
+import { Plus, Minus } from "@/components/ui/app-icon"
 
 const translations = {
   en: {

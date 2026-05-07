@@ -13,16 +13,16 @@ const HERO_BG_IMAGES = [
 
 const HERO_SLOGANS = {
   en: [
-    "We protect family wealth through Hong Kong trust structures and support long-term cross-border asset management.",
-    "We bring regulated custody, digital assets and global allocation into one professional trust platform.",
+    "Hong Kong trust structures for family trust asset management, built to protect and transfer wealth across generations.",
+    "Digital assets and global asset management brought together through a professional trust platform.",
   ],
   "zh-CN": [
-    "我们以香港信托架构守护家族财富，并支持跨境资产的长期管理。",
-    "我们将合规托管、数字资产与全球配置能力整合于同一专业信托平台。",
+    "以香港信托架构开展家族信托资产管理，守护财富的长期稳健与传承。",
+    "以数字资产托管连接全球资产管理，支持跨境配置的合规执行。",
   ],
   "zh-TW": [
-    "我們以香港信託架構守護家族財富，並支持跨境資產的長期管理。",
-    "我們將合規託管、數字資產與全球配置能力整合於同一專業信託平台。",
+    "以香港信託架構開展家族信託資產管理，守護財富的長期穩健與傳承。",
+    "以數字資產託管連接全球資產管理，支持跨境配置的合規執行。",
   ],
 } as const
 

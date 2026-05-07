@@ -13,16 +13,16 @@ const HERO_BG_IMAGES = [
 
 const HERO_SLOGANS = {
   en: [
-    "Hong Kong trust structures for family trust asset management, built to protect and transfer wealth across generations.",
-    "Digital assets and global asset management brought together through a professional trust platform.",
+    "Hong Kong trusts for long-term family trust asset management.",
+    "Digital assets connected to global asset management.",
   ],
   "zh-CN": [
-    "以香港信托架构开展家族信托资产管理，守护财富的长期稳健与传承。",
-    "以数字资产托管连接全球资产管理，支持跨境配置的合规执行。",
+    "香港信托，为家族信托资产管理构建长期架构。",
+    "数字资产，连接全球资产管理与跨境配置。",
   ],
   "zh-TW": [
-    "以香港信託架構開展家族信託資產管理，守護財富的長期穩健與傳承。",
-    "以數字資產託管連接全球資產管理，支持跨境配置的合規執行。",
+    "香港信託，為家族信託資產管理構建長期架構。",
+    "數字資產，連接全球資產管理與跨境配置。",
   ],
 } as const
 
@@ -74,7 +74,7 @@ export function HeroSection() {
       <div className="relative z-10 h-full flex items-center justify-center">
         <div className="container mx-auto px-6 text-center">
           <h1
-            className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-tight max-w-5xl mx-auto animate-fadeIn"
+            className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-medium text-white leading-tight max-w-4xl mx-auto animate-fadeIn"
             style={{ fontFamily: "var(--font-sans)" }}
           >
             {slogans[currentSlide] || slogans[0]}

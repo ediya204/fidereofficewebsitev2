@@ -1,7 +1,10 @@
 import type { ReactNode } from "react"
 import type { Metadata } from "next"
+import Script from "next/script"
 import { siteName, siteUrl } from "@/lib/seo"
 import "@/styles/globals.css"
+
+const googleTagId = "G-DXNG1F7QFP"
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -26,7 +29,25 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`}
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${googleTagId}');
+            `,
+          }}
+        />
+      </body>
     </html>
   )
 }

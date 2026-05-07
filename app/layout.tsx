@@ -9,11 +9,11 @@ const googleTagId = "G-DXNG1F7QFP"
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "香港信托、数字资产与家族信托资产管理 | FIDERE TRUST",
+    default: "香港信托与家族信托资产管理 | FIDERE TRUST",
     template: `%s | ${siteName}`,
   },
   description:
-    "FIDERE TRUST 提供香港信托、家族信托、数字资产托管与资产管理方案，服务全球家族、专业投资者与企业客户。",
+    "FIDERE TRUST 提供香港信托、家族信托与资产管理方案，服务全球家族、专业投资者与企业客户。",
   applicationName: siteName,
   authors: [{ name: siteName }],
   creator: siteName,

@@ -75,7 +75,7 @@ const featureContent = {
 
 export function FeaturesSection() {
   const { language } = useLanguage()
-  const content = featureContent[language] || featureContent.en
+  const content = featureContent[language as keyof typeof featureContent] || featureContent.en
 
   return (
     <section className="py-20 bg-white border-b border-gray-100">

@@ -46,6 +46,19 @@ const translations = {
     submit: "發送消息",
     success: "感謝您的聯繫！您的消息已成功發送。",
   },
+  ar: {
+    label: "نموذج التواصل",
+    title: "تواصل معنا",
+    subtitle: "يرجى تعبئة النموذج وسنعاود التواصل معك في أقرب وقت ممكن.",
+    nameLabel: "الاسم*",
+    namePlaceholder: "أدخل اسمك",
+    emailLabel: "البريد الإلكتروني*",
+    emailPlaceholder: "أدخل بريدك الإلكتروني",
+    messageLabel: "الرسالة*",
+    messagePlaceholder: "اكتب رسالتك هنا",
+    submit: "إرسال الرسالة",
+    success: "شكراً لتواصلك معنا. تم إرسال رسالتك بنجاح.",
+  },
 }
 
 export function ContactForm() {

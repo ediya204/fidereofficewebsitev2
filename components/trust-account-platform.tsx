@@ -45,7 +45,7 @@ export function TrustAccountPlatform() {
     },
   }
 
-  const t = content[language] || content.en
+  const t = content[language as keyof typeof content] || content.en
 
   return (
     <section className="py-24 bg-gradient-to-b from-[#0a0a1a] to-[#111827] overflow-hidden">

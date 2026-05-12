@@ -1,22 +1,24 @@
 "use client"
 
 import type React from "react"
-import { createContext, useCallback, useContext, useMemo } from "react"
+import { createContext, useCallback, useContext, useEffect, useMemo } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import type { Language } from "@/lib/translations"
 
-const supportedLocales = ["en", "cn", "tc"] as const
+const supportedLocales = ["en", "cn", "tc", "ar"] as const
 
 const localeToLanguage: Record<string, Language> = {
   en: "en",
   cn: "zh-CN",
   tc: "zh-TW",
+  ar: "ar",
 }
 
 const languageToLocale: Record<Language, string> = {
   en: "en",
   "zh-CN": "cn",
   "zh-TW": "tc",
+  ar: "ar",
 }
 
 const canonicalToLocalizedPath: Record<string, string> = {
@@ -50,6 +52,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }, [pathname])
 
   const language = localeToLanguage[locale] || "en"
+  const htmlLang = locale === "cn" ? "zh-CN" : locale === "tc" ? "zh-Hant" : locale
+  const direction = locale === "ar" ? "rtl" : "ltr"
+
+  useEffect(() => {
+    document.documentElement.lang = htmlLang
+    document.documentElement.dir = direction
+  }, [direction, htmlLang])
 
   const setLanguage = useCallback((lang: Language) => {
     const newLocale = languageToLocale[lang]

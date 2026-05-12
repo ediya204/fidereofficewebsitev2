@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 
-export const locales = ["en", "cn", "tc"] as const
+export const locales = ["en", "cn", "tc", "ar"] as const
 export type Locale = (typeof locales)[number]
 
 export const defaultLocale: Locale = "en"
@@ -12,12 +12,14 @@ export const localeLanguages: Record<Locale, string> = {
   en: "en",
   cn: "zh-CN",
   tc: "zh-Hant",
+  ar: "ar",
 }
 
 export const localizedLocaleNames: Record<Locale, string> = {
   en: "en_US",
   cn: "zh_CN",
   tc: "zh_HK",
+  ar: "ar_AE",
 }
 
 const routePaths = {
@@ -86,6 +88,7 @@ const coreKeywords = {
   en: ["trust", "Hong Kong trust", "asset management", "family trust"],
   cn: ["信托", "香港信托", "资产管理", "家族信托"],
   tc: ["信託", "香港信託", "資產管理", "家族信託"],
+  ar: ["ائتمان", "ائتمان هونغ كونغ", "إدارة الأصول", "ائتمان عائلي"],
 } as const satisfies Record<Locale, readonly string[]>
 
 const keywordGroups = {
@@ -315,6 +318,77 @@ const keywordGroups = {
     ],
     offshore: ["離岸信託賬戶", "離岸賬戶", "離岸資產保護", "多司法管轄區信託", "全球託管", "國際信託規劃"],
   },
+  ar: {
+    brand: ["FIDERE TRUST", "FIDERE TRUST Limited", "شركة ائتمان مرخصة في هونغ كونغ", "وصي مرخص", "شركة TCSP"],
+    trust: [
+      "خدمات ائتمانية",
+      "شركة ائتمان",
+      "ائتمان خاص",
+      "خدمات الوصي",
+      "هيكلة الائتمان",
+      "حساب ائتماني",
+      "حفظ ائتماني",
+      "ائتمان حماية الأصول",
+      "ائتمان حماية الثروة",
+      "ائتمان تخطيط التعاقب",
+    ],
+    hongKongTrust: [
+      "خدمات ائتمان هونغ كونغ",
+      "وصي هونغ كونغ",
+      "حساب ائتماني في هونغ كونغ",
+      "ائتمان خاص في هونغ كونغ",
+      "ائتمان عائلي في هونغ كونغ",
+      "شركة ائتمان هونغ كونغ",
+      "خدمات ائتمانية في هونغ كونغ",
+    ],
+    assetManagement: [
+      "خدمات إدارة الأصول",
+      "إدارة أصول قائمة على الائتمان",
+      "إدارة الثروات",
+      "تخصيص أصول عالمي",
+      "محفظة متعددة العملات",
+      "تنفيذ الاستثمار",
+      "حفظ الأصول",
+      "إدارة أصول خارجية",
+    ],
+    familyTrust: [
+      "خدمات الائتمان العائلي",
+      "خدمات مكتب العائلة",
+      "تخطيط ثروة العائلة",
+      "حوكمة العائلة",
+      "تعاقب الثروة",
+      "تخطيط الإرث",
+      "نقل الثروة بين الأجيال",
+      "ائتمان ذوي الملاءة العالية",
+    ],
+    corporateTrust: [
+      "خدمات ائتمان الشركات",
+      "خدمات الضمان",
+      "وصي مؤسسي",
+      "خدمات ائتمانية مؤسسية",
+      "إدارة SPV",
+      "خزينة الشركات",
+      "خدمات شركات عابرة للحدود",
+    ],
+    payments: [
+      "مدفوعات الحساب الائتماني",
+      "دفع الفواتير العالمية",
+      "مدفوعات عابرة للحدود",
+      "سداد الفواتير الدولية",
+      "تنفيذ المدفوعات",
+      "مدفوعات متعددة العملات",
+    ],
+    compliance: [
+      "امتثال الائتمان",
+      "فتح حساب KYC",
+      "فتح حساب KYB",
+      "امتثال مكافحة غسل الأموال",
+      "مستندات الحساب الائتماني",
+      "فتح حساب للمستثمرين المحترفين",
+      "ترخيص TCSP",
+    ],
+    offshore: ["حساب ائتماني خارجي", "حساب خارجي", "حماية أصول خارجية", "ائتمان متعدد الولايات القضائية", "حفظ عالمي", "تخطيط ائتماني دولي"],
+  },
 } as const satisfies Record<Locale, Record<string, readonly string[]>>
 
 type KeywordGroup = keyof typeof keywordGroups.en
@@ -342,7 +416,7 @@ const pageKeywordGroups: Record<PageKey, KeywordGroup[]> = {
   disclaimer: ["brand", "trust", "hongKongTrust", "assetManagement"],
 }
 
-export const seo: Record<Locale, Record<PageKey, SeoEntry>> = {
+const baseSeo = {
   en: {
     home: {
       title: "Hong Kong Trust & Family Trust Asset Management",
@@ -698,6 +772,57 @@ export const seo: Record<Locale, Record<PageKey, SeoEntry>> = {
   },
 }
 
+const arSeo: Record<PageKey, SeoEntry> = {
+  ...baseSeo.en,
+  home: {
+    title: "ائتمان هونغ كونغ وإدارة أصول الائتمان العائلي",
+    description:
+      "تقدم FIDERE TRUST حلول ائتمان هونغ كونغ، الائتمان العائلي وإدارة الأصول للعائلات العالمية والمستثمرين المحترفين وعملاء الشركات.",
+    keywords: ["شركة ائتمان مرخصة", "ائتمان خاص", "تعاقب الثروة"],
+  },
+  about: {
+    title: "من نحن | FIDERE TRUST شركة ائتمان مرخصة في هونغ كونغ",
+    description:
+      "تعرّف على FIDERE TRUST، شركة ائتمان مرخصة في هونغ كونغ تركز على هيكلة الائتمان، حوكمة العائلات وإدارة الأصول العالمية.",
+    keywords: ["شركة ائتمان هونغ كونغ", "خدمات الوصي"],
+  },
+  solutions: {
+    title: "حلول ائتمانية | ائتمان هونغ كونغ وإدارة الأصول",
+    description:
+      "استكشف حلول الائتمان والحفظ وإدارة الأصول للعملاء الأفراد والائتمان العائلي ومكاتب العائلات وعملاء الشركات.",
+    keywords: ["حلول ائتمانية", "حفظ ائتماني", "حماية الأصول"],
+  },
+  contact: {
+    title: "اتصل بـ FIDERE TRUST | استشارات ائتمان هونغ كونغ",
+    description:
+      "تواصل مع FIDERE TRUST للحصول على استشارات حول ائتمان هونغ كونغ، الائتمان العائلي وإدارة الأصول.",
+    keywords: ["استشارات ائتمانية", "وصي هونغ كونغ"],
+  },
+  privacy: {
+    title: "سياسة الخصوصية | FIDERE TRUST",
+    description:
+      "اقرأ سياسة الخصوصية الخاصة بـ FIDERE TRUST لخدمات الحسابات الائتمانية والائتمان العائلي وإدارة الأصول.",
+    keywords: ["سياسة الخصوصية"],
+  },
+  terms: {
+    title: "الشروط والأحكام | FIDERE TRUST",
+    description:
+      "راجع شروط وأحكام FIDERE TRUST لخدمات الائتمان والحفظ وإدارة الأصول في هونغ كونغ.",
+    keywords: ["الشروط والأحكام"],
+  },
+  disclaimer: {
+    title: "إخلاء المسؤولية | FIDERE TRUST",
+    description:
+      "راجع إخلاءات المسؤولية المهمة المتعلقة بمعلومات FIDERE TRUST عن الائتمان والحفظ وإدارة الأصول في هونغ كونغ.",
+    keywords: ["إخلاء مسؤولية ائتماني"],
+  },
+}
+
+export const seo: Record<Locale, Record<PageKey, SeoEntry>> = {
+  ...baseSeo,
+  ar: arSeo,
+}
+
 export function normalizeLocale(locale?: string): Locale {
   return locales.includes(locale as Locale) ? (locale as Locale) : defaultLocale
 }
@@ -718,6 +843,7 @@ export function getAlternates(pageKey: PageKey, locale: Locale) {
       en: getAbsoluteUrl(pageKey, "en"),
       "zh-CN": getAbsoluteUrl(pageKey, "cn"),
       "zh-Hant": getAbsoluteUrl(pageKey, "tc"),
+      ar: getAbsoluteUrl(pageKey, "ar"),
       "x-default": getAbsoluteUrl(pageKey, defaultLocale),
     },
   }
@@ -869,6 +995,16 @@ export function buildCanonicalPageMetadata(pageKey: CanonicalPageKey): Metadata 
                       : pageKey,
                 "tc",
               ),
+              ar: getAbsoluteUrl(
+                pageKey === "services"
+                  ? "solutions"
+                  : pageKey === "compliance"
+                    ? "complianceKyc"
+                    : pageKey === "assetManagement"
+                      ? "wealthManagement"
+                      : pageKey,
+                "ar",
+              ),
               "x-default": url,
             },
     },
@@ -938,6 +1074,10 @@ export function buildOrganizationJsonLd(locale?: string) {
     "香港信托",
     "资产管理",
     "家族信托",
+    "خدمات ائتمانية",
+    "ائتمان هونغ كونغ",
+    "إدارة الأصول",
+    "ائتمان عائلي",
   ])
 
   return {

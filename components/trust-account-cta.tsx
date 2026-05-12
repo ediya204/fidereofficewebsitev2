@@ -29,7 +29,7 @@ export function TrustAccountCTA() {
     },
   }
 
-  const t = content[language] || content.en
+  const t = content[language as keyof typeof content] || content.en
 
   return (
     <section className="py-24 bg-white">

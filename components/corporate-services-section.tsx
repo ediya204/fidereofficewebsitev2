@@ -131,7 +131,7 @@ const iconMap = {
 
 export function CorporateServicesSection() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
   const moduleStyles = [
     { color: "#4357ef", softBg: "bg-[#eef1ff]", border: "group-hover:border-[#4357ef]/40" },
     { color: "#672bff", softBg: "bg-[#f2eaff]", border: "group-hover:border-[#672bff]/40" },

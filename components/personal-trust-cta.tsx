@@ -29,7 +29,7 @@ const translations = {
 export function PersonalTrustCTA() {
   const { language, locale } = useLanguage()
   const localePath = (path: string) => `/${locale}${path}`
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   return (
     <section className="py-24 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 relative overflow-hidden">

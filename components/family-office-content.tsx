@@ -204,7 +204,7 @@ const translations = {
 
 export function FamilyOfficeContent() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
   const [openIndex, setOpenIndex] = useState(0)
   const scrollToContent = () => {
     window.scrollTo({

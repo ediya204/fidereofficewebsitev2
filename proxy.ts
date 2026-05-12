@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
-// Supported locales: en, cn (simplified), tc (traditional)
-const locales = ["en", "cn", "tc"]
+// Supported locales: en, cn (simplified), tc (traditional), ar (Arabic)
+const locales = ["en", "cn", "tc", "ar"]
 const defaultLocale = "en"
 const canonicalCorePaths = new Set([
   "/",

@@ -28,8 +28,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="en" dir="ltr" suppressHydrationWarning>
+      <body suppressHydrationWarning>
         {children}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${googleTagId}`}

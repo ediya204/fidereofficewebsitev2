@@ -61,7 +61,7 @@ const icons = [Shield, Clock, Globe, Wallet, Users]
 export function WealthBenefits() {
   const [activeIndex, setActiveIndex] = useState(0)
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   const benefits = t.benefits.map((benefit, index) => ({
     ...benefit,

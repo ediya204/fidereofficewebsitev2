@@ -4,6 +4,13 @@ import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, X, ChevronDown, Search } from "@/components/ui/app-icon"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 import { useLanguage } from "@/contexts/language-context"
 import { getTranslation, type Language } from "@/lib/translations"
 
@@ -12,10 +19,18 @@ interface HeaderProps {
 }
 
 const languageOptions: { label: string; language: Language; locale: string }[] = [
-  { label: "EN", language: "en", locale: "en" },
+  { label: "English", language: "en", locale: "en" },
   { label: "繁體", language: "zh-TW", locale: "tc" },
   { label: "简体", language: "zh-CN", locale: "cn" },
+  { label: "العربية", language: "ar", locale: "ar" },
 ]
+
+const languageAriaLabel: Record<Language, string> = {
+  en: "Select language",
+  "zh-CN": "选择语言",
+  "zh-TW": "選擇語言",
+  ar: "اختر اللغة",
+}
 
 export function Header({ forceDarkText = false }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -29,10 +44,9 @@ export function Header({ forceDarkText = false }: HeaderProps) {
   const useDarkText = forceDarkText || scrolled
   const headerClass = useDarkText ? "bg-white/95 backdrop-blur-md py-2 stripe-shadow" : "bg-transparent py-4"
   const primaryTextClass = useDarkText ? "!text-[#07072d]" : "!text-white"
-  const mutedTextClass = useDarkText ? "!text-[#232937]/75 hover:!text-[#07072d]" : "!text-white/70 hover:!text-white"
   const hoverTextClass = useDarkText ? "hover:!text-[#4357ef]" : "hover:!text-white/80"
 
-  const isLocalizedPath = ["en", "cn", "tc"].includes(pathname.split("/")[1] || "")
+  const isLocalizedPath = ["en", "cn", "tc", "ar"].includes(pathname.split("/")[1] || "")
   const localizedPathMap: Record<string, string> = {
     "/services": "/solutions",
     "/compliance": "/compliance-kyc",
@@ -102,22 +116,86 @@ export function Header({ forceDarkText = false }: HeaderProps) {
       href: localePath("/family-office"),
     },
     {
-      title: language === "en" ? "Global Invoice Payment" : language === "zh-CN" ? "全球账单支付" : "全球帳單支付",
-      description: language === "en" ? "Professional bill payment services worldwide." : language === "zh-CN" ? "专业的全球账单支付服务。" : "專業的全球帳單支付服務。",
+      title:
+        language === "ar"
+          ? "دفع الفواتير العالمية"
+          : language === "zh-CN"
+            ? "全球账单支付"
+            : language === "zh-TW"
+              ? "全球帳單支付"
+              : "Global Invoice Payment",
+      description:
+        language === "ar"
+          ? "خدمات احترافية لسداد الفواتير عالمياً."
+          : language === "zh-CN"
+            ? "专业的全球账单支付服务。"
+            : language === "zh-TW"
+              ? "專業的全球帳單支付服務。"
+              : "Professional bill payment services worldwide.",
       href: localePath("/global-invoice-payment"),
     },
   ]
 
   const primaryNavItems = [
-    { label: language === "en" ? "About" : language === "zh-CN" ? "关于我们" : "關於我們", href: localePath("/about") },
-    { label: language === "en" ? "Compliance" : language === "zh-CN" ? "合规" : "合規", href: localePath("/compliance") },
     {
-      label: language === "en" ? "Asset Management" : language === "zh-CN" ? "资产管理" : "資產管理",
-      href: localePath("/asset-management"),
+      label: language === "ar" ? "من نحن" : language === "zh-CN" ? "关于我们" : language === "zh-TW" ? "關於我們" : "About",
+      href: localePath("/about"),
     },
-    { label: t.nav.contactUs, href: localePath("/contact") },
-    { label: t.nav.login, href: localePath("/login") },
   ]
+
+  const currentLanguageOption = languageOptions.find((option) => option.locale === locale) ?? languageOptions[0]
+
+  const handleLanguageSelect = (nextLocale: string, closeMobileMenu = false) => {
+    const nextLanguage = languageOptions.find((option) => option.locale === nextLocale)?.language
+    if (!nextLanguage) return
+
+    setLanguage(nextLanguage)
+    if (closeMobileMenu) {
+      setMobileMenuOpen(false)
+    }
+  }
+
+  const renderLanguageSwitcher = (variant: "desktop" | "mobile") => {
+    const isMobile = variant === "mobile"
+    const triggerClass = isMobile
+      ? "flex w-full items-center justify-between rounded-md border border-white/15 bg-white/5 px-4 py-3 text-base font-medium text-white transition hover:bg-white/10"
+      : `flex h-9 items-center gap-2 rounded-md border px-3 text-sm font-medium transition ${
+          useDarkText
+            ? "border-[#07072d]/15 bg-white/80 text-[#07072d] hover:border-[#4357ef]/35 hover:text-[#4357ef]"
+            : "border-white/35 bg-white/10 text-white hover:bg-white/15"
+        }`
+
+    return (
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <button className={triggerClass} aria-label={languageAriaLabel[language]}>
+            <span>{currentLanguageOption.label}</span>
+            <ChevronDown className="h-4 w-4 opacity-70" />
+          </button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent
+          align={isMobile ? "start" : "end"}
+          sideOffset={8}
+          className="min-w-36 rounded-md border-[#d8dde8] bg-white p-1.5 text-[#07072d] shadow-lg"
+        >
+          <DropdownMenuRadioGroup
+            value={locale}
+            onValueChange={(nextLocale) => handleLanguageSelect(nextLocale, isMobile)}
+          >
+            {languageOptions.map((option) => (
+              <DropdownMenuRadioItem
+                key={option.locale}
+                value={option.locale}
+                className="cursor-pointer rounded px-3 py-2 pl-8 text-sm text-[#232937] focus:bg-[#f2f5fb] focus:text-[#07072d] data-[state=checked]:font-semibold"
+              >
+                {option.label}
+              </DropdownMenuRadioItem>
+            ))}
+          </DropdownMenuRadioGroup>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    )
+  }
 
   return (
     <header
@@ -160,21 +238,7 @@ export function Header({ forceDarkText = false }: HeaderProps) {
 
         {/* Desktop Right Side */}
         <div className="hidden md:flex items-center gap-5">
-          <div className="flex items-center gap-2 text-sm">
-            {languageOptions.map((option, index) => (
-              <div key={option.locale} className="flex items-center gap-2">
-                {index > 0 && <span className={useDarkText ? "!text-[#1a1a2e]/30" : "!text-white/60"}>|</span>}
-                <button
-                  onClick={() => setLanguage(option.language)}
-                  className={`transition ${
-                    locale === option.locale ? `${primaryTextClass} font-medium` : mutedTextClass
-                  }`}
-                >
-                  {option.label}
-                </button>
-              </div>
-            ))}
-          </div>
+          {renderLanguageSwitcher("desktop")}
           <button className={`transition ${primaryTextClass} ${hoverTextClass}`} aria-label="Search">
             <Search className="w-5 h-5" />
           </button>
@@ -235,7 +299,7 @@ export function Header({ forceDarkText = false }: HeaderProps) {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-0 bg-black/95 z-40 flex flex-col">
+        <div className="mobile-menu-overlay md:hidden fixed inset-y-0 left-0 right-auto top-0 z-40 flex h-screen w-screen max-w-none flex-col bg-black/95">
           {/* Mobile Menu Header */}
           <div className="flex items-center justify-between px-6 py-4">
             <Link
@@ -294,23 +358,11 @@ export function Header({ forceDarkText = false }: HeaderProps) {
                   {item.label}
                 </Link>
               ))}
-            </div>
-          </div>
 
-          <div className="px-6 pb-8 pt-4 border-t border-white/10">
-            {/* Language Switcher */}
-            <div className="flex items-center gap-6">
-              {languageOptions.map((option) => (
-                <button
-                  key={option.locale}
-                  onClick={() => setLanguage(option.language)}
-                  className={`text-base transition ${
-                    locale === option.locale ? "text-white font-semibold" : "text-white/50 hover:text-white/80"
-                  }`}
-                >
-                  {option.label}
-                </button>
-              ))}
+              <div className="mt-6 border-t border-white/10 pt-6">
+                {/* Language Switcher */}
+                {renderLanguageSwitcher("mobile")}
+              </div>
             </div>
           </div>
         </div>

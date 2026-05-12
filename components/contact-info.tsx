@@ -22,6 +22,12 @@ const translations = {
     officeTitle: "FIDERE TRUST LIMITED",
     address: "香港紅磡鶴園街凱旋工商中心第三期1樓32室",
   },
+  ar: {
+    label: "معلومات التواصل",
+    title: "موقعنا وطرق التواصل",
+    officeTitle: "FIDERE TRUST LIMITED",
+    address: "RM 32, 1/F, Kaiser Estate Phase 3, KT Hok Yuen Street, Hung Hom, Hong Kong",
+  },
 }
 
 export function ContactInfo() {

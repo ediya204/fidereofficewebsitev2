@@ -99,7 +99,7 @@ const translations = {
 
 export function OffshoreBenefits() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
   const [activeIndex, setActiveIndex] = useState(0)
 
   return (

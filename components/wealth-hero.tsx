@@ -39,7 +39,7 @@ const translations = {
 export function WealthHero() {
   const [isVisible, setIsVisible] = useState(false)
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   useEffect(() => {
     setIsVisible(true)

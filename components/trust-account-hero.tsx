@@ -34,7 +34,7 @@ export function TrustAccountHero() {
     },
   }
 
-  const t = content[language] || content.en
+  const t = content[language as keyof typeof content] || content.en
 
   return (
     <section className="relative min-h-[80vh] flex items-center bg-[#0a0a1a] overflow-hidden">

@@ -105,7 +105,7 @@ const images = [
 export function GlobalPaymentOverview() {
   const [activeMethod, setActiveMethod] = useState("swift")
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   const paymentMethods = t.methods.map((method, index) => ({
     ...method,

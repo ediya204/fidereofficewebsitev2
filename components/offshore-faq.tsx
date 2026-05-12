@@ -82,7 +82,7 @@ const translations = {
 
 export function OffshoreFAQ() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (

@@ -29,7 +29,7 @@ const translations = {
 
 export function OffshoreHero() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   const scrollToContent = () => {
     window.scrollTo({

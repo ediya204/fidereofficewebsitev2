@@ -17,6 +17,10 @@ const translations = {
     title: "聯繫我們，了解更多關於 FIDERE TRUST 的資訊",
     subtitle: "如需了解更多關於我們服務和解決方案的資訊，請與我們聯繫。",
   },
+  ar: {
+    title: "تواصل معنا لمعرفة المزيد عن FIDERE TRUST",
+    subtitle: "يرجى التواصل معنا للحصول على معلومات إضافية حول خدماتنا والحلول التي يمكننا تقديمها لك.",
+  },
 }
 
 export function ContactHero() {

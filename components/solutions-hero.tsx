@@ -26,7 +26,7 @@ const translations = {
 
 export function SolutionsHero() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   return (
     <section className="relative min-h-[60vh] bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 flex items-center overflow-hidden">

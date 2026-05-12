@@ -203,7 +203,7 @@ const iconMap = {
 
 export function GlobalInvoicePayment() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   return (
     <section className="py-20 md:py-28 bg-white">

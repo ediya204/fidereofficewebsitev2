@@ -14,68 +14,76 @@ const offshoreAccounts = [
 export function SolutionsSection() {
   const { language } = useLanguage()
   const t = getTranslation(language)
-  const isZhCN = language === "zh-CN"
-  const isZhTW = language === "zh-TW"
+  const localize = (copy: { en: string; "zh-CN": string; "zh-TW": string; ar: string }) =>
+    copy[language as keyof typeof copy] || copy.en
 
   const rows = [
     {
       id: "offshore",
-      title: isZhCN ? "离岸账户" : isZhTW ? "離岸賬戶" : "Offshore Accounts",
-      description: isZhCN
-        ? "通过多地账户矩阵分散风险，获得更高的资金调度灵活性与全球可达性。"
-        : isZhTW
-          ? "透過多地賬戶矩陣分散風險，獲得更高的資金調度靈活性與全球可達性。"
-          : "Diversify risk with a multi-jurisdiction account matrix and gain global liquidity flexibility.",
-      highlight: isZhCN
-        ? "资产保护、税务优化与隐私强化一体化。"
-        : isZhTW
-          ? "資產保護、稅務優化與隱私強化一體化。"
-          : "Integrated asset protection, tax optimization, and privacy enhancement.",
+      title: localize({ en: "Offshore Accounts", "zh-CN": "离岸账户", "zh-TW": "離岸賬戶", ar: "حسابات خارجية" }),
+      description: localize({
+        en: "Diversify risk with a multi-jurisdiction account matrix and gain global liquidity flexibility.",
+        "zh-CN": "通过多地账户矩阵分散风险，获得更高的资金调度灵活性与全球可达性。",
+        "zh-TW": "透過多地賬戶矩陣分散風險，獲得更高的資金調度靈活性與全球可達性。",
+        ar: "نوّع المخاطر عبر مصفوفة حسابات متعددة الولايات القضائية واحصل على مرونة سيولة عالمية.",
+      }),
+      highlight: localize({
+        en: "Integrated asset protection, tax optimization, and privacy enhancement.",
+        "zh-CN": "资产保护、税务优化与隐私强化一体化。",
+        "zh-TW": "資產保護、稅務優化與隱私強化一體化。",
+        ar: "حماية أصول، تحسين ضريبي وتعزيز الخصوصية ضمن إطار واحد.",
+      }),
       visual: "offshore" as const,
     },
     {
       id: "yield",
-      title: isZhCN ? "收益与收益率" : isZhTW ? "收益與收益率" : "Earnings & Yields",
-      description: isZhCN
-        ? "配置结构化收益方案，覆盖短中期资金安排，提升资产效率。"
-        : isZhTW
-          ? "配置結構化收益方案，覆蓋短中期資金安排，提升資產效率。"
-          : "Deploy structured yield strategies for short and medium-term treasury efficiency.",
-      highlight: isZhCN
-        ? "透明期限、清晰收益目标、可视化持仓表现。"
-        : isZhTW
-          ? "透明期限、清晰收益目標、可視化持倉表現。"
-          : "Transparent tenor, clear return targets, and visible position performance.",
+      title: localize({ en: "Earnings & Yields", "zh-CN": "收益与收益率", "zh-TW": "收益與收益率", ar: "العوائد والدخل" }),
+      description: localize({
+        en: "Deploy structured yield strategies for short and medium-term treasury efficiency.",
+        "zh-CN": "配置结构化收益方案，覆盖短中期资金安排，提升资产效率。",
+        "zh-TW": "配置結構化收益方案，覆蓋短中期資金安排，提升資產效率。",
+        ar: "استخدم استراتيجيات عوائد منظمة لتحسين كفاءة الخزينة قصيرة ومتوسطة الأجل.",
+      }),
+      highlight: localize({
+        en: "Transparent tenor, clear return targets, and visible position performance.",
+        "zh-CN": "透明期限、清晰收益目标、可视化持仓表现。",
+        "zh-TW": "透明期限、清晰收益目標、可視化持倉表現。",
+        ar: "آجال واضحة، أهداف عائد محددة، ورؤية شفافة لأداء المراكز.",
+      }),
       visual: "yield" as const,
     },
     {
       id: "invoice",
-      title: isZhCN ? "全球发票支付" : isZhTW ? "全球發票支付" : "Global Invoice Payment",
-      description: isZhCN
-        ? "上传账单并下达指令，由受托团队执行跨境付款与进度跟踪。"
-        : isZhTW
-          ? "上傳賬單並下達指令，由受託團隊執行跨境付款與進度追蹤。"
-          : "Upload invoices and delegate cross-border execution with progress visibility.",
-      highlight: isZhCN
-        ? "从教育、保险到供应商应付，一站式自动化管理。"
-        : isZhTW
-          ? "從教育、保險到供應商應付，一站式自動化管理。"
-          : "From tuition and insurance to vendor payables, all in one workflow.",
+      title: localize({ en: "Global Invoice Payment", "zh-CN": "全球发票支付", "zh-TW": "全球發票支付", ar: "دفع الفواتير العالمية" }),
+      description: localize({
+        en: "Upload invoices and delegate cross-border execution with progress visibility.",
+        "zh-CN": "上传账单并下达指令，由受托团队执行跨境付款与进度跟踪。",
+        "zh-TW": "上傳賬單並下達指令，由受託團隊執行跨境付款與進度追蹤。",
+        ar: "ارفع الفواتير وفوّض تنفيذ المدفوعات العابرة للحدود مع رؤية واضحة للتقدم.",
+      }),
+      highlight: localize({
+        en: "From tuition and insurance to vendor payables, all in one workflow.",
+        "zh-CN": "从教育、保险到供应商应付，一站式自动化管理。",
+        "zh-TW": "從教育、保險到供應商應付，一站式自動化管理。",
+        ar: "من الرسوم التعليمية والتأمين إلى مستحقات الموردين، ضمن مسار عمل واحد.",
+      }),
       visual: "invoice" as const,
     },
     {
       id: "exchange",
-      title: isZhCN ? "资产交换" : isZhTW ? "資產交換" : "Asset Exchange",
-      description: isZhCN
-        ? "在同一平台完成法币与数字资产转换，强化资金管理连续性。"
-        : isZhTW
-          ? "在同一平台完成法幣與數字資產轉換，強化資金管理連續性。"
-          : "Convert fiat and digital assets in one place to keep treasury operations continuous.",
-      highlight: isZhCN
-        ? "高可用执行与余额联动，支持多币种资产配置。"
-        : isZhTW
-          ? "高可用執行與餘額聯動，支持多幣種資產配置。"
-          : "High-availability execution with balance linkage across multi-currency portfolios.",
+      title: localize({ en: "Asset Exchange", "zh-CN": "资产交换", "zh-TW": "資產交換", ar: "تبادل الأصول" }),
+      description: localize({
+        en: "Convert fiat and digital assets in one place to keep treasury operations continuous.",
+        "zh-CN": "在同一平台完成法币与数字资产转换，强化资金管理连续性。",
+        "zh-TW": "在同一平台完成法幣與數字資產轉換，強化資金管理連續性。",
+        ar: "حوّل العملات التقليدية والأصول الرقمية في مكان واحد للحفاظ على استمرارية عمليات الخزينة.",
+      }),
+      highlight: localize({
+        en: "High-availability execution with balance linkage across multi-currency portfolios.",
+        "zh-CN": "高可用执行与余额联动，支持多币种资产配置。",
+        "zh-TW": "高可用執行與餘額聯動，支持多幣種資產配置。",
+        ar: "تنفيذ عالي التوافر مع ربط الأرصدة عبر محافظ متعددة العملات.",
+      }),
       visual: "exchange" as const,
     },
   ]
@@ -202,14 +210,20 @@ export function SolutionsSection() {
         <div className="mb-20 md:mb-24">
           <span className="text-sm font-medium text-[#4357ef] mb-3 block">{t.homeSolutions.label}</span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-7 tracking-[-0.015em]">
-            {isZhCN ? "一个平台，多种解决方案" : isZhTW ? "一個平台，多種解決方案" : "One Platform, Multiple Solutions"}
+            {localize({
+              en: "One Platform, Multiple Solutions",
+              "zh-CN": "一个平台，多种解决方案",
+              "zh-TW": "一個平台，多種解決方案",
+              ar: "منصة واحدة، حلول متعددة",
+            })}
           </h2>
           <p className="text-gray-600 max-w-3xl leading-8">
-            {isZhCN
-              ? "深入了解我们提供的全方位服务，确保您的财务安全和增长。从离岸账户到资产关联信用卡，我们的平台提供多样化的解决方案，满足您独特的财务需求。"
-              : isZhTW
-                ? "深入了解我們提供的全方位服務，確保您的財務安全和增長。從離岸賬戶到資產關聯信用卡，我們的平台提供多樣化的解決方案，滿足您獨特的財務需求。"
-                : "Explore our comprehensive services designed to ensure your financial security and growth. From offshore accounts to asset-linked credit cards, our platform offers diverse solutions to meet your unique financial needs."}
+            {localize({
+              en: "Explore our comprehensive services designed to ensure your financial security and growth. From offshore accounts to asset-linked credit cards, our platform offers diverse solutions to meet your unique financial needs.",
+              "zh-CN": "深入了解我们提供的全方位服务，确保您的财务安全和增长。从离岸账户到资产关联信用卡，我们的平台提供多样化的解决方案，满足您独特的财务需求。",
+              "zh-TW": "深入了解我們提供的全方位服務，確保您的財務安全和增長。從離岸賬戶到資產關聯信用卡，我們的平台提供多樣化的解決方案，滿足您獨特的財務需求。",
+              ar: "استكشف خدماتنا الشاملة المصممة لدعم أمنك المالي ونموك. من الحسابات الخارجية إلى البطاقات المرتبطة بالأصول، توفر منصتنا حلولاً متنوعة تناسب احتياجاتك المالية.",
+            })}
           </p>
         </div>
 
@@ -224,7 +238,12 @@ export function SolutionsSection() {
                 <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(circle_at_top_right,rgba(67,87,239,0.08),transparent_55%)]" />
                 <div className={`${isReversed ? "lg:order-2" : ""}`}>
                   <span className="inline-flex items-center rounded-full bg-[#4357ef]/10 text-[#4357ef] text-xs font-medium px-3 py-1 mb-5">
-                    {isZhCN ? `模块 ${index + 1}` : isZhTW ? `模組 ${index + 1}` : `Module ${index + 1}`}
+                    {localize({
+                      en: `Module ${index + 1}`,
+                      "zh-CN": `模块 ${index + 1}`,
+                      "zh-TW": `模組 ${index + 1}`,
+                      ar: `الوحدة ${index + 1}`,
+                    })}
                   </span>
                   <h3 className="text-2xl md:text-3xl font-semibold text-[#07072d] mb-4 tracking-[-0.01em]">{row.title}</h3>
                   <p className="text-[#232937] leading-8 mb-4">{row.description}</p>

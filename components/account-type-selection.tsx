@@ -86,6 +86,33 @@ const translations = {
     footerLinks: ["使用條款", "私隱政策", "風險披露"],
     copyright: "2026 Fidere Trust Limited. 保留所有權利。",
   },
+  ar: {
+    portal: "بوابة عملاء FIDERE",
+    title: "اختر نوع الحساب",
+    description: "اختر ملف الحساب الأنسب لاحتياجات فتح الحساب والتحقق.",
+    brandTitle: "ابدأ رحلة إدارة ثروتك",
+    brandDescription:
+      "تقدم Fidere Trust خدمات احترافية وآمنة وفعالة لإدارة الأصول الائتمانية من أجل حفظ الثروة على المدى الطويل.",
+    languageLabel: "اللغة",
+    progress: ["نوع الحساب", "التحقق", "التفعيل"],
+    options: [
+      {
+        title: "حساب شخصي",
+        description: "للعملاء الأفراد الذين يحتاجون إلى خدمات الائتمان وإدارة الأصول الشخصية.",
+        details: ["تحقق فردي", "إدارة أصول شخصية", "إجراءات فتح مبسطة"],
+        href: "/personal-kyc-guide",
+      },
+      {
+        title: "حساب شركة",
+        description: "للشركات ومكاتب العائلات والهياكل المؤسسية التي تحتاج إلى وصول على مستوى الكيان.",
+        details: ["تحقق من الكيان", "إدارة أصول الشركات", "صلاحيات متعددة المستخدمين"],
+        href: "/kyc-guide",
+      },
+    ],
+    assurance: ["خدمات ائتمانية منظمة", "معالجة مستندات مشفرة", "دعم مخصص لفتح الحساب"],
+    footerLinks: ["الشروط", "الخصوصية", "إفصاح المخاطر"],
+    copyright: "2026 Fidere Trust Limited. جميع الحقوق محفوظة.",
+  },
 }
 
 const accountIcons = [User, Building2]
@@ -93,11 +120,12 @@ const languageOptions = [
   { label: "EN", language: "en" as const },
   { label: "繁", language: "zh-TW" as const },
   { label: "简", language: "zh-CN" as const },
+  { label: "ع", language: "ar" as const },
 ]
 
 export function AccountTypeSelection() {
   const { language, locale, setLanguage } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
   const localePath = (path: string) => `/${locale}${path}`
 
   return (

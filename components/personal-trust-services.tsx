@@ -141,7 +141,7 @@ const iconMap = {
 
 export function PersonalTrustServices() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
   const moduleStyles = [
     { color: "var(--emq-primary)", softBg: "bg-[#eef1ff]", border: "group-hover:border-[#4357ef]/45" },
     { color: "var(--emq-primary-strong)", softBg: "bg-[#f2eaff]", border: "group-hover:border-[#672bff]/40" },

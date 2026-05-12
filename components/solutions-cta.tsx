@@ -30,7 +30,7 @@ const translations = {
 export function SolutionsCTA() {
   const { language, locale } = useLanguage()
   const localePath = (path: string) => `/${locale}${path}`
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   return (
     <section className="py-24 bg-[#1a1a2e]">

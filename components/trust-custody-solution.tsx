@@ -91,7 +91,7 @@ const translations = {
 export function TrustCustodySolution() {
   const { language, locale } = useLanguage()
   const localePath = (path: string) => `/${locale}${path}`
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   return (
     <section id="trust-custody" className="py-24 bg-white">

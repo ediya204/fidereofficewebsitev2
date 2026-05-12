@@ -84,7 +84,7 @@ const translations = {
 
 export function OffshoreComparison() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   return (
     <section className="py-24 bg-white">

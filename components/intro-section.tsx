@@ -48,6 +48,8 @@ export function IntroSection() {
   const { language, locale } = useLanguage()
   const t = getTranslation(language)
   const localePath = (path: string) => `/${locale}${path}`
+  const localize = (copy: { en: string; "zh-CN": string; "zh-TW": string; ar: string }) =>
+    copy[language as keyof typeof copy] || copy.en
 
   const cardHrefMap: Record<string, string> = {
     highNetWorth: localePath("/personal-trust"),
@@ -62,74 +64,86 @@ export function IntroSection() {
       gradient: "from-[#672bff]/70 via-[#4357ef]/45 to-transparent",
       ring: "border-[#672bff]",
       glow: "shadow-[0_20px_40px_-24px_rgba(103,43,255,0.7)]",
-      subtitle:
-        language === "en"
-          ? "Private wealth architecture"
-          : language === "zh-CN"
-            ? "私人财富架构"
-            : "私人財富架構",
-      detail:
-        language === "en"
-          ? "Tailored structures for long-term family objectives."
-          : language === "zh-CN"
-            ? "围绕家族长期目标打造专属架构。"
-            : "圍繞家族長期目標打造專屬架構。",
+      subtitle: localize({
+        en: "Private wealth architecture",
+        "zh-CN": "私人财富架构",
+        "zh-TW": "私人財富架構",
+        ar: "هيكلة الثروة الخاصة",
+      }),
+      detail: localize({
+        en: "Tailored structures for long-term family objectives.",
+        "zh-CN": "围绕家族长期目标打造专属架构。",
+        "zh-TW": "圍繞家族長期目標打造專屬架構。",
+        ar: "هياكل مخصصة لأهداف العائلة طويلة الأجل.",
+      }),
     },
     {
       gradient: "from-[#4357ef]/75 via-[#07072d]/40 to-transparent",
       ring: "border-[#4357ef]",
       glow: "shadow-[0_20px_40px_-24px_rgba(67,87,239,0.7)]",
-      subtitle:
-        language === "en" ? "Family governance" : language === "zh-CN" ? "家族治理中枢" : "家族治理中樞",
-      detail:
-        language === "en"
-          ? "Coordinate treasury, trust, and reporting from one platform."
-          : language === "zh-CN"
-            ? "在同一平台协同资金、信托与报告流程。"
-            : "在同一平台協同資金、信託與報告流程。",
+      subtitle: localize({
+        en: "Family governance",
+        "zh-CN": "家族治理中枢",
+        "zh-TW": "家族治理中樞",
+        ar: "حوكمة العائلة",
+      }),
+      detail: localize({
+        en: "Coordinate treasury, trust, and reporting from one platform.",
+        "zh-CN": "在同一平台协同资金、信托与报告流程。",
+        "zh-TW": "在同一平台協同資金、信託與報告流程。",
+        ar: "تنسيق الخزينة والائتمان والتقارير من منصة واحدة.",
+      }),
     },
     {
       gradient: "from-[#ff5c50]/70 via-[#07072d]/35 to-transparent",
       ring: "border-[#ff5c50]",
       glow: "shadow-[0_20px_40px_-24px_rgba(255,92,80,0.65)]",
-      subtitle:
-        language === "en" ? "Enterprise mandate" : language === "zh-CN" ? "企业受托方案" : "企業受託方案",
-      detail:
-        language === "en"
-          ? "Corporate trust capabilities aligned with compliance requirements."
-          : language === "zh-CN"
-            ? "面向企业合规要求的受托与结构化能力。"
-            : "面向企業合規要求的受託與結構化能力。",
+      subtitle: localize({
+        en: "Enterprise mandate",
+        "zh-CN": "企业受托方案",
+        "zh-TW": "企業受託方案",
+        ar: "تفويضات الشركات",
+      }),
+      detail: localize({
+        en: "Corporate trust capabilities aligned with compliance requirements.",
+        "zh-CN": "面向企业合规要求的受托与结构化能力。",
+        "zh-TW": "面向企業合規要求的受託與結構化能力。",
+        ar: "قدرات ائتمانية مؤسسية متوافقة مع متطلبات الامتثال.",
+      }),
     },
     {
       gradient: "from-[#07072d]/75 via-[#4357ef]/35 to-transparent",
       ring: "border-[#07072d]",
       glow: "shadow-[0_20px_40px_-24px_rgba(7,7,45,0.75)]",
-      subtitle:
-        language === "en" ? "Risk insulation" : language === "zh-CN" ? "风险隔离机制" : "風險隔離機制",
-      detail:
-        language === "en"
-          ? "Ring-fence strategic assets with robust legal structures."
-          : language === "zh-CN"
-            ? "通过稳健法律结构实现关键资产隔离。"
-            : "通過穩健法律結構實現關鍵資產隔離。",
+      subtitle: localize({
+        en: "Risk insulation",
+        "zh-CN": "风险隔离机制",
+        "zh-TW": "風險隔離機制",
+        ar: "عزل المخاطر",
+      }),
+      detail: localize({
+        en: "Ring-fence strategic assets with robust legal structures.",
+        "zh-CN": "通过稳健法律结构实现关键资产隔离。",
+        "zh-TW": "通過穩健法律結構實現關鍵資產隔離。",
+        ar: "حماية الأصول الاستراتيجية عبر هياكل قانونية متينة.",
+      }),
     },
     {
       gradient: "from-[#33384f]/70 via-[#4357ef]/35 to-transparent",
       ring: "border-[#33384f]",
       glow: "shadow-[0_20px_40px_-24px_rgba(51,56,79,0.75)]",
-      subtitle:
-        language === "en"
-          ? "Intergenerational continuity"
-          : language === "zh-CN"
-            ? "代际传承延续"
-            : "代際傳承延續",
-      detail:
-        language === "en"
-          ? "Preserve intent and transfer value across generations."
-          : language === "zh-CN"
-            ? "在代际之间延续意图并稳健传递价值。"
-            : "在代際之間延續意圖並穩健傳遞價值。",
+      subtitle: localize({
+        en: "Intergenerational continuity",
+        "zh-CN": "代际传承延续",
+        "zh-TW": "代際傳承延續",
+        ar: "استمرارية بين الأجيال",
+      }),
+      detail: localize({
+        en: "Preserve intent and transfer value across generations.",
+        "zh-CN": "在代际之间延续意图并稳健传递价值。",
+        "zh-TW": "在代際之間延續意圖並穩健傳遞價值。",
+        ar: "حفظ القصد ونقل القيمة بثبات عبر الأجيال.",
+      }),
     },
   ]
   const panelIndex = hoveredIndex ?? activeIndex
@@ -149,55 +163,56 @@ export function IntroSection() {
   }, [])
 
   const cardTitles: Record<string, string> = {
-    highNetWorth: language === "en" ? "High Net Worth" : language === "zh-CN" ? "高净值人士" : "高淨值人士",
-    familyOffice: language === "en" ? "Family Office" : language === "zh-CN" ? "家族办公室" : "家族辦公室",
-    corporateTrust: language === "en" ? "Corporate Trust" : language === "zh-CN" ? "企业信托" : "企業信託",
-    assetProtection: language === "en" ? "Asset Protection" : language === "zh-CN" ? "资产保护" : "資產保護",
-    successionPlanning: language === "en" ? "Succession Planning" : language === "zh-CN" ? "传承规划" : "傳承規劃",
+    highNetWorth: localize({ en: "High Net Worth", "zh-CN": "高净值人士", "zh-TW": "高淨值人士", ar: "ذوو الملاءة العالية" }),
+    familyOffice: localize({ en: "Family Office", "zh-CN": "家族办公室", "zh-TW": "家族辦公室", ar: "مكتب العائلة" }),
+    corporateTrust: localize({ en: "Corporate Trust", "zh-CN": "企业信托", "zh-TW": "企業信託", ar: "ائتمان الشركات" }),
+    assetProtection: localize({ en: "Asset Protection", "zh-CN": "资产保护", "zh-TW": "資產保護", ar: "حماية الأصول" }),
+    successionPlanning: localize({ en: "Succession Planning", "zh-CN": "传承规划", "zh-TW": "傳承規劃", ar: "تخطيط التعاقب" }),
   }
 
   const cardDescs: Record<string, string> = {
-    highNetWorthDesc:
-      language === "en"
-        ? "Tailored wealth management solutions for discerning individuals"
-        : language === "zh-CN"
-          ? "为高端客户量身定制的财富管理方案"
-          : "為高端客戶量身定制的財富管理方案",
-    familyOfficeDesc:
-      language === "en"
-        ? "Comprehensive family wealth governance and administration"
-        : language === "zh-CN"
-          ? "全面的家族财富治理与管理服务"
-          : "全面的家族財富治理與管理服務",
-    corporateTrustDesc:
-      language === "en"
-        ? "Professional trust services for corporate entities"
-        : language === "zh-CN"
-          ? "为企业提供专业信托服务"
-          : "為企業提供專業信託服務",
-    assetProtectionDesc:
-      language === "en"
-        ? "Safeguard your wealth with robust protection structures"
-        : language === "zh-CN"
-          ? "通过稳健的保护架构守护您的财富"
-          : "通過穩健的保護架構守護您的財富",
-    successionPlanningDesc:
-      language === "en"
-        ? "Seamless wealth transfer across generations"
-        : language === "zh-CN"
-          ? "实现财富的代际无缝传承"
-          : "實現財富的代際無縫傳承",
+    highNetWorthDesc: localize({
+      en: "Tailored wealth management solutions for discerning individuals",
+      "zh-CN": "为高端客户量身定制的财富管理方案",
+      "zh-TW": "為高端客戶量身定制的財富管理方案",
+      ar: "حلول مخصصة لإدارة ثروات العملاء المتميزين",
+    }),
+    familyOfficeDesc: localize({
+      en: "Comprehensive family wealth governance and administration",
+      "zh-CN": "全面的家族财富治理与管理服务",
+      "zh-TW": "全面的家族財富治理與管理服務",
+      ar: "حوكمة وإدارة شاملة لثروات العائلات",
+    }),
+    corporateTrustDesc: localize({
+      en: "Professional trust services for corporate entities",
+      "zh-CN": "为企业提供专业信托服务",
+      "zh-TW": "為企業提供專業信託服務",
+      ar: "خدمات ائتمانية مهنية للكيانات المؤسسية",
+    }),
+    assetProtectionDesc: localize({
+      en: "Safeguard your wealth with robust protection structures",
+      "zh-CN": "通过稳健的保护架构守护您的财富",
+      "zh-TW": "通過穩健的保護架構守護您的財富",
+      ar: "حماية الثروة عبر هياكل متينة",
+    }),
+    successionPlanningDesc: localize({
+      en: "Seamless wealth transfer across generations",
+      "zh-CN": "实现财富的代际无缝传承",
+      "zh-TW": "實現財富的代際無縫傳承",
+      ar: "نقل سلس للثروة عبر الأجيال",
+    }),
   }
 
   return (
     <section className="py-20 md:py-24 bg-white">
       <div className="container mx-auto px-6 mb-12">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#07072d] max-w-3xl mx-auto text-center">
-          {language === "en"
-            ? "Flexible and scalable solutions built for your wealth"
-            : language === "zh-CN"
-              ? "为您的财富量身打造灵活可扩展的解决方案"
-              : "為您的財富量身打造靈活可擴展的解決方案"}
+          {localize({
+            en: "Flexible and scalable solutions built for your wealth",
+            "zh-CN": "为您的财富量身打造灵活可扩展的解决方案",
+            "zh-TW": "為您的財富量身打造靈活可擴展的解決方案",
+            ar: "حلول مرنة وقابلة للتوسع مصممة لثروتك",
+          })}
         </h2>
       </div>
 
@@ -251,7 +266,7 @@ export function IntroSection() {
                     <h3 className="text-white text-xl font-semibold mb-2">{cardTitles[card.titleKey]}</h3>
                     <p className="text-white/90 text-sm leading-relaxed">{cardDescs[card.descKey]}</p>
                     <div className="mt-4 inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/60 bg-white/10">
-                      <ArrowRight className="h-4 w-4 text-white" />
+                      <ArrowRight className="h-4 w-4 text-white rtl-flip" />
                     </div>
                   </div>
                 </div>

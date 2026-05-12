@@ -164,3 +164,47 @@
       rgba(0, 0, 0, 0.08) 0 8px 24px -8px;
   }
 }
+
+html[dir="rtl"] {
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+html[dir="rtl"] body {
+  text-align: right;
+  font-family: var(--font-arabic), var(--font-open-sans), "Open Sans", "Inter", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+html[dir="rtl"] input,
+html[dir="rtl"] textarea {
+  text-align: right;
+}
+
+html[dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+html[dir="rtl"] .border-l-4 {
+  border-left-width: 0;
+  border-right-width: 4px;
+}
+
+html[dir="rtl"] .pl-4 {
+  padding-left: 0;
+  padding-right: 1rem;
+}
+
+html[dir="rtl"] .rtl-flip {
+  transform: rotate(180deg);
+}
+
+.mobile-menu-overlay {
+  direction: ltr;
+  left: 0 !important;
+  right: auto !important;
+}
+
+html[dir="rtl"] .mobile-menu-overlay > * {
+  direction: rtl;
+}

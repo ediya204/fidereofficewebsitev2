@@ -21,7 +21,7 @@ const translations = {
 
 export function OffshoreCTA() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   return (
     <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">

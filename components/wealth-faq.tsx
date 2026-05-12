@@ -99,7 +99,7 @@ const translations = {
 export function WealthFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   return (
     <section className="py-24 bg-gray-50">

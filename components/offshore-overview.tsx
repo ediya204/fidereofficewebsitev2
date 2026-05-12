@@ -43,11 +43,24 @@ const translations = {
       { id: "digital-assets", title: "數字資產", icon: Bitcoin },
     ],
   },
+  ar: {
+    topBanner:
+      "خدمات مصرفية عابرة للحدود مع تسوية فورية. تربط FIDERE المؤسسات والأفراد في الاقتصاد الرقمي في الوقت الفعلي، مع دعم بنية تحتية على مدار الساعة وتحويلات فورية بدون رسوم بين حسابات FIDERE.",
+    title: "منصة موحدة لجميع حسابات أصولك",
+    description:
+      "تمكّنك منصة الائتمان الشاملة لدينا من إدارة حسابات هونغ كونغ والولايات المتحدة وسنغافورة والأصول الرقمية عبر واجهة واحدة تغطي مراكز مالية عالمية رئيسية.",
+    accounts: [
+      { id: "hk", title: "حساب هونغ كونغ", icon: Building2 },
+      { id: "us", title: "حساب الولايات المتحدة", icon: Landmark },
+      { id: "sg", title: "حساب سنغافورة", icon: Building },
+      { id: "digital-assets", title: "الأصول الرقمية", icon: Bitcoin },
+    ],
+  },
 }
 
 export function OffshoreOverview() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   return (
     <section className="pt-12 pb-16 md:pb-20 bg-[#f8f9fa]">

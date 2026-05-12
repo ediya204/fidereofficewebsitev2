@@ -97,7 +97,7 @@ const featuredIndexes = [0, 1, 4]
 export function WealthOverview() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   const investmentTypes = t.investmentTypes.map((item, index) => ({
     ...item,

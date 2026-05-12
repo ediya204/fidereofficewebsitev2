@@ -33,7 +33,7 @@ const translations = {
 
 export function PersonalTrustHero() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
   const scrollToContent = () => {
     window.scrollTo({
       top: window.innerHeight,

@@ -29,7 +29,7 @@ const translations = {
 
 export function WealthCTA() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   return (
     <section className="relative h-[60vh] w-full overflow-hidden">

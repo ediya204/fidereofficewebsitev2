@@ -25,7 +25,7 @@ const translations = {
 
 export function GlobalPaymentCTA() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   return (
     <section className="relative h-[70vh] w-full overflow-hidden">

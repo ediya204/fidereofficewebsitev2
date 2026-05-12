@@ -99,7 +99,7 @@ const stepIcons = [Upload, FileSearch, Send, CheckCircle2]
 
 export function GlobalPaymentFeatures() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   const steps = t.steps.map((step, index) => ({
     ...step,

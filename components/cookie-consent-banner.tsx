@@ -23,6 +23,12 @@ const copy = {
     settings: "COOKIE 設定",
     accept: "接受所有 COOKIE",
   },
+  ar: {
+    message:
+      'بالنقر على "قبول جميع ملفات Cookie"، فإنك توافق على تخزين ملفات Cookie على جهازك لتحسين التنقل في الموقع وتحليل الاستخدام ودعم جهودنا التسويقية.',
+    settings: "إعدادات COOKIE",
+    accept: "قبول جميع ملفات COOKIE",
+  },
 } as const
 
 export function CookieConsentBanner() {
@@ -39,7 +45,7 @@ export function CookieConsentBanner() {
   }, [])
 
   const localePath = useMemo(() => (path: string) => `/${locale}${path}`, [locale])
-  const text = copy[language] || copy.en
+  const text = copy[language as keyof typeof copy] || copy.en
 
   const acceptCookies = () => {
     try {
@@ -56,16 +62,16 @@ export function CookieConsentBanner() {
     <div className="fixed inset-x-0 bottom-0 z-[120] border-t border-[#d7dbe6] bg-white shadow-[0_-8px_28px_rgba(7,7,45,0.12)]">
       <div className="mx-auto flex w-full max-w-[1320px] flex-col gap-3 px-4 py-3 md:flex-row md:items-center md:justify-between md:px-6">
         <p className="text-xs leading-relaxed text-[#374151] md:max-w-[70%]">{text.message}</p>
-        <div className="flex items-center gap-2 self-end md:self-auto">
+        <div className="flex w-full max-w-full flex-col gap-2 self-stretch sm:flex-row sm:items-center sm:justify-end md:w-auto md:self-auto">
           <Link
             href={localePath("/privacy")}
-            className="rounded-sm border border-[#cfd5e3] px-4 py-2 text-[11px] font-semibold tracking-[0.08em] text-[#4357ef] transition hover:bg-[#f5f7ff]"
+            className="rounded-sm border border-[#cfd5e3] px-4 py-2 text-center text-[11px] font-semibold tracking-[0.08em] text-[#4357ef] transition hover:bg-[#f5f7ff]"
           >
             {text.settings}
           </Link>
           <button
             onClick={acceptCookies}
-            className="rounded-sm bg-[#0b76b8] px-4 py-2 text-[11px] font-semibold tracking-[0.08em] text-white transition hover:bg-[#09659d]"
+            className="rounded-sm bg-[#0b76b8] px-4 py-2 text-center text-[11px] font-semibold tracking-[0.08em] text-white transition hover:bg-[#09659d]"
           >
             {text.accept}
           </button>

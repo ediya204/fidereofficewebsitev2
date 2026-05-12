@@ -32,7 +32,7 @@ const translations = {
 
 export function CorporateClientsHero() {
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   const scrollToContent = () => {
     window.scrollTo({

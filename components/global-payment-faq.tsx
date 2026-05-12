@@ -119,7 +119,7 @@ const translations = {
 export function GlobalPaymentFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
   const { language } = useLanguage()
-  const t = translations[language] || translations.en
+  const t = translations[language as keyof typeof translations] || translations.en
 
   return (
     <section className="bg-gray-50 py-24 md:py-32">

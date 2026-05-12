@@ -11,7 +11,7 @@ export function Footer() {
   const pathname = usePathname()
   const t = getTranslation(language)
 
-  const isLocalizedPath = ["en", "cn", "tc"].includes(pathname.split("/")[1] || "")
+  const isLocalizedPath = ["en", "cn", "tc", "ar"].includes(pathname.split("/")[1] || "")
   const localizedPathMap: Record<string, string> = {
     "/services": "/solutions",
     "/compliance": "/compliance-kyc",
@@ -24,15 +24,22 @@ export function Footer() {
   }
 
   const leftLinks = [
-    { label: language === "en" ? "Home" : language === "zh-CN" ? "首页" : "首頁", href: localePath("/") },
-    { label: language === "en" ? "About" : language === "zh-CN" ? "关于我们" : "關於我們", href: localePath("/about") },
+    { label: language === "ar" ? "الرئيسية" : language === "zh-CN" ? "首页" : language === "zh-TW" ? "首頁" : "Home", href: localePath("/") },
+    { label: language === "ar" ? "من نحن" : language === "zh-CN" ? "关于我们" : language === "zh-TW" ? "關於我們" : "About", href: localePath("/about") },
     { label: t.nav.solutions, href: localePath("/services") },
-    { label: language === "en" ? "Compliance" : language === "zh-CN" ? "合规" : "合規", href: localePath("/compliance") },
+    { label: language === "ar" ? "الامتثال" : language === "zh-CN" ? "合规" : language === "zh-TW" ? "合規" : "Compliance", href: localePath("/compliance") },
   ]
 
   const rightLinks = [
     {
-      label: language === "en" ? "Wealth Management" : language === "zh-CN" ? "财富管理" : "財富管理",
+      label:
+        language === "ar"
+          ? "إدارة الثروات"
+          : language === "zh-CN"
+            ? "财富管理"
+            : language === "zh-TW"
+              ? "財富管理"
+              : "Wealth Management",
       href: localePath("/asset-management"),
     },
     {
@@ -112,27 +119,27 @@ export function Footer() {
             <span>&copy; {new Date().getFullYear()} FIDERE TRUST LIMITED</span>
             <span>|</span>
             <Link href={localePath("/privacy")} className="text-indigo-600 hover:text-indigo-700 transition-colors">
-              {language === "en" ? "Privacy Policy" : language === "zh-CN" ? "隐私政策" : "隱私政策"}
+              {language === "ar" ? "سياسة الخصوصية" : language === "zh-CN" ? "隐私政策" : language === "zh-TW" ? "隱私政策" : "Privacy Policy"}
             </Link>
             <span>|</span>
             <Link href={localePath("/disclaimer")} className="text-indigo-600 hover:text-indigo-700 transition-colors">
-              {language === "en" ? "Disclaimer" : language === "zh-CN" ? "免责条款" : "免責條款"}
+              {language === "ar" ? "إخلاء المسؤولية" : language === "zh-CN" ? "免责条款" : language === "zh-TW" ? "免責條款" : "Disclaimer"}
             </Link>
             <span>|</span>
             <Link href={localePath("/terms")} className="text-indigo-600 hover:text-indigo-700 transition-colors">
-              {language === "en" ? "Terms & Conditions" : language === "zh-CN" ? "条款与细则" : "條款與細則"}
+              {language === "ar" ? "الشروط والأحكام" : language === "zh-CN" ? "条款与细则" : language === "zh-TW" ? "條款與細則" : "Terms & Conditions"}
             </Link>
             <span>|</span>
             <Link href={localePath("/regulatory-status")} className="text-indigo-600 hover:text-indigo-700 transition-colors">
-              {language === "en" ? "Regulatory Status" : language === "zh-CN" ? "监管与牌照" : "監管與牌照"}
+              {language === "ar" ? "الوضع التنظيمي" : language === "zh-CN" ? "监管与牌照" : language === "zh-TW" ? "監管與牌照" : "Regulatory Status"}
             </Link>
             <span>|</span>
             <Link href={localePath("/compliance-kyc")} className="text-indigo-600 hover:text-indigo-700 transition-colors">
-              {language === "en" ? "Compliance & KYC" : language === "zh-CN" ? "合规与KYC" : "合規與KYC"}
+              {language === "ar" ? "الامتثال و KYC" : language === "zh-CN" ? "合规与KYC" : language === "zh-TW" ? "合規與KYC" : "Compliance & KYC"}
             </Link>
             <span>|</span>
             <Link href={localePath("/risk-fees")} className="text-indigo-600 hover:text-indigo-700 transition-colors">
-              {language === "en" ? "Risk & Fees" : language === "zh-CN" ? "风险与费用" : "風險與費用"}
+              {language === "ar" ? "المخاطر والرسوم" : language === "zh-CN" ? "风险与费用" : language === "zh-TW" ? "風險與費用" : "Risk & Fees"}
             </Link>
           </div>
         </div>

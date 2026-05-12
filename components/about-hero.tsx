@@ -21,9 +21,9 @@ export function AboutHero() {
         <div className="absolute inset-0 bg-black/30" />
       </div>
       <div className="container relative z-10 mx-auto px-6 py-24 text-center">
-        <p className="mx-auto max-w-4xl text-balance text-lg text-white leading-relaxed md:text-xl">
+        <h1 className="mx-auto max-w-4xl text-balance text-3xl font-semibold text-white leading-tight md:text-5xl">
           {t.about.hero.title}
-        </p>
+        </h1>
         <p className="mt-6 mx-auto max-w-3xl text-base text-white/80 leading-relaxed">{t.about.hero.subtitle}</p>
       </div>
     </section>

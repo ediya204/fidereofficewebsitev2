@@ -32,7 +32,17 @@ export function Header({ forceDarkText = false }: HeaderProps) {
   const mutedTextClass = useDarkText ? "!text-[#232937]/75 hover:!text-[#07072d]" : "!text-white/70 hover:!text-white"
   const hoverTextClass = useDarkText ? "hover:!text-[#4357ef]" : "hover:!text-white/80"
 
-  const localePath = (path: string) => `/${locale}${path}`
+  const isLocalizedPath = ["en", "cn", "tc"].includes(pathname.split("/")[1] || "")
+  const localizedPathMap: Record<string, string> = {
+    "/services": "/solutions",
+    "/compliance": "/compliance-kyc",
+    "/asset-management": "/wealth-management",
+  }
+  const localePath = (path: string) => {
+    if (path === "/login") return "/login"
+    if (!isLocalizedPath) return path
+    return `/${locale}${localizedPathMap[path] ?? path}`
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -98,6 +108,17 @@ export function Header({ forceDarkText = false }: HeaderProps) {
     },
   ]
 
+  const primaryNavItems = [
+    { label: language === "en" ? "About" : language === "zh-CN" ? "关于我们" : "關於我們", href: localePath("/about") },
+    { label: language === "en" ? "Compliance" : language === "zh-CN" ? "合规" : "合規", href: localePath("/compliance") },
+    {
+      label: language === "en" ? "Asset Management" : language === "zh-CN" ? "资产管理" : "資產管理",
+      href: localePath("/asset-management"),
+    },
+    { label: t.nav.contactUs, href: localePath("/contact") },
+    { label: t.nav.login, href: localePath("/login") },
+  ]
+
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${headerClass}`}
@@ -109,10 +130,11 @@ export function Header({ forceDarkText = false }: HeaderProps) {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-8" aria-label="Primary navigation">
           {/* Solutions Mega Menu */}
           <div className="relative" onMouseEnter={handleSolutionsMenuEnter} onMouseLeave={handleSolutionsMenuLeave}>
-            <button
+            <Link
+              href={localePath("/services")}
               className={`flex items-center gap-1 text-sm font-medium transition ${
                 solutionsMenuOpen
                   ? useDarkText ? "!text-[#4357ef]" : "!text-white"
@@ -122,21 +144,18 @@ export function Header({ forceDarkText = false }: HeaderProps) {
               {t.nav.solutions}
               <ChevronDown className={`w-4 h-4 transition-transform ${solutionsMenuOpen ? "rotate-180" : ""}`} />
               {solutionsMenuOpen && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#4357ef]"></span>}
-            </button>
+            </Link>
           </div>
 
-          <Link
-            href={localePath("/about")}
-            className={`text-sm font-medium transition ${primaryTextClass} ${hoverTextClass}`}
-          >
-            FIDERE
-          </Link>
-          <Link
-            href={localePath("/contact")}
-            className={`text-sm font-medium transition ${primaryTextClass} ${hoverTextClass}`}
-          >
-            {t.nav.contactUs}
-          </Link>
+          {primaryNavItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`text-sm font-medium transition ${primaryTextClass} ${hoverTextClass}`}
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
 
         {/* Desktop Right Side */}
@@ -265,14 +284,16 @@ export function Header({ forceDarkText = false }: HeaderProps) {
                 )}
               </div>
 
-              {/* FIDERE Link */}
-              <Link
-                href={localePath("/about")}
-                className="py-3 text-white font-medium text-2xl hover:text-white/80 transition"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                FIDERE
-              </Link>
+              {primaryNavItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="py-3 text-white font-medium text-2xl hover:text-white/80 transition"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
           </div>
 

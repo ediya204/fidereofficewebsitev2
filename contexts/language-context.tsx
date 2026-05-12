@@ -19,6 +19,15 @@ const languageToLocale: Record<Language, string> = {
   "zh-TW": "tc",
 }
 
+const canonicalToLocalizedPath: Record<string, string> = {
+  "/": "",
+  "/about": "/about",
+  "/services": "/solutions",
+  "/compliance": "/compliance-kyc",
+  "/asset-management": "/wealth-management",
+  "/contact": "/contact",
+}
+
 type LanguageContextType = {
   language: Language
   locale: string
@@ -46,6 +55,19 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     const newLocale = languageToLocale[lang]
     const segments = pathname.split("/")
 
+    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000`
+
+    if (!supportedLocales.includes(segments[1] as (typeof supportedLocales)[number])) {
+      if (pathname === "/login") {
+        router.push("/login")
+        return
+      }
+
+      const localizedPath = canonicalToLocalizedPath[pathname] ?? pathname
+      router.push(`/${newLocale}${localizedPath}`)
+      return
+    }
+
     // Replace the locale segment
     if (supportedLocales.includes(segments[1] as (typeof supportedLocales)[number])) {
       segments[1] = newLocale
@@ -54,9 +76,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
 
     const newPath = segments.join("/") || `/${newLocale}`
-
-    // Set cookie for middleware
-    document.cookie = `NEXT_LOCALE=${newLocale}; path=/; max-age=31536000`
 
     router.push(newPath)
   }, [pathname, router])

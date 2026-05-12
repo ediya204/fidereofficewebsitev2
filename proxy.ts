@@ -4,9 +4,22 @@ import type { NextRequest } from "next/server"
 // Supported locales: en, cn (simplified), tc (traditional)
 const locales = ["en", "cn", "tc"]
 const defaultLocale = "en"
+const canonicalCorePaths = new Set([
+  "/",
+  "/about",
+  "/services",
+  "/compliance",
+  "/asset-management",
+  "/contact",
+  "/login",
+])
 
 export async function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname
+
+  if (canonicalCorePaths.has(pathname)) {
+    return NextResponse.next()
+  }
 
   // Skip for static files and API routes
   if (

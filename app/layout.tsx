@@ -1,7 +1,7 @@
 import type { ReactNode } from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
-import { siteName, siteUrl } from "@/lib/seo"
+import { companyLegalName, siteName, siteUrl } from "@/lib/seo"
 import "@/styles/globals.css"
 
 const googleTagId = "G-DXNG1F7QFP"
@@ -9,7 +9,7 @@ const googleTagId = "G-DXNG1F7QFP"
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "香港信托与家族信托资产管理 | FIDERE TRUST",
+    default: `${companyLegalName} | Hong Kong Trust Company`,
     template: `%s | ${siteName}`,
   },
   description:
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   publisher: siteName,
   category: "Trust and asset management services",
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/icon.svg",
   },
 }
 

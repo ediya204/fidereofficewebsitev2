@@ -1,30 +1,47 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { MapPin, Mail, Phone } from "@/components/ui/app-icon"
 import { useLanguage } from "@/contexts/language-context"
 import { getTranslation } from "@/lib/translations"
 
 export function Footer() {
   const { language, locale } = useLanguage()
+  const pathname = usePathname()
   const t = getTranslation(language)
 
-  const localePath = (path: string) => `/${locale}${path}`
+  const isLocalizedPath = ["en", "cn", "tc"].includes(pathname.split("/")[1] || "")
+  const localizedPathMap: Record<string, string> = {
+    "/services": "/solutions",
+    "/compliance": "/compliance-kyc",
+    "/asset-management": "/wealth-management",
+  }
+  const localePath = (path: string) => {
+    if (path === "/login") return "/login"
+    if (!isLocalizedPath) return path
+    return `/${locale}${localizedPathMap[path] ?? path}`
+  }
 
   const leftLinks = [
-    { label: t.nav.solutions, href: localePath("/solutions") },
-    { label: t.nav.about, href: localePath("/about") },
-    { label: t.nav.contact, href: localePath("/contact") },
+    { label: language === "en" ? "Home" : language === "zh-CN" ? "首页" : "首頁", href: localePath("/") },
+    { label: language === "en" ? "About" : language === "zh-CN" ? "关于我们" : "關於我們", href: localePath("/about") },
+    { label: t.nav.solutions, href: localePath("/services") },
+    { label: language === "en" ? "Compliance" : language === "zh-CN" ? "合规" : "合規", href: localePath("/compliance") },
   ]
 
   const rightLinks = [
     {
       label: language === "en" ? "Wealth Management" : language === "zh-CN" ? "财富管理" : "財富管理",
-      href: localePath("/wealth-management"),
+      href: localePath("/asset-management"),
     },
     {
-      label: language === "en" ? "Let's talk" : language === "zh-CN" ? "联系洽谈" : "聯繫洽談",
+      label: t.nav.contactUs,
       href: localePath("/contact"),
+    },
+    {
+      label: t.nav.login,
+      href: localePath("/login"),
     },
   ]
 
@@ -35,7 +52,7 @@ export function Footer() {
           {/* Left side - Bold headline */}
           <div className="lg:max-w-md">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-              We live In Trust.
+              FIDERE TRUST LIMITED
             </h2>
             <div className="mt-6 text-sm text-gray-600 space-y-3">
               <div className="flex items-start gap-2">

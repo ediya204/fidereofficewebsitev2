@@ -6,6 +6,7 @@ export type Locale = (typeof locales)[number]
 export const defaultLocale: Locale = "en"
 export const siteUrl = "https://www.fideretrust.com"
 export const siteName = "FIDERE TRUST"
+export const companyLegalName = "FIDERE TRUST LIMITED"
 
 export const localeLanguages: Record<Locale, string> = {
   en: "en",
@@ -43,6 +44,37 @@ const routePaths = {
 } as const
 
 export type PageKey = keyof typeof routePaths
+
+export const canonicalCorePages = [
+  "home",
+  "about",
+  "services",
+  "compliance",
+  "assetManagement",
+  "contact",
+  "login",
+] as const
+
+export type CanonicalPageKey = (typeof canonicalCorePages)[number]
+
+const canonicalRoutePaths: Record<CanonicalPageKey, string> = {
+  home: "/",
+  about: "/about",
+  services: "/services",
+  compliance: "/compliance",
+  assetManagement: "/asset-management",
+  contact: "/contact",
+  login: "/login",
+}
+
+const englishCanonicalPathByPageKey: Partial<Record<PageKey, string>> = {
+  home: "/",
+  about: "/about",
+  solutions: "/services",
+  complianceKyc: "/compliance",
+  wealthManagement: "/asset-management",
+  contact: "/contact",
+}
 
 type SeoEntry = {
   title: string
@@ -391,10 +423,10 @@ export const seo: Record<Locale, Record<PageKey, SeoEntry>> = {
       keywords: ["trust compliance", "KYC", "KYB"],
     },
     regulatoryStatus: {
-      title: "Regulatory Status | Hong Kong Trust License Information",
+      title: "Regulatory Status | Trustee Ordinance Cap. 29",
       description:
-        "Review FIDERE TRUST regulatory status, license information and governance standards for Hong Kong trust and asset management services.",
-      keywords: ["trust license", "TCSP"],
+        "Review FIDERE TRUST TCSP licence and Trust Company registration under section 78(1) of the Trustee Ordinance (Chapter 29) in Hong Kong.",
+      keywords: ["Trustee Ordinance Chapter 29", "Trust Company registration", "TCSP"],
     },
     riskFees: {
       title: "Risk & Fees | Trust and Asset Management Costs",
@@ -513,10 +545,10 @@ export const seo: Record<Locale, Record<PageKey, SeoEntry>> = {
       keywords: ["信托合规", "KYC", "KYB"],
     },
     regulatoryStatus: {
-      title: "监管与牌照 | 香港信托牌照信息",
+      title: "监管与牌照 | 香港受托人条例第29章",
       description:
-        "查看 FIDERE TRUST 香港信托与资产管理服务的监管状态、牌照信息与治理标准。",
-      keywords: ["信托牌照", "TCSP"],
+        "查看 FIDERE TRUST 的 TCSP 牌照，以及根据香港《受托人条例》（第29章）第78(1)条注册为信托公司的状态。",
+      keywords: ["受托人条例第29章", "信托公司注册", "TCSP"],
     },
     riskFees: {
       title: "风险与费用 | 信托与资产管理成本",
@@ -629,9 +661,9 @@ export const seo: Record<Locale, Record<PageKey, SeoEntry>> = {
       keywords: ["信託合規", "KYC", "KYB"],
     },
     regulatoryStatus: {
-      title: "監管與牌照 | 香港信託牌照資訊",
-      description: "查看 FIDERE TRUST 香港信託與資產管理服務的監管狀態、牌照資訊與治理標準。",
-      keywords: ["信託牌照", "TCSP"],
+      title: "監管與牌照 | 香港受託人條例第29章",
+      description: "查看 FIDERE TRUST 的 TCSP 牌照，以及根據香港《受託人條例》（第29章）第78(1)條註冊為信託公司的狀態。",
+      keywords: ["受託人條例第29章", "信託公司註冊", "TCSP"],
     },
     riskFees: {
       title: "風險與費用 | 信託與資產管理成本",
@@ -675,7 +707,8 @@ export function getLocalizedPath(pageKey: PageKey, locale: Locale) {
 }
 
 export function getAbsoluteUrl(pageKey: PageKey, locale: Locale) {
-  return new URL(getLocalizedPath(pageKey, locale), siteUrl).toString()
+  const path = locale === defaultLocale ? englishCanonicalPathByPageKey[pageKey] : undefined
+  return new URL(path ?? getLocalizedPath(pageKey, locale), siteUrl).toString()
 }
 
 export function getAlternates(pageKey: PageKey, locale: Locale) {
@@ -731,6 +764,139 @@ export function buildPageMetadata(pageKey: PageKey, locale?: string): Metadata {
   }
 }
 
+const canonicalSeo: Record<CanonicalPageKey, SeoEntry> = {
+  home: {
+    title: `${companyLegalName} | Hong Kong Trust Company`,
+    description:
+      "FIDERE TRUST LIMITED is a Hong Kong trust company providing trust structuring, family trust, compliance-led custody and asset management services.",
+    keywords: ["FIDERE TRUST LIMITED", "Hong Kong trust company", "family trust", "asset management"],
+  },
+  about: {
+    title: `About ${companyLegalName} | Hong Kong Trust Services`,
+    description:
+      "Learn about FIDERE TRUST LIMITED, its Hong Kong trust company profile, governance focus, trustee responsibilities and institutional service approach.",
+    keywords: ["about FIDERE TRUST LIMITED", "Hong Kong trustee", "trust company profile"],
+  },
+  services: {
+    title: `Trust Services | ${companyLegalName}`,
+    description:
+      "Review FIDERE TRUST LIMITED trust services for private clients, family offices, corporate clients, custody, payments and fiduciary administration.",
+    keywords: ["trust services", "fiduciary services", "trust custody", "corporate trust services"],
+  },
+  compliance: {
+    title: `Compliance & KYC | ${companyLegalName}`,
+    description:
+      "Understand the FIDERE TRUST LIMITED compliance, KYC, KYB, AML and onboarding standards for trust and asset management services in Hong Kong.",
+    keywords: ["trust compliance", "KYC", "KYB", "AML", "Hong Kong trust onboarding"],
+  },
+  assetManagement: {
+    title: `Asset Management | ${companyLegalName}`,
+    description:
+      "Explore trust-based asset management, multi-currency portfolio administration and global asset allocation support from FIDERE TRUST LIMITED.",
+    keywords: ["asset management", "trust-based asset management", "global asset allocation"],
+  },
+  contact: {
+    title: `Contact ${companyLegalName} | Hong Kong Office`,
+    description:
+      "Contact FIDERE TRUST LIMITED in Hong Kong for trust, family trust, compliance and asset management enquiries.",
+    keywords: ["contact FIDERE TRUST LIMITED", "Hong Kong trust consultation"],
+  },
+  login: {
+    title: `Client Login | ${companyLegalName}`,
+    description:
+      "Access the FIDERE TRUST LIMITED client login page for trust account and service enquiries.",
+    keywords: ["FIDERE TRUST login", "client login", "trust account access"],
+  },
+}
+
+export function getCanonicalCorePath(pageKey: CanonicalPageKey) {
+  return canonicalRoutePaths[pageKey]
+}
+
+export function getCanonicalCoreUrl(pageKey: CanonicalPageKey) {
+  return new URL(getCanonicalCorePath(pageKey), siteUrl).toString()
+}
+
+export function buildCanonicalPageMetadata(pageKey: CanonicalPageKey): Metadata {
+  const entry = canonicalSeo[pageKey]
+  const groupedKeywords = pageKeywordGroups[
+    pageKey === "services"
+      ? "solutions"
+      : pageKey === "compliance"
+        ? "complianceKyc"
+        : pageKey === "assetManagement"
+          ? "wealthManagement"
+          : pageKey === "login"
+            ? "home"
+            : pageKey
+  ].flatMap((group) => keywordGroups.en[group])
+  const keywords = uniqueKeywords([...coreKeywords.en, ...groupedKeywords, ...entry.keywords])
+  const url = getCanonicalCoreUrl(pageKey)
+
+  return {
+    title: {
+      absolute: entry.title,
+    },
+    description: entry.description,
+    keywords,
+    alternates: {
+      canonical: url,
+      languages:
+        pageKey === "login"
+          ? {
+              en: url,
+              "x-default": url,
+            }
+          : {
+              en: url,
+              "zh-CN": getAbsoluteUrl(
+                pageKey === "services"
+                  ? "solutions"
+                  : pageKey === "compliance"
+                    ? "complianceKyc"
+                    : pageKey === "assetManagement"
+                      ? "wealthManagement"
+                      : pageKey,
+                "cn",
+              ),
+              "zh-Hant": getAbsoluteUrl(
+                pageKey === "services"
+                  ? "solutions"
+                  : pageKey === "compliance"
+                    ? "complianceKyc"
+                    : pageKey === "assetManagement"
+                      ? "wealthManagement"
+                      : pageKey,
+                "tc",
+              ),
+              "x-default": url,
+            },
+    },
+    openGraph: {
+      title: entry.title,
+      description: entry.description,
+      url,
+      siteName,
+      locale: localizedLocaleNames.en,
+      type: "website",
+      images: [
+        {
+          url: "/hong-kong-financial-district.jpg",
+          width: 1200,
+          height: 630,
+          alt: "FIDERE TRUST LIMITED Hong Kong trust services",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: entry.title,
+      description: entry.description,
+      images: ["/hong-kong-financial-district.jpg"],
+    },
+  }
+}
+
 export async function generatePageMetadata(
   pageKey: PageKey,
   params: Promise<{ locale: string }> | { locale: string },
@@ -748,6 +914,14 @@ export function getAllLocalizedRoutes() {
       url: getAbsoluteUrl(pageKey, locale),
     })),
   )
+}
+
+export function getCanonicalCoreRoutes() {
+  return canonicalCorePages.map((pageKey) => ({
+    pageKey,
+    path: getCanonicalCorePath(pageKey),
+    url: getCanonicalCoreUrl(pageKey),
+  }))
 }
 
 export function buildOrganizationJsonLd(locale?: string) {
@@ -772,11 +946,14 @@ export function buildOrganizationJsonLd(locale?: string) {
       {
         "@type": ["Organization", "FinancialService"],
         "@id": `${siteUrl}/#organization`,
-        name: siteName,
-        legalName: "FIDERE TRUST Limited",
+        name: companyLegalName,
+        alternateName: siteName,
+        legalName: companyLegalName,
         url: siteUrl,
-        logo: `${siteUrl}/favicon.png`,
+        logo: `${siteUrl}/icon.svg`,
         image: `${siteUrl}/hong-kong-financial-district.jpg`,
+        description:
+          "FIDERE TRUST LIMITED provides Hong Kong trust services, family trust structuring, compliance-led custody, fiduciary administration and trust-based asset management for private, family office and corporate clients.",
         email: "info@fideretrust.com",
         telephone: "+85251286593",
         address: {

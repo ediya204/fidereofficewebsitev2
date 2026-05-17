@@ -119,19 +119,19 @@ export function SolutionsSection() {
               <TrendingUp className="w-4 h-4 text-[#4357ef]" />
             </div>
             <div>
-              <p className="font-semibold text-gray-900 text-sm">GALAXY</p>
-              <p className="text-xs text-gray-500">ETH Lending</p>
+              <p className="font-semibold text-gray-900 text-sm">USD Money Market Fund</p>
+              <p className="text-xs text-gray-500">Daily Liquidity</p>
             </div>
-            <span className="ml-auto text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Lending</span>
+            <span className="ml-auto text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Money Fund</span>
           </div>
           <div className="flex justify-between border-t pt-3">
             <div>
-              <p className="text-xs text-gray-500">APY</p>
+              <p className="text-xs text-gray-500">Yield</p>
               <p className="text-lg font-semibold text-[#4357ef]">4.58%</p>
             </div>
             <div className="text-right">
-              <p className="text-xs text-gray-500">Tenor</p>
-              <p className="text-lg font-semibold text-gray-900">90 Days</p>
+              <p className="text-xs text-gray-500">Access</p>
+              <p className="text-lg font-semibold text-gray-900">T+1</p>
             </div>
           </div>
         </div>

@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { Building2, Bitcoin, Landmark, Building } from "@/components/ui/app-icon"
+import { Building2, Landmark, Building } from "@/components/ui/app-icon"
 
 const translations = {
   en: {
@@ -9,12 +9,11 @@ const translations = {
       "Borderless banking services with instant settlement. FIDERE connects institutions and individuals in the digital economy in real-time, building a digital financial ecosystem. 24/7 infrastructure support with zero-fee instant transfers between FIDERE accounts.",
     title: "A Unified Platform for All Your Asset Accounts",
     description:
-      "Our comprehensive trust platform enables you to manage accounts in Hong Kong, United States, Singapore, and digital assets through a single interface, with coverage across major global financial centers.",
+      "Our comprehensive trust platform enables you to manage accounts in Hong Kong, United States, and Singapore through a single interface, with coverage across major global financial centers.",
     accounts: [
       { id: "hk", title: "Hong Kong Account", icon: Building2 },
       { id: "us", title: "US Account", icon: Landmark },
       { id: "sg", title: "Singapore Account", icon: Building },
-      { id: "digital-assets", title: "Digital Assets", icon: Bitcoin },
     ],
   },
   "zh-CN": {
@@ -22,12 +21,11 @@ const translations = {
       "无边界银行服务，即时结算。FIDERE 实时互联数字经济中的机构与个人，构建数字金融生态。全年无休基础设施支持，FIDERE账户间即时转账零费用畅行。",
     title: "一站式资产账户管理平台",
     description:
-      "我们的综合信托平台让您能够通过单一界面管理香港、美国、新加坡银行账户及数字资产，覆盖全球主要金融中心。",
+      "我们的综合信托平台让您能够通过单一界面管理香港、美国、新加坡银行账户，覆盖全球主要金融中心。",
     accounts: [
       { id: "hk", title: "香港账户", icon: Building2 },
       { id: "us", title: "美国账户", icon: Landmark },
       { id: "sg", title: "新加坡账户", icon: Building },
-      { id: "digital-assets", title: "数字资产", icon: Bitcoin },
     ],
   },
   "zh-TW": {
@@ -35,12 +33,11 @@ const translations = {
       "無邊界銀行服務，即時結算。FIDERE 實時互聯數字經濟中的機構與個人，構建數字金融生態。全年無休基礎設施支持，FIDERE帳戶間即時轉帳零費用暢行。",
     title: "一站式資產帳戶管理平台",
     description:
-      "我們的綜合信託平台讓您能夠通過單一界面管理香港、美國、新加坡銀行帳戶及數字資產，覆蓋全球主要金融中心。",
+      "我們的綜合信託平台讓您能夠通過單一界面管理香港、美國、新加坡銀行帳戶，覆蓋全球主要金融中心。",
     accounts: [
       { id: "hk", title: "香港帳戶", icon: Building2 },
       { id: "us", title: "美國帳戶", icon: Landmark },
       { id: "sg", title: "新加坡帳戶", icon: Building },
-      { id: "digital-assets", title: "數字資產", icon: Bitcoin },
     ],
   },
   ar: {
@@ -48,12 +45,11 @@ const translations = {
       "خدمات مصرفية عابرة للحدود مع تسوية فورية. تربط FIDERE المؤسسات والأفراد في الاقتصاد الرقمي في الوقت الفعلي، مع دعم بنية تحتية على مدار الساعة وتحويلات فورية بدون رسوم بين حسابات FIDERE.",
     title: "منصة موحدة لجميع حسابات أصولك",
     description:
-      "تمكّنك منصة الائتمان الشاملة لدينا من إدارة حسابات هونغ كونغ والولايات المتحدة وسنغافورة والأصول الرقمية عبر واجهة واحدة تغطي مراكز مالية عالمية رئيسية.",
+      "تمكّنك منصة الائتمان الشاملة لدينا من إدارة حسابات هونغ كونغ والولايات المتحدة وسنغافورة عبر واجهة واحدة تغطي مراكز مالية عالمية رئيسية.",
     accounts: [
       { id: "hk", title: "حساب هونغ كونغ", icon: Building2 },
       { id: "us", title: "حساب الولايات المتحدة", icon: Landmark },
       { id: "sg", title: "حساب سنغافورة", icon: Building },
-      { id: "digital-assets", title: "الأصول الرقمية", icon: Bitcoin },
     ],
   },
 }

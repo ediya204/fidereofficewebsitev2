@@ -43,7 +43,7 @@ const translations = {
       },
       {
         category: "Flexibility",
-        trust: "Accepts cash, properties, metals, digital assets.",
+        trust: "Accepts cash, properties, and metals.",
         bank: "Mainly accepts cash.",
       },
     ],
@@ -61,7 +61,7 @@ const translations = {
       { category: "风险隔离", trust: "无权冻结客户资产。", bank: "可因多种原因冻结账户。" },
       { category: "可持续性", trust: "永续。信托可无限期存在。", bank: "不可持续。发生意外时被冻结。" },
       { category: "隐私性", trust: "高。只有高等法院可要求访问。", bank: "低。如有理由可被查询。" },
-      { category: "灵活性", trust: "接受现金、房产、贵金属、数字资产。", bank: "主要接受现金。" },
+      { category: "灵活性", trust: "接受现金、房产、贵金属。", bank: "主要接受现金。" },
     ],
   },
   "zh-TW": {
@@ -77,7 +77,7 @@ const translations = {
       { category: "風險隔離", trust: "無權凍結客戶資產。", bank: "可因多種原因凍結賬戶。" },
       { category: "可持續性", trust: "永續。信託可無限期存在。", bank: "不可持續。發生意外時被凍結。" },
       { category: "隱私性", trust: "高。只有高等法院可要求訪問。", bank: "低。如有理由可被查詢。" },
-      { category: "靈活性", trust: "接受現金、房產、貴金屬、數字資產。", bank: "主要接受現金。" },
+      { category: "靈活性", trust: "接受現金、房產、貴金屬。", bank: "主要接受現金。" },
     ],
   },
 }

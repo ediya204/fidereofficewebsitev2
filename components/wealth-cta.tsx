@@ -25,6 +25,12 @@ const translations = {
     register: "立即註冊",
     contact: "聯繫我們",
   },
+  ar: {
+    title: "هل أنت مستعد لبدء رحلة إدارة الثروة؟",
+    description: "اكتشف قوة FIDERE TRUST اليوم. استكشف منصتنا الائتمانية أو أنشئ حساباً لبدء تجربتك.",
+    register: "سجّل الآن",
+    contact: "تواصل معنا",
+  },
 }
 
 export function WealthCTA() {

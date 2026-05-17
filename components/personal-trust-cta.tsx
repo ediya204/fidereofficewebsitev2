@@ -24,6 +24,12 @@ const translations = {
     cta: "聯繫我們",
     secondaryCta: "了解更多",
   },
+  ar: {
+    title: "هل أنت مستعد لحماية ثروتك؟",
+    description: "تواصل مع فريقنا لاستكشاف حلول ائتمانية وإدارة ثروة مصممة وفق احتياجاتك الخاصة.",
+    cta: "تواصل معنا",
+    secondaryCta: "اعرف المزيد",
+  },
 }
 
 export function PersonalTrustCTA() {

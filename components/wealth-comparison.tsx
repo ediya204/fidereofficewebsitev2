@@ -52,8 +52,8 @@ const translations = {
       {
         category: "Flexibility",
         trust:
-          "High. Trust accounts accept not only cash, but also overseas properties, precious metals, digital assets, etc.",
-        bank: "Low. Banks primarily accept cash, very unlikely to accept digital assets.",
+          "High. Trust accounts accept not only cash, but also overseas properties, precious metals, and other eligible assets.",
+        bank: "Low. Banks primarily accept cash.",
         trustHighlight: true,
       },
       {
@@ -111,8 +111,8 @@ const translations = {
       },
       {
         category: "灵活性",
-        trust: "高。信托账户不仅接受现金，还接受海外房产、贵金属、数字资产等。",
-        bank: "低。银行主要接受现金，极不可能接受数字资产。",
+        trust: "高。信托账户不仅接受现金，还接受海外房产、贵金属及其他合资格资产。",
+        bank: "低。银行主要接受现金。",
         trustHighlight: true,
       },
       {
@@ -169,8 +169,8 @@ const translations = {
       },
       {
         category: "靈活性",
-        trust: "高。信託賬戶不僅接受現金，還接受海外房產、貴金屬、數字資產等。",
-        bank: "低。銀行主要接受現金，極不可能接受數字資產。",
+        trust: "高。信託賬戶不僅接受現金，還接受海外房產、貴金屬及其他合資格資產。",
+        bank: "低。銀行主要接受現金。",
         trustHighlight: true,
       },
       {
@@ -179,6 +179,24 @@ const translations = {
         bank: "有限。銀行賬戶僅提供本地銀行服務。投資選擇僅限於銀行自有產品。",
         trustHighlight: true,
       },
+    ],
+  },
+  ar: {
+    badge: "تحليل مقارن",
+    title: "مزايا الحساب الائتماني: أبعد من الخدمات المصرفية التقليدية",
+    subtitle: "اكتشف لماذا توفر الحسابات الائتمانية مزايا متقدمة في إدارة الثروة وحماية الأصول",
+    comparisonItem: "عنصر المقارنة",
+    trustAccount: "حساب ائتماني",
+    bankAccount: "حساب مصرفي",
+    data: [
+      { category: "الملكية القانونية", trust: "الوصي (شركة ائتمان)", bank: "حساب مصرفي" },
+      { category: "السرية", trust: "مرتفعة. الائتمان ترتيب سري.", bank: "منخفضة. قد تطلع عليه الجهات القضائية.", trustHighlight: true },
+      { category: "الاستقلالية", trust: "مرتفعة. تنفذ شركة الائتمان تعليمات المؤسس فقط.", bank: "منخفضة. قد تستخدم البنوك ودائع العملاء للإقراض.", trustHighlight: true },
+      { category: "المخاطر", trust: "عزل للمخاطر. لا يجمّد الائتمان أصول العميل إلا في حالات قانونية استثنائية.", bank: "لا يوجد عزل مخاطر. قد تُجمّد الحسابات لأسباب متعددة.", trustHighlight: true },
+      { category: "الاستمرارية", trust: "مستمرة. يمكن للائتمانات في هونغ كونغ أن تستمر بلا أجل محدد للتخطيط متعدد الأجيال.", bank: "غير مستدامة. قد يتجمّد الحساب عند الوفاة إلى حين إجراءات التركة.", trustHighlight: true },
+      { category: "الخصوصية", trust: "مرتفعة. عادة لا يمكن طلب معلومات الحساب الائتماني إلا عبر المحكمة العليا.", bank: "منخفضة. يمكن التحقيق في معلومات الحساب وتدفقات الأصول عند وجود سبب.", trustHighlight: true },
+      { category: "المرونة", trust: "مرتفعة. تقبل الحسابات الائتمانية النقد والعقارات الخارجية والمعادن والأصول المؤهلة الأخرى.", bank: "منخفضة. تركز البنوك أساساً على النقد.", trustHighlight: true },
+      { category: "الخدمات", trust: "متنوعة. توفر الحسابات الائتمانية خدمات عالمية مثل الحسابات الخارجية والاستثمارات والمدفوعات ونقل الأصول.", bank: "محدودة. توفر الحسابات المصرفية خدمات مصرفية محلية وخيارات استثمار محدودة.", trustHighlight: true },
     ],
   },
 }

@@ -43,9 +43,9 @@ export function TrustAccountServices() {
           gradient: "from-[#2563EB] to-[#3B82F6]",
         },
         {
-          title: "Asset Exchange",
+          title: "Currency Exchange",
           description:
-            "Seamlessly convert between digital and traditional assets with institutional-grade security and competitive rates.",
+            "Seamlessly convert major currencies with institutional-grade security and competitive rates.",
           href: "/asset-exchange",
           gradient: "from-[#3B82F6] to-[#6366F1]",
         },
@@ -81,8 +81,8 @@ export function TrustAccountServices() {
           gradient: "from-[#2563EB] to-[#3B82F6]",
         },
         {
-          title: "资产转换",
-          description: "以机构级安全性和具有竞争力的价格，无缝转换数字资产和传统资产。",
+          title: "货币兑换",
+          description: "以机构级安全性和具有竞争力的价格，无缝完成主要货币兑换。",
           href: "/asset-exchange",
           gradient: "from-[#3B82F6] to-[#6366F1]",
         },
@@ -118,12 +118,50 @@ export function TrustAccountServices() {
           gradient: "from-[#2563EB] to-[#3B82F6]",
         },
         {
-          title: "資產轉換",
-          description: "以機構級安全性和具有競爭力的價格，無縫轉換數字資產和傳統資產。",
+          title: "貨幣兌換",
+          description: "以機構級安全性和具有競爭力的價格，無縫完成主要貨幣兌換。",
           href: "/asset-exchange",
           gradient: "from-[#3B82F6] to-[#6366F1]",
         },
       ],
+    },
+    ar: {
+      label: "مزايا الحساب",
+      title: "عالم من خدمات الائتمان",
+      subtitle: "تتيح لك منصتنا الشاملة الوصول إلى مجموعة كاملة من خدمات الائتمان وإدارة الثروة من حساب واحد.",
+      services: [
+        {
+          title: "الحسابات الخارجية",
+          description: "تنويع عالمي آمن للثروة عبر هياكل ائتمانية متعددة الولايات مصممة لحماية الأصول والخصوصية.",
+          href: "/offshore-accounts",
+          gradient: "from-[#2563EB] to-[#6366F1]",
+        },
+        {
+          title: "المدفوعات العالمية",
+          description: "تحويلات دولية سلسة بأسعار تنافسية وتتبع فوري ودعم متعدد العملات.",
+          href: "/global-payment",
+          gradient: "from-[#6366F1] to-[#8B5CF6]",
+        },
+        {
+          title: "إدارة الثروة",
+          description: "إدارة استثمارية مهنية مع وصول إلى الأسواق العالمية والأصول البديلة والاستراتيجيات المخصصة.",
+          href: "/wealth-management",
+          gradient: "from-[#8B5CF6] to-[#A855F7]",
+        },
+        {
+          title: "بطاقة مرتبطة بالأصول",
+          description: "بطاقات مميزة مدعومة بأصولك الائتمانية، تتيح الإنفاق العالمي مع الحفاظ على أمان الأصول.",
+          href: "/credit-card",
+          gradient: "from-[#2563EB] to-[#3B82F6]",
+        },
+        {
+          title: "تبادل العملات",
+          description: "تحويل سلس للعملات الرئيسية بأمان مؤسسي وأسعار تنافسية.",
+          href: "/asset-exchange",
+          gradient: "from-[#3B82F6] to-[#6366F1]",
+        },
+      ],
+      learnMore: "اعرف المزيد",
     },
   }
 
@@ -156,7 +194,7 @@ export function TrustAccountServices() {
               <p className="text-gray-600 leading-relaxed mb-6">{service.description}</p>
 
               <div className="flex items-center gap-2 text-[#2563EB] font-medium">
-                <span className="group-hover:underline">Learn more</span>
+                <span className="group-hover:underline">{"learnMore" in t ? t.learnMore : "Learn more"}</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>

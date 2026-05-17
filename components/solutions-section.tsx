@@ -4,18 +4,63 @@ import { TrendingUp, FileText } from "@/components/ui/app-icon"
 import { useLanguage } from "@/contexts/language-context"
 import { getTranslation } from "@/lib/translations"
 
-const offshoreAccounts = [
-  { name: "Hong Kong Account", id: "002-013-0567545-001", amount: "2,050,000 USD", color: "#4357ef" },
-  { name: "US Account", id: "002-013-0367545-002", amount: "275,000 USD", color: "#5e6ff1" },
-  { name: "Singapore Account", id: "002-013-0867545-003", amount: "840,065 USD", color: "#7a88f4" },
-  { name: "Digital Wallet", id: "002-013-0567545-004", amount: "5,994,400 USD", color: "#96a1f7" },
-]
-
 export function SolutionsSection() {
   const { language } = useLanguage()
   const t = getTranslation(language)
   const localize = (copy: { en: string; "zh-CN": string; "zh-TW": string; ar: string }) =>
     copy[language as keyof typeof copy] || copy.en
+  const offshoreAccounts = [
+    {
+      name: localize({ en: "Hong Kong Account", "zh-CN": "香港账户", "zh-TW": "香港賬戶", ar: "حساب هونغ كونغ" }),
+      id: "002-013-0567545-001",
+      amount: "2,050,000 USD",
+      color: "#4357ef",
+    },
+    {
+      name: localize({ en: "US Account", "zh-CN": "美国账户", "zh-TW": "美國賬戶", ar: "حساب الولايات المتحدة" }),
+      id: "002-013-0367545-002",
+      amount: "275,000 USD",
+      color: "#5e6ff1",
+    },
+    {
+      name: localize({ en: "Singapore Account", "zh-CN": "新加坡账户", "zh-TW": "新加坡賬戶", ar: "حساب سنغافورة" }),
+      id: "002-013-0867545-003",
+      amount: "840,065 USD",
+      color: "#7a88f4",
+    },
+    {
+      name: localize({ en: "Multi-currency Reserve", "zh-CN": "多币种储备", "zh-TW": "多幣種儲備", ar: "احتياطي متعدد العملات" }),
+      id: "002-013-0567545-004",
+      amount: "5,994,400 USD",
+      color: "#96a1f7",
+    },
+  ]
+  const visualCopy = {
+    moneyFundTitle: localize({ en: "USD Money Market Fund", "zh-CN": "美元货币基金", "zh-TW": "美元貨幣基金", ar: "صندوق سوق نقدي بالدولار" }),
+    dailyLiquidity: localize({ en: "Daily Liquidity", "zh-CN": "每日流动性", "zh-TW": "每日流動性", ar: "سيولة يومية" }),
+    moneyFund: localize({ en: "Money Fund", "zh-CN": "货币基金", "zh-TW": "貨幣基金", ar: "صندوق نقدي" }),
+    yield: localize({ en: "Yield", "zh-CN": "收益率", "zh-TW": "收益率", ar: "العائد" }),
+    access: localize({ en: "Access", "zh-CN": "申赎", "zh-TW": "申贖", ar: "الإتاحة" }),
+    uploadInvoice: localize({ en: "Upload invoice", "zh-CN": "上传发票", "zh-TW": "上傳發票", ar: "رفع الفاتورة" }),
+    fileRules: localize({
+      en: "PNG, JPG, PDF format. Max 5 files, 5MB each.",
+      "zh-CN": "支持 PNG、JPG、PDF，最多 5 个文件，每个 5MB。",
+      "zh-TW": "支持 PNG、JPG、PDF，最多 5 個文件，每個 5MB。",
+      ar: "يدعم PNG وJPG وPDF. حتى 5 ملفات، 5MB لكل ملف.",
+    }),
+    uploadCta: localize({ en: "Upload Invoice", "zh-CN": "上传发票", "zh-TW": "上傳發票", ar: "رفع الفاتورة" }),
+    extracting: localize({
+      en: "Extracting invoice details",
+      "zh-CN": "提取发票信息",
+      "zh-TW": "提取發票資訊",
+      ar: "استخراج تفاصيل الفاتورة",
+    }),
+    buy: localize({ en: "Buy", "zh-CN": "买入", "zh-TW": "買入", ar: "شراء" }),
+    sell: localize({ en: "Sell", "zh-CN": "卖出", "zh-TW": "賣出", ar: "بيع" }),
+    youBuy: localize({ en: "You Buy", "zh-CN": "买入货币", "zh-TW": "買入貨幣", ar: "تشتري" }),
+    youPay: localize({ en: "You Pay", "zh-CN": "支付货币", "zh-TW": "支付貨幣", ar: "تدفع" }),
+    balance: localize({ en: "Balance", "zh-CN": "余额", "zh-TW": "結餘", ar: "الرصيد" }),
+  }
 
   const rows = [
     {
@@ -119,18 +164,18 @@ export function SolutionsSection() {
               <TrendingUp className="w-4 h-4 text-[#4357ef]" />
             </div>
             <div>
-              <p className="font-semibold text-gray-900 text-sm">USD Money Market Fund</p>
-              <p className="text-xs text-gray-500">Daily Liquidity</p>
+              <p className="font-semibold text-gray-900 text-sm">{visualCopy.moneyFundTitle}</p>
+              <p className="text-xs text-gray-500">{visualCopy.dailyLiquidity}</p>
             </div>
-            <span className="ml-auto text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">Money Fund</span>
+            <span className="ml-auto text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">{visualCopy.moneyFund}</span>
           </div>
           <div className="flex justify-between border-t pt-3">
             <div>
-              <p className="text-xs text-gray-500">Yield</p>
+              <p className="text-xs text-gray-500">{visualCopy.yield}</p>
               <p className="text-lg font-semibold text-[#4357ef]">4.58%</p>
             </div>
             <div className="text-right">
-              <p className="text-xs text-gray-500">Access</p>
+              <p className="text-xs text-gray-500">{visualCopy.access}</p>
               <p className="text-lg font-semibold text-gray-900">T+1</p>
             </div>
           </div>
@@ -145,15 +190,15 @@ export function SolutionsSection() {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
                 <FileText className="w-4 h-4 text-gray-400" />
-                <span className="text-xs font-medium text-gray-700">Upload invoice</span>
+                <span className="text-xs font-medium text-gray-700">{visualCopy.uploadInvoice}</span>
               </div>
-              <p className="text-[10px] text-gray-400 mb-3">PNG, JPG, PDF format. Max 5 files, 5MB each.</p>
+              <p className="text-[10px] text-gray-400 mb-3">{visualCopy.fileRules}</p>
               <div className="border-2 border-dashed border-gray-200 rounded-lg p-3 text-center">
-                <p className="text-xs text-gray-400">Upload Invoice</p>
+                <p className="text-xs text-gray-400">{visualCopy.uploadCta}</p>
               </div>
             </div>
             <div className="flex-1 bg-[#4357ef]/10 rounded-lg p-3">
-              <p className="text-xs font-medium text-gray-700 mb-2">Extracting invoice details</p>
+              <p className="text-xs font-medium text-gray-700 mb-2">{visualCopy.extracting}</p>
               <div className="space-y-1">
                 <div className="h-2 bg-[#4357ef]/25 rounded-full w-full" />
                 <div className="h-2 bg-[#4357ef]/25 rounded-full w-3/4" />
@@ -167,13 +212,13 @@ export function SolutionsSection() {
     return (
         <div className="bg-white/95 backdrop-blur rounded-2xl p-5 shadow-[0_18px_50px_rgba(67,87,239,0.12)] border border-[#dbe1ff] transition-all duration-500 group-hover:-translate-y-1 group-hover:shadow-[0_28px_70px_rgba(67,87,239,0.18)]">
         <div className="flex gap-2 mb-4">
-          <button className="flex-1 bg-[#4357ef] text-white text-xs py-2 rounded-lg font-medium">Buy</button>
-          <button className="flex-1 bg-gray-100 text-gray-600 text-xs py-2 rounded-lg font-medium">Sell</button>
+          <button className="flex-1 bg-[#4357ef] text-white text-xs py-2 rounded-lg font-medium">{visualCopy.buy}</button>
+          <button className="flex-1 bg-gray-100 text-gray-600 text-xs py-2 rounded-lg font-medium">{visualCopy.sell}</button>
         </div>
         <div className="space-y-3">
           <div className="flex justify-between items-center">
             <div>
-              <p className="text-xs text-gray-500">You Buy</p>
+              <p className="text-xs text-gray-500">{visualCopy.youBuy}</p>
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 bg-[#ef4444] rounded-full flex items-center justify-center text-white text-[8px] font-bold">
                   HK
@@ -185,7 +230,7 @@ export function SolutionsSection() {
           </div>
           <div className="flex justify-between items-center border-t pt-3">
             <div>
-              <p className="text-xs text-gray-500">You Pay</p>
+              <p className="text-xs text-gray-500">{visualCopy.youPay}</p>
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 bg-[#2563eb] rounded-full flex items-center justify-center text-white text-[8px] font-bold">
                   US
@@ -195,7 +240,9 @@ export function SolutionsSection() {
             </div>
             <div className="text-right">
               <span className="text-xl font-semibold text-gray-900">125,820</span>
-              <p className="text-[10px] text-gray-400">Balance: 1,550,380.2 USD</p>
+              <p className="text-[10px] text-gray-400">
+                {visualCopy.balance}: 1,550,380.2 USD
+              </p>
             </div>
           </div>
         </div>

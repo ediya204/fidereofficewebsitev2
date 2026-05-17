@@ -1,7 +1,7 @@
 "use client"
 
 import { useLanguage } from "@/contexts/language-context"
-import { Shield, Globe, Home, TrendingUp, Landmark, Bitcoin } from "@/components/ui/app-icon"
+import { Shield, Globe, Home, TrendingUp, Landmark, Briefcase } from "@/components/ui/app-icon"
 
 const translations = {
   en: {
@@ -12,7 +12,7 @@ const translations = {
       "A coordinated service layer for families who need trust structuring, cross-border execution, asset oversight, and long-term governance from one accountable team.",
     proofPoints: ["Trust structuring", "Global execution", "Asset oversight"],
     moduleLabel: "Service module",
-    serviceTags: ["Trust", "Execution", "Mobility", "Markets", "Real assets", "Web3"],
+    serviceTags: ["Trust", "Execution", "Mobility", "Markets", "Real assets", "Oversight"],
     services: [
       {
         icon: "Shield",
@@ -40,9 +40,9 @@ const translations = {
         description: "We manage global holding structures for real assets such as real estate, art, private jet and others.",
       },
       {
-        icon: "Bitcoin",
-        title: "Digital Asset Custody",
-        description: "We provide secure administration and oversight of clients' digital and Web3 asset holdings.",
+        icon: "Briefcase",
+        title: "Asset Oversight",
+        description: "We provide secure administration and oversight for complex asset holdings and long-term reporting.",
       },
     ],
   },
@@ -53,7 +53,7 @@ const translations = {
     summary: "为需要信托架构、跨境执行、资产监督和长期治理的家族，提供由同一专业团队协调的综合服务层。",
     proofPoints: ["信托架构", "全球执行", "资产监督"],
     moduleLabel: "服务模块",
-    serviceTags: ["信托", "执行", "身份规划", "市场", "实物资产", "Web3"],
+    serviceTags: ["信托", "执行", "身份规划", "市场", "实物资产", "监督"],
     services: [
       {
         icon: "Shield",
@@ -81,9 +81,9 @@ const translations = {
         description: "我们管理房地产、艺术品、私人飞机等实物资产的全球持有结构。",
       },
       {
-        icon: "Bitcoin",
-        title: "数字资产托管",
-        description: "我们为客户的数字资产和Web3资产提供安全的管理和监督服务。",
+        icon: "Briefcase",
+        title: "资产监督管理",
+        description: "我们为客户复杂资产持有与长期报告提供安全的管理和监督服务。",
       },
     ],
   },
@@ -94,7 +94,7 @@ const translations = {
     summary: "為需要信託架構、跨境執行、資產監督和長期治理的家族，提供由同一專業團隊協調的綜合服務層。",
     proofPoints: ["信託架構", "全球執行", "資產監督"],
     moduleLabel: "服務模組",
-    serviceTags: ["信託", "執行", "身份規劃", "市場", "實物資產", "Web3"],
+    serviceTags: ["信託", "執行", "身份規劃", "市場", "實物資產", "監督"],
     services: [
       {
         icon: "Shield",
@@ -122,9 +122,51 @@ const translations = {
         description: "我們管理房地產、藝術品、私人飛機等實物資產的全球持有結構。",
       },
       {
-        icon: "Bitcoin",
-        title: "數字資產託管",
-        description: "我們為客戶的數字資產和Web3資產提供安全的管理和監督服務。",
+        icon: "Briefcase",
+        title: "資產監督管理",
+        description: "我們為客戶複雜資產持有與長期報告提供安全的管理和監督服務。",
+      },
+    ],
+  },
+  ar: {
+    sectionLabel: "ما نقدمه",
+    title: "خدمات شاملة لرحلة ثروتك",
+    eyebrow: "قدرات الائتمان الخاص",
+    summary:
+      "طبقة خدمات منسقة للعائلات التي تحتاج إلى هيكلة ائتمانية، تنفيذ عابر للحدود، رقابة على الأصول، وحوكمة طويلة الأجل من فريق مسؤول واحد.",
+    proofPoints: ["هيكلة الائتمان", "تنفيذ عالمي", "رقابة الأصول"],
+    moduleLabel: "وحدة الخدمة",
+    serviceTags: ["ائتمان", "تنفيذ", "تنقل", "أسواق", "أصول حقيقية", "رقابة"],
+    services: [
+      {
+        icon: "Shield",
+        title: "خدمات الائتمان",
+        description: "نقوم بهيكلة وإدارة الائتمانات بدعم مهني طويل الأجل من فريق ذي خبرة عالمية.",
+      },
+      {
+        icon: "Globe",
+        title: "دعم المعاملات",
+        description: "نساعد في إجراءات المدفوعات الدولية، والتحقق من الامتثال، ودعم العناية الواجبة.",
+      },
+      {
+        icon: "Home",
+        title: "الإقامة والجنسية",
+        description: "نرشد العملاء في برامج الإقامة والجنسية، بما في ذلك برنامج CIES في هونغ كونغ.",
+      },
+      {
+        icon: "TrendingUp",
+        title: "الوصول إلى الاستثمار",
+        description: "نربط العملاء بمنصات وساطة وإدارة أصول موثوقة لفرص الأسهم والسندات والاستثمار متعدد الأصول.",
+      },
+      {
+        icon: "Landmark",
+        title: "إدارة الأصول الحقيقية",
+        description: "ندير هياكل الحيازة العالمية للأصول الحقيقية مثل العقارات والفن والطائرات الخاصة وغيرها.",
+      },
+      {
+        icon: "Briefcase",
+        title: "رقابة الأصول",
+        description: "نوفر إدارة ورقابة آمنة لحيازات الأصول المعقدة والتقارير طويلة الأجل.",
       },
     ],
   },
@@ -136,7 +178,7 @@ const iconMap = {
   Home,
   TrendingUp,
   Landmark,
-  Bitcoin,
+  Briefcase,
 }
 
 export function PersonalTrustServices() {

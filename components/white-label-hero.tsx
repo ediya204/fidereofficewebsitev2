@@ -37,18 +37,45 @@ const content = {
     cta2: "聯繫我們",
     cta3: "開始對話",
   },
+  ar: {
+    title: "خدمات العلامة البيضاء لشركات الائتمان",
+    subtitle: "تكامل واحد لأعمالك الائتمانية",
+    description:
+      "تمكنك حلول العلامة البيضاء لدينا من تقديم خدمات ائتمانية تحت علامتك التجارية مع الاستفادة من بنيتنا التحتية الشاملة، مما يخلق فرصاً جديدة للتفاعل مع عملائك والوصول إلى السوق بسرعة بوظائف كاملة.",
+    description2:
+      "من خلال تكامل واحد، نقدم تجربة بسيطة ومنظمة ومؤتمتة. نربط أعمالك من موقعها الحالي إلى حيث تحتاج أن تكون.",
+    cta1: "حلولنا",
+    cta2: "تواصل معنا",
+    cta3: "لنتحدث",
+  },
 }
 
 export function WhiteLabelHero() {
   const { language } = useLanguage()
-  const t = content[language as keyof typeof content] || content["zh-CN"]
-
-  return (
-    <section className="relative bg-[#1a1a2e] text-white min-h-[80vh] flex items-center overflow-hidden">
-      {/* Background code decoration */}
-      <div className="absolute right-0 top-0 w-1/2 h-full opacity-30 overflow-hidden">
-        <div className="absolute right-8 top-20 font-mono text-xs text-[#4a5568] leading-relaxed">
-          <pre>{`12     output   :  "idr "
+  const t = content[language as keyof typeof content] || content.en
+  const integrationMockup =
+    language === "ar"
+      ? `12     المخرج  :  "IDR "
+13     السعر   :  "14250.000000  "  }
+14
+15   طلب  / v3  / أسعار / USD / VND
+16   { " المدخل  " : " USD ",
+17     المخرج  :  "VND ",
+18     السعر   :  "23250.000000  "  }
+19
+20   طلب  / v4  / أسعار / USD / CNY
+21   { " المدخل  " : " USD ",
+22     المخرج  :  "CNY ",
+23     السعر   :  "7.085256  "  }
+24
+25   طلب  / v5  / أسعار / USD / INR
+26   { " المدخل  " : " USD ",
+27     المخرج  :  "INR ",
+28     السعر   :  "75.024900  "  }
+29
+30   طلب  / v6  / أسعار / USD / JPY
+31   { " المدخل  " : " USD ",`
+      : `12     output   :  "idr "
 13     rate     :  "14250.000000  "  }
 14
 15   GET  / v3  / quotes / USD / VND
@@ -67,7 +94,14 @@ export function WhiteLabelHero() {
 28     rate     :  "75.024900  "  }
 29
 30   GET  / v6  / quotes / USD / JPY
-31   { " input   " : " usd ",`}</pre>
+31   { " input   " : " usd ",`
+
+  return (
+    <section className="relative bg-[#1a1a2e] text-white min-h-[80vh] flex items-center overflow-hidden">
+      {/* Background code decoration */}
+      <div className="absolute right-0 top-0 w-1/2 h-full opacity-30 overflow-hidden">
+        <div className="absolute right-8 top-20 font-mono text-xs text-[#4a5568] leading-relaxed">
+          <pre>{integrationMockup}</pre>
         </div>
       </div>
 

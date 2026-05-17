@@ -27,6 +27,12 @@ export function TrustAccountCTA() {
       cta: "預約諮詢",
       secondary: "聯繫我們",
     },
+    ar: {
+      title: "هل أنت مستعد للبدء؟",
+      subtitle: "تحدث إلى خبرائنا لمعرفة كيف يمكن لحلولنا الائتمانية الشاملة دعم أهدافك في إدارة الثروة.",
+      cta: "احجز استشارة",
+      secondary: "تواصل معنا",
+    },
   }
 
   const t = content[language as keyof typeof content] || content.en

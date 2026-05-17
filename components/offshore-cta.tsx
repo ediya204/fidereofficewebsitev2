@@ -17,6 +17,10 @@ const translations = {
     title: "準備好在全球保護您的財富了嗎？",
     cta: "立即開始",
   },
+  ar: {
+    title: "هل أنت مستعد لحماية ثروتك عالمياً؟",
+    cta: "ابدأ الآن",
+  },
 }
 
 export function OffshoreCTA() {

@@ -25,6 +25,12 @@ const translations = {
     cta: "聯繫我們",
     secondary: "了解更多",
   },
+  ar: {
+    title: "هل أنت مستعد للبدء؟",
+    description: "تواصل معنا اليوم لمعرفة كيف يمكن لـ FIDERE دعم أهدافك المالية.",
+    cta: "تواصل معنا",
+    secondary: "اعرف المزيد",
+  },
 }
 
 export function SolutionsCTA() {

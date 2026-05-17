@@ -42,7 +42,7 @@ const translations = {
         stats: "Customized",
       },
       { title: "Fixed Deposits", description: "Stable and secure investment options", stats: "4.5%+ APY" },
-      { title: "Staking", description: "Earn yields by supporting blockchain networks", stats: "Flexible Redemption" },
+      { title: "Money Market", description: "Short-term liquidity solutions for cash management", stats: "Flexible Access" },
     ],
   },
   "zh-CN": {
@@ -59,7 +59,7 @@ const translations = {
       { title: "IPO", description: "首次公开发行和国际股票认购", stats: "优先配售" },
       { title: "结构性产品", description: "为专业投资者量身定制的解决方案", stats: "定制化" },
       { title: "定期存款", description: "稳定安全的投资选择", stats: "年化4.5%+" },
-      { title: "质押理财", description: "通过支持区块链网络获得收益", stats: "灵活赎回" },
+      { title: "货币基金", description: "用于现金管理的短期流动性方案", stats: "灵活申赎" },
     ],
   },
   "zh-TW": {
@@ -76,7 +76,25 @@ const translations = {
       { title: "IPO", description: "首次公開發行和國際股票認購", stats: "優先配售" },
       { title: "結構性產品", description: "為專業投資者量身定制的解決方案", stats: "定制化" },
       { title: "定期存款", description: "穩定安全的投資選擇", stats: "年化4.5%+" },
-      { title: "質押理財", description: "通過支持區塊鏈網絡獲得收益", stats: "靈活贖回" },
+      { title: "貨幣基金", description: "用於現金管理的短期流動性方案", stats: "靈活申贖" },
+    ],
+  },
+  ar: {
+    badge: "محفظة متنوعة",
+    title1: "حساب واحد،",
+    title2: "إمكانات بلا حدود",
+    description:
+      "ابن محفظة استثمارية متنوعة بسهولة عبر FIDERE TRUST، مع الوصول إلى أصول عالمية مختارة.",
+    cta: "ابدأ رحلة الاستثمار",
+    investmentTypes: [
+      { title: "الأسهم", description: "أسهم الولايات المتحدة وهونغ كونغ والصين وأسهم عالمية مختارة", stats: "30+ سوقاً" },
+      { title: "الصناديق", description: "صناديق مشتركة وصناديق ETF متنوعة", stats: "5000+ منتج" },
+      { title: "السندات", description: "سندات حكومية وشركات", stats: "تصنيف AAA" },
+      { title: "الخيارات", description: "خيارات مرنة لاستراتيجيات الاستثمار", stats: "تداول T+0" },
+      { title: "الاكتتابات", description: "اكتتابات أولية واشتراكات أسهم دولية", stats: "تخصيص أولوية" },
+      { title: "منتجات مهيكلة", description: "حلول مخصصة للمستثمرين المحترفين", stats: "مخصص" },
+      { title: "ودائع ثابتة", description: "خيارات استثمار مستقرة وآمنة", stats: "4.5%+ سنوياً" },
+      { title: "سوق النقد", description: "حلول سيولة قصيرة الأجل لإدارة النقد", stats: "وصول مرن" },
     ],
   },
 }

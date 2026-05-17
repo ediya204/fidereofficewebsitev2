@@ -26,11 +26,18 @@ const content = {
     feature: "透過我們靈活的信託基礎設施實現業務敏捷性",
     featureCta: "了解更多",
   },
+  ar: {
+    title: "كن شريكنا.",
+    subtitle: "لنتحدث",
+    cta: "سجّل الآن",
+    feature: "مكّن مرونة أعمالك عبر بنيتنا التحتية الائتمانية المرنة",
+    featureCta: "اعرف المزيد",
+  },
 }
 
 export function WhiteLabelCTA() {
   const { language } = useLanguage()
-  const t = content[language as keyof typeof content] || content["zh-CN"]
+  const t = content[language as keyof typeof content] || content.en
 
   return (
     <section className="py-16 bg-white">

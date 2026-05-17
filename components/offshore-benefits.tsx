@@ -95,6 +95,37 @@ const translations = {
       },
     ],
   },
+  ar: {
+    label: "حلولنا",
+    title: "خدمات مصممة لاحتياجاتك",
+    learnMore: "اعرف المزيد",
+    solutions: [
+      {
+        id: "trust",
+        icon: FileText,
+        title: "حلول الائتمان والحفظ",
+        description:
+          "سواء كان هدفك تخطيط الثروة والتعاقب أو التخطيط الضريبي أو التخطيط الخارجي أو مكتب العائلة، توفر FIDERE TRUST دعماً منظماً...",
+        link: "/solutions/trust",
+      },
+      {
+        id: "financial",
+        icon: TrendingUp,
+        title: "الحلول المالية",
+        description:
+          "تمكنك حلولنا المالية من التحكم في أصولك بخصوصية وأمان. في FIDERE TRUST نربطك ببنية مالية عالمية...",
+        link: "/solutions/financial",
+      },
+      {
+        id: "business",
+        icon: Building2,
+        title: "حلول الأعمال",
+        description:
+          "تناسب FIDERE TRUST المؤسسات التي تسعى إلى تحسين أصولها المالية وتبسيط الإدارة والعمليات التنظيمية...",
+        link: "/solutions/business",
+      },
+    ],
+  },
 }
 
 export function OffshoreBenefits() {

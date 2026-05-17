@@ -14,19 +14,19 @@ const HERO_BG_IMAGES = [
 const HERO_SLOGANS = {
   en: [
     "Hong Kong trusts for long-term family trust asset management.",
-    "Digital assets connected to global asset management.",
+    "Global asset allocation connected to trust-based wealth management.",
   ],
   "zh-CN": [
     "香港信托，为家族信托资产管理构建长期架构。",
-    "数字资产，连接全球资产管理与跨境配置。",
+    "全球资产配置，连接信托架构与跨境财富管理。",
   ],
   "zh-TW": [
     "香港信託，為家族信託資產管理構建長期架構。",
-    "數字資產，連接全球資產管理與跨境配置。",
+    "全球資產配置，連接信託架構與跨境財富管理。",
   ],
   ar: [
     "هياكل ائتمانية في هونغ كونغ لإدارة ثروة العائلات على المدى الطويل.",
-    "أصول رقمية متصلة بإدارة الأصول والتخصيص العالمي.",
+    "تخصيص أصول عالمي متصل بإدارة الثروات عبر هياكل ائتمانية.",
   ],
 } as const
 

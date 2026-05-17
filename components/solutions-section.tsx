@@ -71,12 +71,12 @@ export function SolutionsSection() {
     },
     {
       id: "exchange",
-      title: localize({ en: "Asset Exchange", "zh-CN": "资产交换", "zh-TW": "資產交換", ar: "تبادل الأصول" }),
+      title: localize({ en: "Currency Exchange", "zh-CN": "货币兑换", "zh-TW": "貨幣兌換", ar: "تبادل العملات" }),
       description: localize({
-        en: "Convert fiat and digital assets in one place to keep treasury operations continuous.",
-        "zh-CN": "在同一平台完成法币与数字资产转换，强化资金管理连续性。",
-        "zh-TW": "在同一平台完成法幣與數字資產轉換，強化資金管理連續性。",
-        ar: "حوّل العملات التقليدية والأصول الرقمية في مكان واحد للحفاظ على استمرارية عمليات الخزينة.",
+        en: "Convert major currencies in one place to keep treasury operations continuous.",
+        "zh-CN": "在同一平台完成主要货币兑换，强化资金管理连续性。",
+        "zh-TW": "在同一平台完成主要貨幣兌換，強化資金管理連續性。",
+        ar: "حوّل العملات الرئيسية في مكان واحد للحفاظ على استمرارية عمليات الخزينة.",
       }),
       highlight: localize({
         en: "High-availability execution with balance linkage across multi-currency portfolios.",
